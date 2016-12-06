@@ -1,6 +1,7 @@
 <%
 var absolutePath = filename.split(site.developDir)[filename.split(site.developDir).length -1].replace('.ejs','.html');
 var relativePath = '../'.repeat([absolutePath.split('/').length -1]);
+var css_js_Path = '../'.repeat([absolutePath.split('/').length -3]);
 var page = {
   title: "テストページ｜hello",
   description: site.description,
@@ -11,11 +12,14 @@ var page = {
   ogpType: "website",
   ogpImage: site.ogpImage,
   absolutePath: absolutePath,
-  relativePath: relativePath
+  relativePath: relativePath,
+  css_js_Path:css_js_Path
 };
 -%>
 
 
+<%- include(page.relativePath + '_common/ejs/_head', {page: page, modifier: '',}); %>
+<%- include(page.relativePath + '_common/ejs/_header', {page: page, modifier: '',}); %>
 <!-- contents -->
 <article class="l-contents">
   <div class="p-mv">
@@ -87,3 +91,5 @@ var page = {
   </div>
 </article>
 <!-- /contents -->
+<%- include(page.relativePath + '_common/ejs/_footer', {page: page, modifier: '',}); %>
+<%- include(page.relativePath + '_common/ejs/_script', {page: page, modifier: '',}); %>
