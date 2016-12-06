@@ -1,5 +1,6 @@
     var gulp = require("gulp");
     var fs = require("fs");
+
     //html
     var htmlhint = require("gulp-htmlhint");
     var minifyhtml = require("gulp-minify-html");
@@ -41,7 +42,7 @@
         "scss": dir.src + "/_develop/**/*.scss",
         "scssbase": dir.src + "/_common/**/*.scss",
         "ejs": dir.src + "/_develop/**/*.ejs",
-        "ejsbase": dir.src + " /_common/**/*.ejs",
+        "ejsbase": dir.src + "/_common/**/*.ejs",
         "css": [dir.src + "/_develop/**/*.css", "!" + dir.src + "/_develop/**/*min.css"],
         "js": [dir.src + "/_develop/**/*.js", "!" + dir.src + "/_develop/**/*min.js"],
         "img": [dir.src + "/_develop/**/*.jpg", dir.src + "/_develop/**/*.gif", dir.src + "/_develop/**/*.png"]
@@ -184,20 +185,6 @@
             }))
     });
 
-    gulp.task("ejsbase", function() {
-        return gulp.src(path.ejsbase)
-            .pipe(plumber({
-                errorHandler: notify.onError('ejsでError出てまっせ: <%= error.message %>')
-            }))
-            .pipe(ejs({
-                site: JSON.parse(fs.readFileSync(develop.data + 'site.json'))
-            }, { "ext": ".html" }))
-            .pipe(gulp.dest(dir.src + '/deploy'))
-            .pipe(browser.reload({
-                stream: true
-            }))
-    });
-
     gulp.task("copy", function() {
         return gulp.src([
                 '!_src/sass/**/*.scss',
@@ -208,15 +195,15 @@
     });
 
     gulp.task("watch", function() {
-        gulp.watch(path.ejs, ["ejs", "ejsbase", 'lint:html']);
-        gulp.watch(path.ejsbase, ["ejs", "ejsbase", 'lint:html']);
-        gulp.watch(path.scss, ["sass", "sassbase"]);
-        gulp.watch(path.scssbase, ["sass", "sassbase"]);
+        gulp.watch(path.ejs, ["ejs", 'lint:html']);
+        gulp.watch(path.ejsbase, ["ejs", 'lint:html']);
+        gulp.watch(path.scss, ["sass"]);
+        gulp.watch(path.scssbase, ["sass"]);
     });
 
     gulp.task("prepare", function(callback) {
         return sequence(
-            ['ejs', 'ejsbase'], ["sass", "sassbase"], ['lint:html'], ['watch'],
+            ['ejs'], ["sass"], ['lint:html'], ['watch'],
             callback
         );
     });

@@ -4,11 +4,11 @@ var relativePath = '../'.repeat([absolutePath.split('/').length -1]);
 var css_js_Path = '../'.repeat([absolutePath.split('/').length -3]);
 var page = {
   title: "テストページ｜hello",
-  description: site.description,
+  description: site.description.projectA,
   keywords: site.keywords,
   bodyClass: "c-top",
-  singleCss: [],
-  singleJs: [],
+  singleCss: ["main.css"],
+  singleJs: ["main.js"],
   ogpType: "website",
   ogpImage: site.ogpImage,
   absolutePath: absolutePath,

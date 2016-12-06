@@ -1,28 +1,25 @@
+<%
+var absolutePath = filename.split(site.developDir)[filename.split(site.developDir).length -1].replace('.ejs','.html');
+var relativePath = '../'.repeat([absolutePath.split('/').length -1]);
+var css_js_Path = '../'.repeat([absolutePath.split('/').length -3]);
+var page = {
+  title: "テストページ｜hello",
+  description: site.description.project--a,
+  keywords: site.keywords,
+  bodyClass: "c-top",
+  singleCss: ["main.css","style.css"],
+  singleJs: ["main.js","style.js",],
+  ogpType: "website",
+  ogpImage: site.ogpImage,
+  absolutePath: absolutePath,
+  relativePath: relativePath,
+  css_js_Path:css_js_Path
+};
+-%>
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-    <title>テストページ｜hello</title>
-    <meta name="description" content="トップページのディスクリプションです ">
-    <meta name="keywords" content="HTML,カラー,画像,特殊文字,リファレンス,HTML,カラー,画像,特殊文字,リファレンス,HTML,カラー,画像,特殊文字,リファレンス">
-    
-    <link rel="stylesheet" href="../css/main.css">
-</head>
-<body>
-
-<header class="l-header">
-  <div class="c-header">
-    <h1 class="c-header__heading">PAasfafsdRTS</h1>
-    <ul class="c-header__nav">
-      <li class="c-header__list"><a href="" class="c-header__link">asdfsa</a></li>
-      <li class="c-header__list"><a href="" class="c-header__link">asfsd</a></li>
-      <li class="c-header__list"><a href="" class="c-header__link">asfsad</a></li>
-    </ul>
-  </div>
-</header>
-
+<%- include(page.relativePath + '_common/ejs/_head', {page: page, modifier: '',}); %>
+<%- include(page.relativePath + '_common/ejs/_header', {page: page, modifier: '',}); %>
 <!-- contents -->
 <article class="l-contents">
   <div class="p-mv">
@@ -94,15 +91,5 @@
   </div>
 </article>
 <!-- /contents -->
-<!--
-<footer class="l-footer">
-  <div class="c-footer">
-    <p class="c-footer__copy">interlink@interlink</p>
-  </div>
-</footer>
--->
-
- 
-    <script src="../js/main.js"></script>
-</body>
-</html>
+<%- include(page.relativePath + '_common/ejs/_footer', {page: page, modifier: '',}); %>
+<%- include(page.relativePath + '_common/ejs/_script', {page: page, modifier: '',}); %>

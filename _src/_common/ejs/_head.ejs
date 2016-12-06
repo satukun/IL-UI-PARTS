@@ -5,7 +5,6 @@
     <title><%= page.title %></title>
     <meta name="description" content="<%= page.description %>">
     <meta name="keywords" content="<%= page.keywords %>">
-    <link rel="stylesheet" href="<%= page.css_js_Path %>css/main<%= site.css %>">
     <% if(page.singleCss) { %><% page.singleCss.forEach(function(data) { %>
     <link rel="stylesheet" href="<%= page.css_js_Path %>css/<%= data %>"><% }); %><% } %>
 </head>
