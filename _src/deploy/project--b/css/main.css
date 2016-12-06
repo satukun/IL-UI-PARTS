@@ -1,0 +1,431 @@
+@charset "UTF-8";
+/* Reset.cssやNormalize.cssなどを用いたブラウザのデフォルトスタイルの初期化や、プロジェクトにおける基本的なスタイルを定義します。
+ページの下地としての全体の背景や、基本的なタイポグラフィなどが該当します。*/
+@font-face {
+  font-family: 'fontello-expo';
+  src: url("../font/fontello-expo.eot");
+  src: url("../font/fontello-expo.eot") format("embedded-opentype");
+  src: url("../font/fontello-expo.woff") format("woff");
+  src: url("../font/fontello-expo.ttf") format("truetype");
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption,
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q,
+blockquote {
+  quotes: none;
+}
+
+q:before,
+q:after,
+blockquote:before,
+blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+body {
+  font-family: sans-serif, "游ゴシック", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  position: relative;
+}
+
+html,
+body {
+  font-family: "fontello-expo";
+  font-size: 62.5%;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -o-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  background-color: #44a0dd;
+  font-feature-settings: "palt";
+}
+
+a {
+  text-decoration: none;
+}
+
+div,
+section,
+article,
+main {
+  display: block;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/** Layout ***************************************/
+/* ページを構成するヘッダーやメインのコンテンツエリア、
+サイドバーやフッターといったプロジェクト共通のコンテナーブロックのスタイルを定義します。*/
+.l-footer {
+  padding: 10px;
+  font-size: 1.4rem;
+  background-color: #000;
+}
+
+.l-header {
+  padding: 2rem 2rem;
+  overflow: hidden;
+  font-size: 1.4rem;
+}
+
+.l-main {
+  float: left;
+  width: 640px;
+}
+
+.l-side {
+  float: right;
+  width: 300px;
+}
+
+/** Object ***************************************/
+/* OOCSSのコンセプトを元に、プロジェクトにおける繰り返されるビジュアルパターンをすべてObjectと定義します。
+FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます。*/
+/* Component --------------- */
+.c-header {
+  color: #fff;
+}
+
+.c-header__heading {
+  float: left;
+}
+
+.c-header__nav {
+  float: right;
+  color: white;
+}
+
+.c-header__list {
+  display: inline-block;
+}
+
+.c-header__link {
+  color: white;
+}
+
+.c-footer {
+  color: #fff;
+  text-align: center;
+}
+
+.c-breadcrumb__list {
+  display: inline-block;
+}
+
+.c-mv {
+  height: 46rem;
+  position: relative;
+}
+
+.c-mv__parts--name {
+  position: absolute;
+  color: #fff;
+  font-size: 1.7rem;
+  display: inline-block;
+  padding: 2rem;
+}
+
+.c-mv__contents {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 2rem;
+  width: 100%;
+  text-align: center;
+}
+
+.c-mv__center {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.c-article {
+  width: 9000%;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 3rem;
+  line-height: 1.5;
+}
+
+.c-contents__heading--a {
+  font-size: 2.4rem;
+  text-align: center;
+  margin: 0 0 2rem;
+}
+
+.c-contents__heading--b {
+  font-size: 2.4rem;
+  text-align: center;
+  margin: 0 0 2rem;
+}
+
+.c-contents__description {
+  text-align: center;
+  font-size: 1.4rem;
+  margin: 0 auto 6rem;
+  width: 70%;
+}
+
+.c-contents__description span {
+  display: inline-block;
+  padding-bottom: 2rem;
+  border-bottom: 0.1rem solid #ccc;
+}
+
+.c-cols {
+  width: 100%;
+  letter-spacing: -.4em;
+}
+
+.c-cols__md-12 {
+  width: 100%;
+}
+
+.c-cols__md-11 {
+  width: 91.66666667%;
+}
+
+.c-cols__md-10 {
+  width: 83.33333333%;
+}
+
+.c-cols__md-9 {
+  width: 75%;
+}
+
+.c-cols__md-8 {
+  width: 66.66666667%;
+}
+
+.c-cols__md-7 {
+  width: 58.33333333%;
+}
+
+.c-cols__md-6 {
+  width: 50%;
+}
+
+.c-cols__md-5 {
+  width: 41.66666667%;
+}
+
+.c-cols__md-4 {
+  width: 33.33333333%;
+}
+
+.c-cols__md-3 {
+  width: 25%;
+}
+
+.c-cols__md-2 {
+  width: 16.66666667%;
+}
+
+.c-cols__md-1 {
+  width: 8.33333333%;
+}
+
+[class^="c-cols__"] {
+  padding: 0 0.5rem;
+  display: inline-block;
+  letter-spacing: normal;
+  margin-bottom: 3rem;
+  vertical-align: top;
+}
+
+.c-parts__title {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.c-parts__text {
+  margin-bottom: 1rem;
+}
+
+.c-parts__mv {
+  height: 20rem;
+  background-color: #ddd;
+  margin-bottom: 1rem;
+}
+
+/* Project --------------- */
+.p-mv {
+  padding-bottom: 10rem;
+}
+
+.p-breadcrumb {
+  padding: 10px;
+  font-size: 1.4rem;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.p-contents {
+  overflow: hidden;
+  font-size: 1.4rem;
+  position: relative;
+  margin: -10rem auto 0;
+}
+
+/* Utility --------------- */
+.u-clearfix {
+  overflow: hidden;
+}
+
+.u-clearfix::after {
+  content: '';
+  clear: both;
+  display: table;
+}
+
+.u-align--left {
+  float: left;
+}
+
+.u-align--right {
+  float: right;
+}

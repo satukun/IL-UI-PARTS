@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <title><%= page.title %></title>
+    <meta name="description" content="<%= page.description %>">
+    <meta name="keywords" content="<%= page.keywords %>">
+    <link rel="stylesheet" href="<%= page.relativePath %>../css/main<%= site.css %>">
+    <% if(page.singleCss) { %><% page.singleCss.forEach(function(data) { %>
+    <link rel="stylesheet" href="<%= page.relativePath %>../css/<%= data %>"><% }); %><% } %>
+</head>
+<body>
