@@ -4,16 +4,55 @@
         &__imgbox {
             flex-grow: 1;
         }
-        &__img {}
         &__info {
             width: 60%;
             word-wrap: break-word;
             font-size: 1.4rem;
         }
-        &__infoInner {}
-        &__infotext {}
-        &__component {}
-        &__componame {}
-        &__compotext {}
+        &__headding {
+            display: block;
+            padding-bottom: 1rem;
+            font-size: 1.4rem;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+        &__keyword {
+            display: block;
+            padding-bottom: 1rem;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            li {
+                display: inline-block;
+            }
+            a {
+                display: block;
+                padding: 0.5rem;
+                border-radius: 0.5rem;
+                background-color: #f6f6f6;
+                color: #333;
+            }
+        }
+        &__infoInner {
+            margin-bottom: 1rem;
+        }
+        &__infoText {
+            margin-bottom: 1rem;
+        }
+        &__component {
+            width: 100%;
+            display: block;
+            letter-spacing: -.4em;
+        }
+        &__componame {
+            display: inline-block;
+            width: 50%;
+            letter-spacing: normal;
+        }
+        &__compotext {
+            display: inline-block;
+            width: 50%;
+            letter-spacing: normal;
+        }
     }
 }

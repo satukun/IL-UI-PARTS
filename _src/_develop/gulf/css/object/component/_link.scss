@@ -1,0 +1,42 @@
+.c- {
+    &link {
+        font-size: 1.4rem;
+        &__inner {
+            border-top: 1px solid #ccc;
+        }
+        &__list {
+            border-bottom: 1px solid #ccc;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        &__store {
+            flex-grow: 1;
+            align-items: center;
+        }
+        &__text {
+            width: 30%;
+            align-items: center;
+        }
+        &__ph {
+            height: 73px;
+            width: 73px;
+            border-radius: 100%;
+            background-color: #ccc;
+            margin-right: 1rem;
+            &--mini {
+                height: 41px;
+                width: 41px;
+            }
+        }
+        &__name {
+            &--text {}
+        }
+        &__add {
+            display: block;
+            text-align: center;
+            padding: 2rem 0;
+            border-bottom: 1px solid #ccc;
+            color: #666;
+        }
+    }
+}

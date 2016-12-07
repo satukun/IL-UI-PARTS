@@ -3,12 +3,12 @@ var absolutePath = filename.split(site.developDir)[filename.split(site.developDi
 var relativePath = '../'.repeat([absolutePath.split('/').length -1]);
 var css_js_Path = '../'.repeat([absolutePath.split('/').length -3]);
 var page = {
-  title: "テストページ｜hello",
+  title: "カタログA｜" + site.name,
   description: site.description.projectA,
   keywords: site.keywords,
   bodyClass: "c-top",
   singleCss: ["main.css"],
-  singleJs: ["main.js"],
+  singleJs: [],
   ogpType: "website",
   ogpImage: site.ogpImage,
   absolutePath: absolutePath,
@@ -21,71 +21,35 @@ var page = {
 <%- include(page.relativePath + '_common/ejs/_header', {page: page, modifier: '',}); %>
 <!-- contents -->
 <article class="l-contents">
-  <div class="p-mv">
-    <div class="c-mv c-parts">
-      <span class="c-mv__parts--name">TAB</span>
-      <div class="c-mv__contents">
-
-      <!-- mv__parts -->
-      <div class="c-mv__center"></div>
-      <!-- mv__parts -->
-
-      </div>
-    </div>
-  </div>
   <div class="p-contents">
     <div class="c-article">
-      <div class="c-contents">
-        <h1 class="c-contents__heading--a">UI parts</h1>
-        <div class="c-contents__description">
-          <span>Bootstrap3が公開され、デザインもフラットになりましたね。これを、配布されているテーマを使って手軽にもっとかっこ良くできちゃいます！今回はBootstrap3の無料テーマ＆テーマ集をまとめてみました。どのテーマもかっこよすぎて涙が出ます。フラットデザインを作成中の方はぜひ参考にしてみてください。</span>
-        </div>
-        <h2 class="c-contents__heading--b">UI parts</h2>
-          <section class="p-parts c-cols">
-            <div class="c-cols__md-4">
-              <dl class="c-parts">
-                <dt class="c-parts__title">tab</dt>
-                <dd class="c-parts__mv"></dd>
-                <dd class="c-parts__text">いいいい▲いいい▲いいいい▲いいいい▲</dd>
-              </dl>
+      <section class="p-link c-link">
+        <ul class="c-link__inner">
+          <li class="c-link__list u-flex">
+            <div class="c-link__store u-flex">
+             <div class="c-link__ph"></div>
+             <span class="c-link__name--text">A店様</span>
             </div>
-            <div class="c-cols__md-4">
-              <dl class="c-parts">
-                <dt class="c-parts__title">navbar</dt>
-                <dd class="c-parts__mv"></dd>
-                <dd class="c-parts__text">いいいい▲いいいい▲いいいい▲いいいい▲</dd>
-              </dl>
+            <div class="c-link__text u-flex">
+             <div class="c-link__ph c-link__ph--mini"></div>
+             <span class="c-link__name--text">自分太郎</span>
             </div>
-            <div class="c-cols__md-4">
-              <dl class="c-parts">
-                <dt class="c-parts__title">button</dt>
-                <dd class="c-parts__mv"></dd>
-                <dd class="c-parts__text">いいいい▲いいいい▲いいいい▲いいいい▲</dd>
-              </dl>
+          </li>
+          <li class="c-link__list u-flex">
+            <div class="c-link__store u-flex">
+             <div class="c-link__ph"></div>
+             <span class="c-link__name--text">A店様</span>
             </div>
-            <div class="c-cols__md-4">
-              <dl class="c-parts">
-                <dt class="c-parts__title">list</dt>
-                <dd class="c-parts__mv"></dd>
-                <dd class="c-parts__text">いいいい▲いいいい▲いいいい▲いいいい▲</dd>
-              </dl>
+            <div class="c-link__text u-flex">
+             <div class="c-link__ph c-link__ph--mini"></div>
+             <span class="c-link__name--text">自分太郎</span>
             </div>
-            <div class="c-cols__md-4">
-              <dl class="c-parts">
-                <dt class="c-parts__title">breadcrumb</dt>
-                <dd class="c-parts__mv"></dd>
-                <dd class="c-parts__text">いいいい▲いいいい▲いいいい▲いいいい▲</dd>
-              </dl>
-            </div>
-            <div class="c-cols__md-4">
-              <dl class="c-parts">
-                <dt class="c-parts__title">signup</dt>
-                <dd class="c-parts__mv"></dd>
-                <dd class="c-parts__text">いいいい▲いいいい▲いいいい▲いいいい▲</dd>
-              </dl>
-            </div>
-          </section>
-      </div>
+          </li>
+
+
+        </ul>
+        <div ><a class="c-link__add" href="#">linkを追加</a></div>
+      </section>
     </div>
   </div>
 </article>

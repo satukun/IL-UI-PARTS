@@ -2,6 +2,9 @@
     &cols {
         width: 100%;
         letter-spacing: -.4em;
+        a {
+            color: #333;
+        }
         &__md-12 {
             width: 100%;
         }
@@ -42,7 +45,7 @@
 }
 
 [class^="c-cols__"] {
-    padding: 0 1rem;
+    padding: 0 0.5rem;
     display: inline-block;
     letter-spacing: normal;
     margin-bottom: 3rem;
