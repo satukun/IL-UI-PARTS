@@ -1,0 +1,23 @@
+{
+    "name": "Gulf",
+    "description": {
+        "Gulf": {
+            "A": "A-1-2カタログAカタログA"
+        }
+    },
+    "keywords": "HTML,カラー,画像,特殊文字,リファレンス,HTML,カラー,画像,特殊文字,リファレンス,HTML,カラー,画像,特殊文字,リファレンス",
+    "author": "",
+    "rootUrl": "http://example.com/",
+    "css": ".css",
+    "js": ".js",
+    "ogpImage": "http://example.com/images/og-image.jpg",
+    "facebookAdmins": "",
+    "facebookAppId": "",
+    "twitterCard": "summary",
+    "twitterSite": "@",
+    "favicon": "",
+    "appleIcon": "",
+    "appTitle": "",
+    "analyticsId": "",
+    "developDir": "_develop"
+}

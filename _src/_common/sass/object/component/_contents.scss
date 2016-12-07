@@ -1,10 +1,18 @@
 .c- {
     &contents {
         &__heading {
-            &--a {
-                font-size: 2.4rem;
+            &--name {
+                font-size: 1.4rem;
                 text-align: center;
-                margin: 0 0 2rem
+                margin: 0 0 2rem;
+                display: block;
+                text-align: center;
+                span {
+                    display: inline-block;
+                    border: 1px solid #C0392A;
+                    color: #C0392A;
+                    padding: 0.75rem;
+                }
             }
             &--b {
                 font-size: 2.4rem;

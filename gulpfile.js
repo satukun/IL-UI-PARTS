@@ -34,16 +34,16 @@
     }
 
     var develop = {
-        "data": '_src/_develop/project--a/'
+        "data": '_src/_develop/gulf/'
     }
 
     var path = {
-        "html": [dir.src + "/**/*.html", "!" + dir.src + "/**/*min.html", "!" + dir.src + "/**/_*.html"],
+        "html": [dir.src + "/**/*.html", "!" + dir.src + "/**/*min.html"],
         "scss": dir.src + "/_develop/**/*.scss",
         "scssbase": dir.src + "/_common/**/*.scss",
         "ejs": dir.src + "/_develop/**/*.ejs",
         "ejsbase": dir.src + "/_common/**/*.ejs",
-        "css": [dir.src + "/_develop/**/*.css", "!" + dir.src + "/_develop/**/*min.css"],
+        "css": [dir.src + "/**/*.css", "!" + dir.src + "/**/*min.css"],
         "js": [dir.src + "/_develop/**/*.js", "!" + dir.src + "/_develop/**/*min.js"],
         "img": [dir.src + "/_develop/**/*.jpg", dir.src + "/_develop/**/*.gif", dir.src + "/_develop/**/*.png"]
     }
@@ -91,11 +91,12 @@
             }))
     });
 
-
-
     gulp.task("js", function() {
         return gulp.src(path.js)
-            .pipe(gulp.dest(dir.src + '/js'))
+            .pipe(gulp.dest(dir.src + '/deploy'))
+            .pipe(browser.reload({
+                stream: true
+            }))
     });
 
 
@@ -141,7 +142,7 @@
             .pipe(rename({
                 suffix: '_min'
             }))
-            .pipe(gulp.dest(dir.dist + '/css'))
+            .pipe(gulp.dest(dir.dist))
     });
 
     gulp.task("min:js", function() {
@@ -186,11 +187,9 @@
     });
 
     gulp.task("copy", function() {
-        return gulp.src([
-                '!_src/sass/**/*.scss',
-                '!_src/ejs/**/*.ejs',
-                '_src/**/*'
-            ])
+        return gulp.src(
+                ['_src/deploy/**/**'], { base: '_src' }
+            )
             .pipe(gulp.dest(dir.dist));
     });
 
@@ -199,11 +198,12 @@
         gulp.watch(path.ejsbase, ["ejs", 'lint:html']);
         gulp.watch(path.scss, ["sass"]);
         gulp.watch(path.scssbase, ["sass"]);
+        gulp.watch(path.js, ["js"]);
     });
 
     gulp.task("prepare", function(callback) {
         return sequence(
-            ['ejs'], ["sass"], ['lint:html'], ['watch'],
+            ['ejs'], ["sass"], ["js"], ['lint:html'], ['watch'],
             callback
         );
     });
