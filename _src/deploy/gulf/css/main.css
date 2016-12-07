@@ -298,10 +298,10 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
   padding: 0.75rem;
 }
 
-.c-contents__heading--b {
+.c-contents__heading--product {
   font-size: 2.4rem;
-  text-align: center;
   margin: 0 0 2rem;
+  word-wrap: break-word;
 }
 
 .c-contents__description {
@@ -405,8 +405,45 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
   margin-bottom: 1rem;
 }
 
-.c-catalog__details {
+.c-catalog {
   background-color: #fff;
+  display: block;
+  padding: 2rem;
+  font-size: 1.8rem;
+  box-shadow: 7px 7px 11px rgba(0, 0, 0, 0.25);
+  word-wrap: break-word;
+}
+
+.c-catalog__title {
+  margin-bottom: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.c-catalog__text {
+  margin-bottom: 1rem;
+  color: #999999;
+  font-size: 1rem;
+}
+
+.c-catalog__mv {
+  height: 20rem;
+  background-color: #ddd;
+  margin-bottom: 1rem;
+}
+
+.c-product {
+  width: 100%;
+}
+
+.c-product__imgbox {
+  flex-grow: 1;
+}
+
+.c-product__info {
+  width: 60%;
+  word-wrap: break-word;
+  font-size: 1.4rem;
 }
 
 /* Project --------------- */
@@ -424,6 +461,11 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 .p-contents {
   overflow: hidden;
   position: relative;
+}
+
+.p-product {
+  background-color: #fff;
+  padding: 2rem;
 }
 
 /* Utility --------------- */
@@ -447,4 +489,10 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
 .u-rad__items {
   border-radius: 1rem;
+}
+
+.u-flex {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
 }

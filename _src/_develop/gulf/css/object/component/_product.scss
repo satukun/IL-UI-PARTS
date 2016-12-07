@@ -1,0 +1,19 @@
+.c- {
+    &product {
+        width: 100%;
+        &__imgbox {
+            flex-grow: 1;
+        }
+        &__img {}
+        &__info {
+            width: 60%;
+            word-wrap: break-word;
+            font-size: 1.4rem;
+        }
+        &__infoInner {}
+        &__infotext {}
+        &__component {}
+        &__componame {}
+        &__compotext {}
+    }
+}

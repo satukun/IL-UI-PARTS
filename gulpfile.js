@@ -40,7 +40,6 @@
     var path = {
         "html": [dir.src + "/**/*.html", "!" + dir.src + "/**/*min.html"],
         "scss": dir.src + "/_develop/**/*.scss",
-        "scssbase": dir.src + "/_common/**/*.scss",
         "ejs": dir.src + "/_develop/**/*.ejs",
         "ejsbase": dir.src + "/_common/**/*.ejs",
         "css": [dir.src + "/**/*.css", "!" + dir.src + "/**/*min.css"],
@@ -80,16 +79,6 @@
             }))
     });
 
-    gulp.task("sassbase", function() {
-        return gulp.src(path.scssbase)
-            .pipe(plumber({
-                errorHandler: notify.onError('SCSSでError出てまっせ: <%= error.message %>')
-            }))
-            .pipe(sass({ outputStyle: 'expanded' }))
-            .pipe(browser.reload({
-                stream: true
-            }))
-    });
 
     gulp.task("js", function() {
         return gulp.src(path.js)
@@ -197,7 +186,6 @@
         gulp.watch(path.ejs, ["ejs", 'lint:html']);
         gulp.watch(path.ejsbase, ["ejs", 'lint:html']);
         gulp.watch(path.scss, ["sass"]);
-        gulp.watch(path.scssbase, ["sass"]);
         gulp.watch(path.js, ["js"]);
     });
 
