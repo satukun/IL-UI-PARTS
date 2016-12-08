@@ -50,6 +50,11 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 @import "object/component/_catalog";
 @import "object/component/_product";
 @import "object/component/_link";
+@import "object/component/_form";
+@import "object/component/_menu";
+@import "object/component/_arrow";
+@import "object/component/_recommended";
+@import "object/component/_item";
 
 /* Project --------------- */
 
@@ -66,6 +71,8 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 @import "object/project/_card";
 @import "object/project/_catalog";
 @import "object/project/_product";
+@import "object/project/_recommended";
+@import "object/project/_item";
 
 /* Utility --------------- */
 

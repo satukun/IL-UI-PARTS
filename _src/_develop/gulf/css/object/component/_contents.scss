@@ -20,6 +20,14 @@
                 word-wrap: break-word;
                 font-weight: bold;
             }
+            &--recommended {
+                font-size: 1.4rem;
+                margin: 0 0 3rem;
+                word-wrap: break-word;
+                font-weight: bold;
+                color: #999999;
+                text-align: center;
+            }
         }
         &__description {
             text-align: center;

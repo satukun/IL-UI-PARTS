@@ -1,0 +1,27 @@
+.c- {
+    &arrow {
+        position: absolute;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        border-top: 4px solid #999999;
+        border-right: 4px solid #999999;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(0, -50%);
+        &--right {
+            right: 1.5rem;
+            -moz-transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+        }
+        &--left {
+            left: 1.5rem;
+            -moz-transform: rotate(225deg);
+            -webkit-transform: rotate(225deg);
+            -o-transform: rotate(225deg);
+            -ms-transform: rotate(225deg);
+        }
+    }
+}
