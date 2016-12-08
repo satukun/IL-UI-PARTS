@@ -7,7 +7,7 @@
         border-top: 4px solid #999999;
         border-right: 4px solid #999999;
         top: 50%;
-        -webkit-transform: translate(-50%, -50%);
+        -webkit-transform: translate(0, -50%);
         transform: translate(0, -50%);
         &--right {
             right: 1.5rem;
@@ -23,5 +23,10 @@
             -o-transform: rotate(225deg);
             -ms-transform: rotate(225deg);
         }
+    }
+    &arrowmenu {
+        width: 15px;
+        height: 15px;
+        top: 28px;
     }
 }

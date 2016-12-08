@@ -442,7 +442,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 }
 
 [class^="c-cols__"] {
-  padding: 0 1rem;
+  padding: 0 2rem;
   display: inline-block;
   letter-spacing: normal;
   margin-bottom: 3rem;
@@ -543,9 +543,14 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 }
 
 .c-catalog__mv {
-  height: 15rem;
-  background-color: #ddd;
+  max-height: 19rem;
   margin-bottom: 1rem;
+  text-align: center;
+}
+
+.c-catalog__mv img {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .c-catalog__updateset {
@@ -562,7 +567,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
   display: block;
   padding: 0.5rem 0;
   border-bottom: 1px solid #fff;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
 }
 
 .c-catalog__update dt,
@@ -572,11 +577,11 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 }
 
 .c-catalog__update dt {
-  width: 30%;
+  width: 40%;
 }
 
 .c-catalog__update dd {
-  width: 70%;
+  width: 60%;
 }
 
 .c-catalog__update:last-child {
@@ -585,7 +590,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
 .c-catalog__add {
   background-color: #ccc;
-  min-height: 100px;
+  min-height: 425px;
 }
 
 .c-catalog__add span {
@@ -807,7 +812,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
   border-top: 4px solid #999999;
   border-right: 4px solid #999999;
   top: 50%;
-  -webkit-transform: translate(-50%, -50%);
+  -webkit-transform: translate(0, -50%);
   transform: translate(0, -50%);
 }
 
@@ -825,6 +830,12 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
   -webkit-transform: rotate(225deg);
   -o-transform: rotate(225deg);
   -ms-transform: rotate(225deg);
+}
+
+.c-arrowmenu {
+  width: 15px;
+  height: 15px;
+  top: 28px;
 }
 
 .c-recommended {
