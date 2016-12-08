@@ -1,0 +1,115 @@
+<%
+var absolutePath = filename.split(site.developDir)[filename.split(site.developDir).length -1].replace('.ejs','.html');
+var relativePath = '../'.repeat([absolutePath.split('/').length -1]);
+var css_js_Path = '../'.repeat([absolutePath.split('/').length -3]);
+var page = {
+  title: site.title.B11 + "｜" + site.name,
+  description: site.description.B12,
+  keywords: site.keywords,
+  bodyClass: "c-top",
+  singleCss: ["main.css"],
+  singleJs: [],
+  ogpType: "website",
+  ogpImage: site.ogpImage,
+  absolutePath: absolutePath,
+  relativePath: relativePath,
+  css_js_Path:css_js_Path
+};
+-%>
+
+<%- include(page.relativePath + '_common/ejs/_head', {page: page, modifier: '',}); %>
+<%- include(page.relativePath + '_common/ejs/_header', {page: page, modifier: '',}); %>
+<!-- contents -->
+<article class="l-contents">
+  <div class="p-contents">
+    <div class="c-article">
+      <section class="p-link c-link">
+        <ul class="c-link__inner">
+          <li class="c-link__list u-flex">
+            <div class="c-link__store u-flex">
+             <div class="c-link__ph"></div>
+             <span class="c-link__name--text">A店様</span>
+            </div>
+            <div class="c-link__text u-flex">
+             <div class="c-link__ph c-link__ph--mini"></div>
+             <span class="c-link__name--text">自分太郎</span>
+            </div>
+          </li>
+          <li class="c-link__list u-flex">
+            <div class="c-link__store u-flex">
+             <div class="c-link__ph"></div>
+             <span class="c-link__name--text">A店様</span>
+            </div>
+            <div class="c-link__text u-flex">
+             <div class="c-link__ph c-link__ph--mini"></div>
+             <span class="c-link__name--text">自分太郎</span>
+            </div>
+          </li>
+          <li class="c-link__list u-flex">
+            <div class="c-link__store u-flex">
+             <div class="c-link__ph"></div>
+             <span class="c-link__name--text">A店様</span>
+            </div>
+            <div class="c-link__text u-flex">
+             <div class="c-link__ph c-link__ph--mini"></div>
+             <span class="c-link__name--text">自分太郎</span>
+            </div>
+          </li>
+          <li class="c-link__list u-flex">
+            <div class="c-link__store u-flex">
+             <div class="c-link__ph"></div>
+             <span class="c-link__name--text">A店様</span>
+            </div>
+            <div class="c-link__text u-flex">
+             <div class="c-link__ph c-link__ph--mini"></div>
+             <span class="c-link__name--text">自分太郎</span>
+            </div>
+          </li>
+          <li class="c-link__list u-flex">
+            <div class="c-link__store u-flex">
+             <div class="c-link__ph"></div>
+             <span class="c-link__name--text">A店様</span>
+            </div>
+            <div class="c-link__text u-flex">
+             <div class="c-link__ph c-link__ph--mini"></div>
+             <span class="c-link__name--text">自分太郎</span>
+            </div>
+          </li>
+          <li class="c-link__list u-flex">
+            <div class="c-link__store u-flex">
+             <div class="c-link__ph"></div>
+             <span class="c-link__name--text">A店様</span>
+            </div>
+            <div class="c-link__text u-flex">
+             <div class="c-link__ph c-link__ph--mini"></div>
+             <span class="c-link__name--text">自分太郎</span>
+            </div>
+          </li>
+          <li class="c-link__list u-flex">
+            <div class="c-link__store u-flex">
+             <div class="c-link__ph"></div>
+             <span class="c-link__name--text">A店様</span>
+            </div>
+            <div class="c-link__text u-flex">
+             <div class="c-link__ph c-link__ph--mini"></div>
+             <span class="c-link__name--text">自分太郎</span>
+            </div>
+          </li>
+        </ul>
+        <div >
+          <a class="c-link__add" href="#">
+            <span class="c-link__addInner">linkを追加
+              <span class="c-button__close" href="#">
+                <span></span>
+                <span></span>
+              </span>
+            </span>
+          </a>
+        </div>
+      </section>
+    </div>
+  </div>
+</article>
+<!-- /contents -->
+<%- include(page.relativePath + '_common/ejs/_footer', {page: page, modifier: '',}); %>
+<%- include(page.relativePath + '_common/ejs/_script', {page: page, modifier: '',}); %>

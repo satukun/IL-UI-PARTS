@@ -9,13 +9,19 @@
             width: 1500px;
         }
         &__imgbox {
-            flex-grow: 1;
+            width: 40%;
+            box-sizing: border-box;
+            img {
+                width: 100%;
+            }
         }
         &__info {
             width: 60%;
             word-wrap: break-word;
             font-size: 1.4rem;
             color: #434343;
+            box-sizing: border-box;
+            padding: 0 0 0 3rem;
         }
         &__headding {
             display: block;

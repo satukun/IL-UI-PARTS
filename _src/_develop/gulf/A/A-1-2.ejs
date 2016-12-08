@@ -18,17 +18,16 @@ var page = {
 -%>
 
 <%- include(page.relativePath + '_common/ejs/_head', {page: page, modifier: '',}); %>
-<%- include(page.relativePath + '_common/ejs/_header', {page: page, modifier: '',}); %>
+<%- include(page.relativePath + '_common/ejs/_menu', {page: page, modifier: '',}); %>
 <!-- contents -->
 <article class="l-contents">
   <div class="p-contents">
     <div class="c-article">
-      <%- include(page.relativePath + '_common/ejs/_menu', {page: page, modifier: '',}); %>
       <h1 class="c-contents__heading--name"><span>Your Customer Name Space</span></h1>
-        <section class="p-catalog c-cols c-item">
-          <%- include(page.relativePath + '_common/ejs/_card', {page: page, modifier: '', cols: '6', type:'p-catalog'}); %>
-        </section>
-      </div>
+      <section class="p-catalog c-cols c-item">
+        <%- include(page.relativePath + '_common/ejs/_card', {page: page, modifier: '', cols: '6', type:'p-catalog'}); %>
+      </section>
+    </div>
   </div>
 </article>
 <!-- /contents -->

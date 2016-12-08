@@ -79,6 +79,12 @@
             }))
     });
 
+    gulp.task("img", function() {
+        return gulp.src(path.img)
+            .pipe(gulp.dest(dir.src + '/deploy'))
+    });
+
+
 
     gulp.task("js", function() {
         return gulp.src(path.js)
@@ -144,17 +150,17 @@
     });
 
     gulp.task("min:img", function() {
-        gulp.src(path.img + "/**/*.png")
+        gulp.src(path.img)
             .pipe(imagemin({
                 use: [pngquant()]
             }))
-            .pipe(gulp.dest(path.img));
+            .pipe(gulp.dest(dir.dist + '/img'));
 
-        gulp.src(path.img + "/**/*.jpg")
+        gulp.src(path.img)
             .pipe(imagemin({
                 progressive: true
             }))
-            .pipe(gulp.dest(path.img));
+            .pipe(gulp.dest(dir.dist + '/img'));
     });
 
 
@@ -191,14 +197,14 @@
 
     gulp.task("prepare", function(callback) {
         return sequence(
-            ['ejs'], ["sass"], ["js"], ['lint:html'], ['watch'],
+            ['ejs'], ["sass"], ["js", "img"], ['lint:html'], ['watch'],
             callback
         );
     });
 
     gulp.task("deploy", function(callback) {
         return sequence(
-            ['lint:html'], ['min:html', 'min:css'], ['copy'],
+            ['lint:html'], ['min:html', 'min:css', 'min:img'], ['copy'],
             callback
         );
     });

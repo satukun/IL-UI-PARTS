@@ -18,13 +18,13 @@ var page = {
 -%>
 
 <%- include(page.relativePath + '_common/ejs/_head', {page: page, modifier: '',}); %>
-<%- include(page.relativePath + '_common/ejs/_header', {page: page, modifier: '',}); %>
+<%- include(page.relativePath + '_common/ejs/_menu', {page: page, modifier: '',}); %>
 <!-- contents -->
 <article class="l-contents">
   <div class="p-contents">
     <div class="c-article">
-
       <%- include(page.relativePath + '_common/ejs/_form', {page: page, modifier: '',}); %>
+
       <section class="p-recommended">
         <div class="c-recommended">
           <h2 class="c-contents__heading--recommended">Recommended Catalogs</h2>
