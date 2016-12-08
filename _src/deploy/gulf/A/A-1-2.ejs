@@ -3,8 +3,8 @@ var absolutePath = filename.split(site.developDir)[filename.split(site.developDi
 var relativePath = '../'.repeat([absolutePath.split('/').length -1]);
 var css_js_Path = '../'.repeat([absolutePath.split('/').length -3]);
 var page = {
-  title: site.title.A12 + "｜" + site.name,
-  description: site.description.A12,
+  title: "カタログA｜" + site.name,
+  description: site.description.A.1_1,
   keywords: site.keywords,
   bodyClass: "c-top",
   singleCss: ["main.css"],
@@ -16,7 +16,7 @@ var page = {
   css_js_Path:css_js_Path
 };
 -%>
-
+<% console.log(site.description.A);-%>
 <%- include(page.relativePath + '_common/ejs/_head', {page: page, modifier: '',}); %>
 <%- include(page.relativePath + '_common/ejs/_header', {page: page, modifier: '',}); %>
 <!-- contents -->
@@ -74,6 +74,7 @@ var page = {
               </dl>
             </a>
           </div>
+
         </section>
       </div>
 

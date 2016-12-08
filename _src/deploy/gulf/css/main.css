@@ -300,7 +300,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
 .c-contents__heading--product {
   font-size: 2.4rem;
-  margin: 0 0 2rem;
+  margin: 0 0 3rem;
   word-wrap: break-word;
   font-weight: bold;
 }
@@ -325,6 +325,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
 .c-cols a {
   color: #333;
+  display: block;
 }
 
 .c-cols__md-12 {
@@ -449,15 +450,17 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
   width: 60%;
   word-wrap: break-word;
   font-size: 1.4rem;
+  color: #434343;
 }
 
 .c-product__headding {
   display: block;
   padding-bottom: 1rem;
-  font-size: 1.4rem;
+  font-size: 1.7rem;
   border-bottom: 1px solid #ccc;
   margin-bottom: 1rem;
   font-weight: bold;
+  color: #999;
 }
 
 .c-product__keyword {
@@ -465,10 +468,13 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
   padding-bottom: 1rem;
   font-size: 1.4rem;
   margin-bottom: 1rem;
+  letter-spacing: -.4em;
 }
 
 .c-product__keyword li {
   display: inline-block;
+  letter-spacing: normal;
+  margin-right: 1rem;
 }
 
 .c-product__keyword a {
@@ -477,6 +483,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
   border-radius: 0.5rem;
   background-color: #f6f6f6;
   color: #333;
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
 }
 
 .c-product__infoInner {
@@ -484,7 +491,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 }
 
 .c-product__infoText {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .c-product__component {
@@ -495,14 +502,20 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
 .c-product__componame {
   display: inline-block;
-  width: 50%;
+  width: 40%;
   letter-spacing: normal;
+  vertical-align: top;
 }
 
 .c-product__compotext {
   display: inline-block;
-  width: 50%;
+  width: 60%;
   letter-spacing: normal;
+  vertical-align: top;
+}
+
+.c-product__container {
+  margin-bottom: 4rem;
 }
 
 .c-link {
@@ -516,7 +529,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 .c-link__list {
   border-bottom: 1px solid #ccc;
   align-items: center;
-  padding: 1rem 0;
+  padding: 1rem;
 }
 
 .c-link__store {
@@ -535,6 +548,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
   border-radius: 100%;
   background-color: #ccc;
   margin-right: 1rem;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.25);
 }
 
 .c-link__ph--mini {

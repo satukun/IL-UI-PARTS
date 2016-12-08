@@ -7,7 +7,7 @@
         &__list {
             border-bottom: 1px solid #ccc;
             align-items: center;
-            padding: 1rem 0;
+            padding: 1rem;
         }
         &__store {
             flex-grow: 1;
@@ -23,6 +23,7 @@
             border-radius: 100%;
             background-color: #ccc;
             margin-right: 1rem;
+            box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.25);
             &--mini {
                 height: 41px;
                 width: 41px;
