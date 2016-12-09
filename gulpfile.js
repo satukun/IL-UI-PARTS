@@ -27,6 +27,14 @@
 
     // --------------------------------------------------------
 
+    var project = require('./project.json');
+    var work;
+    for (var name in project) {
+        if (project[name] === true) {
+            work = name;
+        }
+    }
+
     var dir = {
         "src": "_src",
         "dist": "_dist",
@@ -34,7 +42,7 @@
     }
 
     var develop = {
-        "data": '_src/_develop/gulf/'
+        "data": '_src/_develop/' + work + '/'
     }
 
     var path = {
@@ -46,6 +54,7 @@
         "js": [dir.src + "/_develop/**/*.js", "!" + dir.src + "/_develop/**/*min.js"],
         "img": [dir.src + "/_develop/**/*.jpg", dir.src + "/_develop/**/*.gif", dir.src + "/_develop/**/*.png"]
     }
+
 
 
     /***********************************************************

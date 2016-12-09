@@ -28,10 +28,12 @@ var page = {
       <section class="p-recommended">
         <div class="c-recommended">
           <h2 class="c-contents__heading--recommended">Recommended Catalogs</h2>
-            <div class="c-recommended__table c-recommended__catalogs">
-              <section class="p-catalog c-cols">
-                <%- include(page.relativePath + '_common/ejs/_card', {page: page, modifier: '', cols: '1', type:'p-catalog'}); %>
-              </section>
+            <div class="c-recommended__slidebox">
+              <div class="c-recommended__slide">
+                <section class="p-catalog c-cols">
+                  <%- include(page.relativePath + '_common/ejs/_card', {page: page, modifier: '', cols: '1', type:'p-catalog'}); %>
+                </section>
+               </div>
             </div>
         </div>
         <div class="c-recommended">

@@ -1,0 +1,81 @@
+<%
+var absolutePath = filename.split(site.developDir)[filename.split(site.developDir).length -1].replace('.ejs','.html');
+var relativePath = '../'.repeat([absolutePath.split('/').length -1]);
+var css_js_Path = '../'.repeat([absolutePath.split('/').length -3]);
+var page = {
+  title: site.title.A14 + "｜" + site.name,
+  description: site.description.A14,
+  keywords: site.keywords,
+  bodyClass: "c-top",
+  singleCss: ["main.css"],
+  singleJs: [],
+  ogpType: "website",
+  ogpImage: site.ogpImage,
+  absolutePath: absolutePath,
+  relativePath: relativePath,
+  css_js_Path:css_js_Path
+};
+-%>
+
+<%- include(page.relativePath + '_common/ejs/_head', {page: page, modifier: '',}); %>
+<%- include(page.relativePath + '_common/ejs/_menu', {page: page, modifier: '',}); %>
+<!-- contents -->
+<article class="l-contents">
+<div class="p-contents">
+  <div class="c-article">
+    <section class="p-product c-product">
+      <a href="" class="c-button__star" href="#"></a>
+      <%- include(page.relativePath + '_common/ejs/_arrow', {page: page, modifier: '',}); %>
+      <div class="c-product__container u-flex">
+        <div class="c-product__imgbox">
+          <img src="../img/url.jpg" alt="">
+        </div>
+        <div class="c-product__info">
+          <h1 class="c-contents__heading--product">AAAAAAAAAAAaAAAAAAAAAAAaAAAAAAAAAAAa</h1>
+          <div class="c-product__infoInner">
+            <p class="c-product__infoText">It is a heavy soy sauce of this brewing.It has a mellow taste.You can use it for any dish such as boiling and sashimi.</p>
+            <p class="c-product__infoText">It is a heavy soy sauce of this brewing.It has a mellow taste.You can use it for any dish such as boiling and sashimi.</p>
+            <dl class="c-product__component">
+              <dt class="c-product__componame">Contents amount </dt>
+              <dd class="c-product__compotext">asdfasfsafasdfsadfdsadafad</dd>
+              <dt class="c-product__componame">Contents amount </dt>
+              <dd class="c-product__compotext">asdfasfsafasdfsadfdsadafad</dd>
+              <dt class="c-product__componame">Contents amount </dt>
+              <dd class="c-product__compotext">asdfasfsafasdfsadfdsadafad</dd>
+              <dt class="c-product__componame">Contents amount </dt>
+              <dd class="c-product__compotext">asdfasfsafasdfsadfdsadafad</dd>
+              <dt class="c-product__componame">Contents amount </dt>
+              <dd class="c-product__compotext">asdfasfsafasdfsadfdsadafad</dd>
+              <dt class="c-product__componame">Contents amount </dt>
+              <dd class="c-product__compotext">asdfasfsafasdfsadfdsadafad</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <div class="c-product__container">
+        <h2 class="c-product__headding">keyword</h2>
+        <ul class="c-product__keyword">
+          <li class="c-product__keywordlist"><a class="c-product__keywordlink" href="#">soy sauce</a></li>
+          <li class="c-product__keywordlist"><a class="c-product__keywordlink" href="#">soy sauce</a></li>
+          <li class="c-product__keywordlist"><a class="c-product__keywordlink" href="#">soy sauce</a></li>
+          <li class="c-product__keywordlist"><a class="c-product__keywordlink" href="#">soy sauce</a></li>
+        </ul>
+      </div>
+
+      <div class="c-product__container">
+        <h2 class="c-product__headding">Relatedproducts</h2>
+        <div class="c-product__slidesbox">
+          <div class="c-product__slides">
+            <section class="p-item c-cols">
+              <%- include(page.relativePath + '_common/ejs/_card', {page: page, modifier: 'u-rad__items', cols: '2', type:'p-item'}); %>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+</article>
+<!-- /contents -->
+<%- include(page.relativePath + '_common/ejs/_footer', {page: page, modifier: '',}); %>
+<%- include(page.relativePath + '_common/ejs/_script', {page: page, modifier: '',}); %>

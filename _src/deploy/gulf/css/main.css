@@ -146,13 +146,12 @@ summary {
 }
 
 body {
-  font-family: sans-serif, "游ゴシック", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-family: Helvetica, "游ゴシック", "Yu Gothic", sans-serif;
   position: relative;
 }
 
 html,
 body {
-  font-family: "fontello-expo";
   font-size: 62.5%;
   font-size: 80%;
   width: 100%;
@@ -165,7 +164,7 @@ body {
   -o-text-size-adjust: 100%;
   text-size-adjust: 100%;
   font-feature-settings: "palt";
-  background-color: #eee;
+  background: url("../img/bg.png");
   -webkit-overflow-scrolling: touch;
 }
 
@@ -330,8 +329,8 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
 .c-article {
   width: 100%;
-  margin: 0 auto;
-  padding: 2.5rem 0;
+  margin: 2.5rem auto 0;
+  padding: 0 0 2.5rem;
   line-height: 1.5;
   position: relative;
 }
@@ -391,6 +390,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
   clear: both;
   position: relative;
   z-index: 5;
+  width: 100%;
 }
 
 .c-cols__md-12 {
@@ -452,18 +452,35 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 .c-card {
   background-color: #fff;
   display: block;
-  padding: 1rem;
+  padding: 7%;
   font-size: 1.8rem;
   box-shadow: 7px 7px 11px rgba(0, 0, 0, 0.25);
   word-wrap: break-word;
 }
 
 .c-card__title {
-  margin-bottom: 1rem;
   font-weight: bold;
   text-align: center;
   font-size: 1.4rem;
   text-align: left;
+  height: 10rem;
+  position: relative;
+}
+
+.c-card__title span {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(0, -50%);
+  font-size: 2rem;
+}
+
+.c-card__titleonly {
+  font-weight: bold;
+  font-size: 1.4rem;
+  text-align: left;
+  position: relative;
+  margin: 1rem 0;
 }
 
 .c-card__text {
@@ -473,15 +490,16 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 }
 
 .c-card__mv {
-  margin-bottom: 1rem;
+  margin-bottom: 7.5%;
   position: relative;
   text-align: center;
-  max-height: 25rem;
 }
 
 .c-card__mv img {
   max-width: 100%;
   max-height: 100%;
+  width: 100%;
+  vertical-align: bottom;
 }
 
 .c-card__updateset {
@@ -589,11 +607,14 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 }
 
 .c-catalog__add {
-  background-color: #ccc;
-  min-height: 425px;
+  background-color: #eee;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25) inset;
+  min-height: 553px;
 }
 
-.c-catalog__add span {
+.c-catalog__addInner {
+  display: inline-block;
+  padding-right: 45px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -619,10 +640,13 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 .c-product__imgbox {
   width: 40%;
   box-sizing: border-box;
+  text-align: center;
+  position: relative;
 }
 
 .c-product__imgbox img {
-  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .c-product__info {
@@ -632,6 +656,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
   color: #434343;
   box-sizing: border-box;
   padding: 0 0 0 3rem;
+  line-height: 1.3;
 }
 
 .c-product__headding {
@@ -735,7 +760,6 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
   width: 73px;
   border-radius: 100%;
   margin-right: 1rem;
-  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.25);
   overflow: hidden;
 }
 
@@ -766,7 +790,13 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 .c-link__addInner {
   display: inline-block;
   padding-right: 45px;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  color: #999999;
 }
 
 .c-form {
@@ -797,11 +827,105 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 .c-menu {
   position: relative;
   background-color: #fff;
-  padding: 2rem 1rem;
+  padding: 1.6rem 1rem;
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.25);
   text-align: center;
   font-size: 1.4rem;
   font-weight: bold;
+}
+
+.c-menu ul {
+  display: table;
+  width: 100%;
+}
+
+.c-menu ul li {
+  display: table-cell;
+}
+
+.c-menu ul li:nth-of-type(1) {
+  width: 20%;
+}
+
+.c-menu ul li:nth-of-type(2) {
+  width: 60%;
+  text-align: center;
+}
+
+.c-menu ul li:nth-of-type(3) {
+  width: 20%;
+  position: relative;
+}
+
+.c-menu__ham {
+  position: absolute;
+  width: 30px;
+  height: 14px;
+  display: inline-block;
+  transition: all .4s;
+  box-sizing: border-box;
+  color: black;
+  right: 0;
+  top: -3px;
+}
+
+.c-menu__ham span {
+  display: inline-block;
+  transition: all .4s;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #000;
+  border-radius: 4px;
+}
+
+.c-menu__ham span:nth-of-type(1) {
+  top: 0;
+}
+
+.c-menu__ham span:nth-of-type(2) {
+  top: 20px;
+}
+
+.c-menu__ham span:nth-of-type(3) {
+  bottom: 0;
+}
+
+.c-menu__hamb {
+  position: absolute;
+  width: 30px;
+  height: 14px;
+  display: inline-block;
+  transition: all .4s;
+  box-sizing: border-box;
+  color: black;
+  right: 40px;
+  top: 14px;
+}
+
+.c-menu__hamb span {
+  display: inline-block;
+  transition: all .4s;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #AAA8A8;
+}
+
+.c-menu__hamb span:nth-of-type(1) {
+  top: 0;
+}
+
+.c-menu__hamb span:nth-of-type(2) {
+  top: 20px;
+}
+
+.c-menu__hamb span:nth-of-type(3) {
+  bottom: 2px;
 }
 
 .c-arrow {
@@ -835,12 +959,31 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 .c-arrowmenu {
   width: 15px;
   height: 15px;
-  top: 28px;
+  top: 20px;
 }
 
 .c-recommended {
   position: relative;
   margin-bottom: 5rem;
+}
+
+.c-recommended__slide {
+  width: 3000px;
+  min-width: 3000px;
+}
+
+.c-recommended__slidebox {
+  overflow-x: scroll;
+}
+
+.c-recommended__slidebox::after {
+  position: absolute;
+  content: " ";
+  bottom: 0;
+  height: 5rem;
+  background-color: #999;
+  width: 100%;
+  min-width: 3000px;
 }
 
 .c-recommended__catalogs {
@@ -888,7 +1031,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
 .p-product {
   background-color: #fff;
-  padding: 5rem;
+  padding: 3.6rem;
   position: relative;
   border-radius: 5px;
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);

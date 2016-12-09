@@ -1,16 +1,69 @@
 <% if (typeof modifier === undefined) { var modifier = ''; } -%>
 <% if (typeof cols === undefined) { var cols = ''; } -%>
 <% if (typeof type === undefined) { var type = ''; } -%>
-<% for(var i = 0; i < 6; i++){ -%>
+
 <div class="c-cols__md-<%= cols %>">
   <a href="../A/A-1-3.html">
     <dl class="c-card <%= modifier %>">
-      <dt class="c-card__mv"><img src="../img/url.jpg" alt="aa"></dt>
-      <dd class="c-card__title">TitleString</dd>
+      <dt class="c-card__mv"><img src="../img/sample-a.png" alt="aa"></dt>
       <% if (type === 'p-item') { -%>
-        <dd class="c-catalog__text">texttexttetexttexttext△texttexttext△texttexttext△texttexttext△texttexttext△texttexttext△xt△texttexttext△texttexttext△</dd>
+      <dd class="c-card__titleonly">TitleString</dd>
+      <dd class="c-catalog__text">texttexttetexttexttext△texttexttext△texttexttext△texttexttext△texttexttext△texttexttext△xt△texttexttext△texttexttext△</dd>
+      <% }else{ -%>
+      <dd class="c-card__title"><span>TitleString</span></dd>
       <% } -%>
     </dl>
   </a>
 </div>
-<% } -%>
+<div class="c-cols__md-<%= cols %>">
+  <a href="../A/A-1-3.html">
+    <dl class="c-card <%= modifier %>">
+      <dt class="c-card__mv"><img src="../img/sample-b.png" alt="aa"></dt>
+      <% if (type === 'p-item') { -%>
+      <dd class="c-card__titleonly">TitleString</dd>
+      <dd class="c-catalog__text">texttexttetexttexttext△texttexttext△texttexttext△texttexttext△texttexttext△texttexttext△xt△texttexttext△texttexttext△</dd>
+      <% }else{ -%>
+      <dd class="c-card__title"><span>TitleString</span></dd>
+      <% } -%>
+    </dl>
+  </a>
+</div>
+<div class="c-cols__md-<%= cols %>">
+  <a href="../A/A-1-3.html">
+    <dl class="c-card <%= modifier %>">
+      <dt class="c-card__mv"><img src="../img/sample-c.png" alt="aa"></dt>
+      <% if (type === 'p-item') { -%>
+      <dd class="c-card__titleonly">TitleString</dd>
+      <dd class="c-catalog__text">texttexttetexttexttext△texttexttext△texttexttext△texttexttext△texttexttext△texttexttext△xt△texttexttext△texttexttext△</dd>
+      <% }else{ -%>
+      <dd class="c-card__title"><span>TitleString</span></dd>
+      <% } -%>
+    </dl>
+  </a>
+</div>
+<div class="c-cols__md-<%= cols %>">
+  <a href="../A/A-1-3.html">
+    <dl class="c-card <%= modifier %>">
+      <dt class="c-card__mv"><img src="../img/sample-d.png" alt="aa"></dt>
+      <% if (type === 'p-item') { -%>
+      <dd class="c-card__titleonly">TitleString</dd>
+      <dd class="c-catalog__text">texttexttetexttexttext△texttexttext△texttexttext△texttexttext△texttexttext△texttexttext△xt△texttexttext△texttexttext△</dd>
+      <% }else{ -%>
+      <dd class="c-card__title"><span>TitleString</span></dd>
+      <% } -%>
+    </dl>
+  </a>
+</div>
+<div class="c-cols__md-<%= cols %>">
+  <a href="../A/A-1-3.html">
+    <dl class="c-card <%= modifier %>">
+      <dt class="c-card__mv"><img src="../img/sample-e.jpg" alt="aa"></dt>
+      <% if (type === 'p-item') { -%>
+      <dd class="c-card__titleonly">TitleString</dd>
+      <dd class="c-catalog__text">texttexttetexttexttext△texttexttext△texttexttext△texttexttext△texttexttext△texttexttext△xt△texttexttext△texttexttext△</dd>
+      <% }else{ -%>
+      <dd class="c-card__title"><span>TitleString</span></dd>
+      <% } -%>
+    </dl>
+  </a>
+</div>
