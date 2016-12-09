@@ -1,0 +1,34 @@
+{
+    "name": "Gulf",
+    "title": {
+        "A12": "A-1-2",
+        "A13": "A-1-3",
+        "A14": "A-1-4",
+        "A15": "A-1-5",
+        "B11": "B-1-1",
+        "C11": "C-1-1"
+    },
+    "description": {
+        "A12": "A-1-2カタログA-1-2カタログA-1-2カタログA-1-2カタログA-1-2カタログ",
+        "A13": "A-1-3カタログA-1-3カタログA-1-3カタログA-1-3カタログA-1-3カタログ",
+        "A14": "A-1-4カタログA-1-4カタログA-1-4カタログA-1-4カタログA-1-4カタログ",
+        "A15": "A-1-5カタログA-1-5カタログA-1-5カタログA-1-5カタログA-1-5カタログ",
+        "B11": "B-1-1カタログB-1-1カタログB-1-1カタログB-1-1カタログB-1-1カタログ",
+        "C11": "C-1-1カタログC-1-1カタログC-1-1カタログC-1-1カタログC-1-1カタログ"
+    },
+    "keywords": "HTML,カラー,画像,特殊文字,リファレンス,HTML,カラー,画像,特殊文字,リファレンス,HTML,カラー,画像,特殊文字,リファレンス",
+    "author": "",
+    "rootUrl": "http://example.com/",
+    "css": ".css",
+    "js": ".js",
+    "ogpImage": "http://example.com/images/og-image.jpg",
+    "facebookAdmins": "",
+    "facebookAppId": "",
+    "twitterCard": "summary",
+    "twitterSite": "@",
+    "favicon": "",
+    "appleIcon": "",
+    "appTitle": "",
+    "analyticsId": "",
+    "developDir": "_develop"
+}

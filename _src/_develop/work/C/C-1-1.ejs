@@ -1,0 +1,113 @@
+<%
+var absolutePath = filename.split(site.developDir)[filename.split(site.developDir).length -1].replace('.ejs','.html');
+var relativePath = '../'.repeat([absolutePath.split('/').length -1]);
+var css_js_Path = '../'.repeat([absolutePath.split('/').length -3]);
+var page = {
+  title: site.title.A12 + "｜" + site.name,
+  description: site.description.A12,
+  keywords: site.keywords,
+  bodyClass: "c-top",
+  singleCss: ["main.css"],
+  singleJs: [],
+  ogpType: "website",
+  ogpImage: site.ogpImage,
+  absolutePath: absolutePath,
+  relativePath: relativePath,
+  css_js_Path:css_js_Path
+};
+-%>
+
+<%- include(page.relativePath + '_common/ejs/_head', {page: page, modifier: '',}); %>
+<%- include(page.relativePath + '_common/ejs/_menu', {page: page, modifier: '',}); %>
+<!-- contents -->
+<article class="l-contents">
+  <div class="p-contents">
+    <div class="c-article">
+       <%- include(page.relativePath + '_common/ejs/_form', {page: page, modifier: '',}); %>
+        <section class="p-catalog c-cols c-item">
+          <div class="c-cols__md-6">
+            <a href="../A/A-1-3.html">
+              <div class="c-catalog">
+                <div href="#" class="c-catalog__add">
+                  <span class="c-link__addInner">AddCatalog<span class="c-button__close" href="#">
+                <span></span>
+                <span></span>
+              </span></span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="c-cols__md-6">
+            <div class="c-catalog__updateset">
+              <dl class="c-catalog__update">
+                <dt>updated:</dt>
+                <dd>2016.12.05</dd>
+              </dl>
+              <dl class="c-catalog__update">
+                <dt>updated:</dt>
+                <dd>Tarou Yamada </dd>
+              </dl>
+              <dl class="c-catalog__update">
+                <dt>hoge:</dt>
+                <dd>Information</dd>
+              </dl>
+            </div>
+            <a href="../A/A-1-3.html">
+              <dl class="c-card ">
+                <dt class="c-card__mv"><img src="../img/sample-c.png" alt="aa"></dt>
+                <dd class="c-card__title"><span>TitleString</span></dd>
+              </dl>
+            </a>
+          </div>
+          <div class="c-cols__md-6">
+            <div class="c-catalog__updateset">
+              <dl class="c-catalog__update">
+                <dt>updated:</dt>
+                <dd>2016.12.05</dd>
+              </dl>
+              <dl class="c-catalog__update">
+                <dt>updated:</dt>
+                <dd>Tarou Yamada </dd>
+              </dl>
+              <dl class="c-catalog__update">
+                <dt>hoge:</dt>
+                <dd>Information</dd>
+              </dl>
+            </div>
+            <a href="../A/A-1-3.html">
+              <dl class="c-card ">
+                <dt class="c-card__mv"><img src="../img/sample-d.png" alt="aa"></dt>
+                <dd class="c-card__title"><span>TitleString</span></dd>
+              </dl>
+            </a>
+          </div>
+          <div class="c-cols__md-6">
+            <div class="c-catalog__updateset">
+              <dl class="c-catalog__update">
+                <dt>updated:</dt>
+                <dd>2016.12.05</dd>
+              </dl>
+              <dl class="c-catalog__update">
+                <dt>updated:</dt>
+                <dd>Tarou Yamada </dd>
+              </dl>
+              <dl class="c-catalog__update">
+                <dt>hoge:</dt>
+                <dd>Information</dd>
+              </dl>
+            </div>
+            <a href="../A/A-1-3.html">
+              <dl class="c-card ">
+                <dt class="c-card__mv"><img src="../img/sample-b.png" alt="aa"></dt>
+                <dd class="c-card__title"><span>TitleString</span></dd>
+              </dl>
+            </a>
+          </div>
+        </section>
+      </div>
+
+  </div>
+</article>
+<!-- /contents -->
+<%- include(page.relativePath + '_common/ejs/_footer', {page: page, modifier: '',}); %>
+<%- include(page.relativePath + '_common/ejs/_script', {page: page, modifier: '',}); %>
