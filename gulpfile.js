@@ -163,13 +163,11 @@
             .pipe(imagemin({
                 use: [pngquant()]
             }))
-            .pipe(gulp.dest(dir.dist + '/img'));
 
         gulp.src(path.img)
             .pipe(imagemin({
                 progressive: true
             }))
-            .pipe(gulp.dest(dir.dist + '/img'));
     });
 
 
