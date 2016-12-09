@@ -4,10 +4,14 @@
     //html
     var htmlhint = require("gulp-htmlhint");
     var minifyhtml = require("gulp-minify-html");
+    var prettify = require('gulp-html-prettify');
 
     //css
     var cssmin = require("gulp-cssmin");
     var sass = require("gulp-sass");
+    var csslint = require("gulp-csslint");
+    var csscomb = require("gulp-csscomb");
+    var autoprefixer = require("gulp-autoprefixer");
 
     //Webサーバー、ユーティリティ
     var ejs = require("gulp-ejs");
@@ -52,7 +56,7 @@
         "scss": dir.src + "/_develop/" + work + "/**/*.scss",
         "ejs": dir.src + "/_develop/" + work + "/**/*.ejs",
         "ejsbase": dir.src + "/_common/**/*.ejs",
-        "css": [dir.src + "/**/*.css", "!" + dir.src + "/**/*min.css"],
+        "css": dir.src + "/deploy/" + work + "/**/*.css",
         "js": [dir.src + "/_develop/" + work + "/**/*.js", "!" + dir.src + "/_develop/" + work + "/**/*min.js"],
         "img": [dir.src + "/_develop/" + work + "/**/*.jpg", dir.src + "/_develop/" + work + "/**/*.gif", dir.src + "/_develop/" + work + "/**/*.png"]
     }
@@ -85,6 +89,11 @@
                 errorHandler: notify.onError('SCSSでError出てまっせ: <%= error.message %>')
             }))
             .pipe(sass({ outputStyle: 'expanded' }))
+            .pipe(autoprefixer({
+                browsers: ['last 2 versions', "ie 8", "ie 7"],
+                cascade: false
+            }))
+            .pipe(csscomb())
             .pipe(gulp.dest(dir.src + '/deploy/' + work))
             .pipe(browser.reload({
                 stream: true
@@ -114,6 +123,15 @@
             }))
             .pipe(htmlhint('.htmlhintrc'))
             .pipe(htmlhint.reporter());
+    });
+
+    gulp.task("lint:css", function() {
+        gulp.src(path.css)
+            .pipe(plumber({
+                errorHandler: notify.onError('CSSでError出てまっせ: <%= error.message %>')
+            }))
+            .pipe(csslint('.csslintrc'))
+            .pipe(csslint.formatter());
     });
 
     gulp.task("lint:js", function() {
@@ -146,7 +164,7 @@
             .pipe(rename({
                 suffix: '_min'
             }))
-            .pipe(gulp.dest(dir.dist))
+            .pipe(gulp.dest(dir.dist + '/deploy/' + work))
     });
 
     gulp.task("min:js", function() {
@@ -183,6 +201,7 @@
             .pipe(ejs({
                 site: JSON.parse(fs.readFileSync(develop.data + 'site.json'))
             }, { "ext": ".html" }))
+            .pipe(prettify({ indent_char: ' ', indent_size: 2 }))
             .pipe(gulp.dest(dir.src + '/deploy/' + work + '/'))
             .pipe(browser.reload({
                 stream: true
@@ -205,14 +224,14 @@
 
     gulp.task("prepare", function(callback) {
         return sequence(
-            ['ejs'], ["sass"], ["js", "img"], ['lint:html'], ['watch'],
+            ['ejs'], ["sass"], ["js", "img"], ['lint:html', 'lint:css'], ['watch'],
             callback
         );
     });
 
     gulp.task("deploy", function(callback) {
         return sequence(
-            ['ejs'], ["sass"], ["js", "img"], ['lint:html'], ['min:html', 'min:css', 'min:img'], ['copy'],
+            ['ejs'], ["sass"], ["js", "img"], ['lint:html', 'lint:css'], ['min:html', 'min:css', 'min:img'], ['copy'],
             callback
         );
     });
