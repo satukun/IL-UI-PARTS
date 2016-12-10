@@ -13,6 +13,10 @@
     var csscomb = require("gulp-csscomb");
     var autoprefixer = require("gulp-autoprefixer");
 
+    //js
+    var concat = require("gulp-concat");
+    var uglify = require('gulp-uglify');
+
     //Webサーバー、ユーティリティ
     var ejs = require("gulp-ejs");
     var browser = require("browser-sync");
@@ -58,6 +62,7 @@
         "ejsbase": dir.src + "/_common/**/*.ejs",
         "css": dir.src + "/deploy/" + work + "/**/*.css",
         "js": [dir.src + "/_develop/" + work + "/**/*.js", "!" + dir.src + "/_develop/" + work + "/**/*min.js"],
+        "jsdep": dir.src + "/deploy/" + work + "/**/*.js",
         "img": [dir.src + "/_develop/" + work + "/**/*.jpg", dir.src + "/_develop/" + work + "/**/*.gif", dir.src + "/_develop/" + work + "/**/*.png"]
     }
 
@@ -106,8 +111,10 @@
     });
 
     gulp.task("js", function() {
+        console.log(path.js);
         return gulp.src(path.js)
-            .pipe(gulp.dest(dir.src + '/deploy/' + work))
+            .pipe(concat('main.js'))
+            .pipe(gulp.dest(dir.src + '/deploy/' + work + '/js'))
             .pipe(browser.reload({
                 stream: true
             }))
@@ -153,7 +160,7 @@
         return gulp.src(path.html)
             .pipe(minifyhtml({ empty: true }))
             .pipe(rename({
-                suffix: '_min'
+                suffix: '.min'
             }))
             .pipe(gulp.dest(dir.dist))
     });
@@ -162,18 +169,18 @@
         return gulp.src(path.css)
             .pipe(cssmin())
             .pipe(rename({
-                suffix: '_min'
+                suffix: '.min'
             }))
             .pipe(gulp.dest(dir.dist + '/deploy/' + work))
     });
 
     gulp.task("min:js", function() {
-        return gulp.src(path.js)
+        return gulp.src(path.jsdep)
             .pipe(uglify())
             .pipe(rename({
-                suffix: '_min'
+                suffix: '.min'
             }))
-            .pipe(gulp.dest(dir.dist + '/js'))
+            .pipe(gulp.dest(dir.dist + '/deploy/' + work))
     });
 
     gulp.task("min:img", function() {
@@ -222,16 +229,27 @@
         gulp.watch(path.js, ["js"]);
     });
 
+
+
+
+
     gulp.task("prepare", function(callback) {
         return sequence(
-            ['ejs'], ["sass"], ["js", "img"], ['lint:html', 'lint:css'], ['watch'],
+            ['ejs'], ["sass"], ["js", "img"], ['lint:html'], ['watch'],
+            callback
+        );
+    });
+
+    gulp.task("imagemin", function(callback) {
+        return sequence(
+            ['min:img'],
             callback
         );
     });
 
     gulp.task("deploy", function(callback) {
         return sequence(
-            ['ejs'], ["sass"], ["js", "img"], ['lint:html', 'lint:css'], ['min:html', 'min:css', 'min:img'], ['copy'],
+            ['ejs'], ["sass"], ["js", "img"], ['lint:html'], ['min:html', 'min:css', 'min:js'], ['copy'],
             callback
         );
     });
