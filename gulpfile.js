@@ -25,6 +25,8 @@
     var notifier = require('node-notifier');
     var sequence = require('gulp-sequence');
     var changed = require('gulp-changed');
+    var browserify = require('browserify');
+    var source = require('vinyl-source-stream');
 
     // ファイル操作
     var rename = require("gulp-rename");
@@ -61,7 +63,7 @@
         "ejs": dir.src + "/_develop/" + work + "/**/*.ejs",
         "ejsbase": dir.src + "/_common/**/*.ejs",
         "css": dir.src + "/deploy/" + work + "/**/*.css",
-        "js": [dir.src + "/_develop/" + work + "/**/*.js", "!" + dir.src + "/_develop/" + work + "/**/*min.js"],
+        "js": dir.src + "/_develop/" + work + "/**/*.js",
         "jsdep": dir.src + "/deploy/" + work + "/**/*.js",
         "img": [dir.src + "/_develop/" + work + "/**/*.jpg", dir.src + "/_develop/" + work + "/**/*.gif", dir.src + "/_develop/" + work + "/**/*.png"]
     }
@@ -111,9 +113,15 @@
     });
 
     gulp.task("js", function() {
-        console.log(path.js);
-        return gulp.src(path.js)
-            .pipe(concat('main.js'))
+        browserify({
+                entries: [
+                    '_src/_develop/work/js/names.js',
+                    '_src/_develop/work/js/action.js',
+                    '_src/_develop/work/js/style.js'
+                ]
+            })
+            .bundle()
+            .pipe(source('main.js'))
             .pipe(gulp.dest(dir.src + '/deploy/' + work + '/js'))
             .pipe(browser.reload({
                 stream: true
