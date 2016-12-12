@@ -121,7 +121,7 @@
                 ]
             })
             .bundle()
-            .pipe(source('main.js'))
+            .pipe(source('bundle.js'))
             .pipe(gulp.dest(dir.src + '/deploy/' + work + '/js'))
             .pipe(browser.reload({
                 stream: true
@@ -243,7 +243,7 @@
 
     gulp.task("prepare", function(callback) {
         return sequence(
-            ['ejs'], ["sass"], ["js", "img"], ['lint:html'], ['watch'],
+            ['ejs'], ["sass"], ["img"], ['lint:html'], ['watch'],
             callback
         );
     });
@@ -257,7 +257,7 @@
 
     gulp.task("deploy", function(callback) {
         return sequence(
-            ['ejs'], ["sass"], ["js", "img"], ['lint:html'], ['min:html', 'min:css', 'min:js'], ['copy'],
+            ['ejs'], ["sass"], ["img"], ['lint:html'], ['min:html', 'min:css', 'min:js'], ['copy'],
             callback
         );
     });
