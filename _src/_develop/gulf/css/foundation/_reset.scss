@@ -146,6 +146,7 @@ summary {
 body {
     font-family: Helvetica, "游ゴシック", "Yu Gothic", sans-serif;
     position: relative;
+    word-break: break-all;
 }
 
 html,
@@ -183,4 +184,11 @@ main {
     -o-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
+}
+
+dt,
+dl {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }

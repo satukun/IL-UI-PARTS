@@ -24,14 +24,13 @@ var page = {
   <div class="p-contents">
     <div class="c-article">
       <%- include(page.relativePath + '_common/ejs/_form', {page: page, modifier: '',}); %>
-
       <section class="p-recommended">
         <div class="c-recommended">
           <h2 class="c-contents__heading--recommended">Recommended Catalogs</h2>
             <div class="c-recommended__slidebox">
               <div class="c-recommended__slide">
                 <section class="p-catalog c-cols">
-                  <%- include(page.relativePath + '_common/ejs/_card', {page: page, modifier: '', cols: '1', type:'p-catalog'}); %>
+                  <%- include(page.relativePath + '_common/ejs/_card', {page: page, modifier: '', cols: '1', padding:'u-pd1l u-pd1r u-mg0', type:'p-catalog'}); %>
                 </section>
                </div>
             </div>
@@ -40,7 +39,7 @@ var page = {
           <h2 class="c-contents__heading--recommended">Recommended Items</h2>
           <div class="c-recommended__catalogs"></div>
               <section class="p-item c-cols c-item">
-                <%- include(page.relativePath + '_common/ejs/_card', {page: page, modifier: 'u-rad__items', cols: '3', type:'p-item'}); %>
+                <%- include(page.relativePath + '_common/ejs/_card', {page: page, modifier: 'u-rad__items', cols: '3', padding:'u-pd2l u-pd2r u-mg2b', type:'p-item'}); %>
               </section>
         </div>
       </section>

@@ -1,0 +1,36 @@
+<% var absolutePath=f ilename.split(site.developDir)[filename.split(site.developDir).length -1].replace( '.ejs', '.html'); var relativePath='../' .repeat([absolutePath.split( '/').length -1]); var css_js_Path='../' .repeat([absolutePath.split( '/').length
+-3]); var page={ title: site.title.A15 + "｜" + site.name, description: site.description.A14, keywords: site.keywords, bodyClass: "c-top", singleCss: [ "main.css"], singleJs: [], ogpType: "website", ogpImage: site.ogpImage, absolutePath: absolutePath,
+relativePath: relativePath, css_js_Path:css_js_Path }; -%>
+
+  <%- include(page.relativePath + '_common/ejs/_head', {page: page, modifier: '',}); %>
+    <%- include(page.relativePath + '_common/ejs/_menu', {page: page, modifier: '',}); %>
+      <!-- contents -->
+      <article class="l-contents">
+        <div class="p-contents">
+          <div class="c-article">
+            <%- include(page.relativePath + '_common/ejs/_form', {page: page, modifier: '',}); %>
+              <section class="p-recommended">
+                <div class="c-recommended">
+                  <h2 class="c-contents__heading--recommended">Recommended Catalogs</h2>
+                  <div class="c-recommended__slidebox">
+                    <div class="c-recommended__slide">
+                      <section class="p-catalog c-cols">
+                        <%- include(page.relativePath + '_common/ejs/_card', {page: page, modifier: '', cols: '1', type: 'p-catalog'}); %>
+                      </section>
+                    </div>
+                  </div>
+                </div>
+                <div class="c-recommended">
+                  <h2 class="c-contents__heading--recommended">Recommended Items</h2>
+                  <div class="c-recommended__catalogs"></div>
+                  <section class="p-item c-cols c-item">
+                    <%- include(page.relativePath + '_common/ejs/_card', {page: page, modifier: 'u-rad__items', cols: '3', type: 'p-item'}); %>
+                  </section>
+                </div>
+              </section>
+          </div>
+        </div>
+      </article>
+      <!-- /contents -->
+      <%- include(page.relativePath + '_common/ejs/_footer', {page: page, modifier: '',}); %>
+        <%- include(page.relativePath + '_common/ejs/_script', {page: page, modifier: '',}); %>

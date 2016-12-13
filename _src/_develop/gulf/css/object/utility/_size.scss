@@ -1,9 +1,26 @@
 .u-fsize {
-    &--xxl {}
-    &--xl {}
-    &--l {}
-    &--m {}
-    &--s {}
-    &--xs {}
-    &--xxs {}
+    &--l {
+        font-size: 2.4rem;
+        font-size: 24px;
+    }
+    &--m {
+        font-size: 1.7rem;
+        font-size: 17px;
+    }
+    &--s {
+        font-size: 1.4rem;
+        font-size: 14px;
+    }
+    &--xs {
+        font-size: 1rem;
+        font-size: 10px;
+    }
+    &--action {
+        font-size: 2rem;
+        font-size: 20px;
+    }
+    &--segment {
+        font-size: 1.3rem;
+        font-size: 13px;
+    }
 }
