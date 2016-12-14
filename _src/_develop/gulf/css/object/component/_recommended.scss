@@ -3,8 +3,8 @@
         position: relative;
         margin-bottom: 5rem;
         &__slide {
-            width: 3000px;
-            min-width: 3000px;
+            width: 800rem;
+            min-width: 800rem;
             padding-bottom: 1rem;
         }
         &__slidebox {
@@ -16,14 +16,14 @@
                 height: 5rem;
                 background-color: #999;
                 width: 100%;
-                min-width: 3000px;
+                min-width: 800rem;
             }
         }
         &__catalogs {
-            width: 3000px;
+            width: 800rem;
         }
         &__table {
-            width: 3000px;
+            width: 800rem;
             &::after {
                 position: absolute;
                 content: " ";

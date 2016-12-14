@@ -6,12 +6,12 @@
             overflow-x: scroll;
         }
         &__slides {
-            width: 1500px;
+            width: 800rem;
         }
         &__imgbox {
             position: relative;
             box-sizing: border-box;
-            width: 40%;
+            width: 30%;
             text-align: center;
             max-height: 31.4rem;
             img {
@@ -19,7 +19,7 @@
             }
         }
         &__info {
-            width: 60%;
+            width: 70%;
             word-wrap: break-word;
             font-size: 1.4rem;
             color: #434343;

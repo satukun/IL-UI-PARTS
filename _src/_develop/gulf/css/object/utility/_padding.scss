@@ -1,6 +1,21 @@
 .u- {
-    @for $i from 0 through 10 {
-        @include padding($i);
-        @include padding($i);
+    @for $i from 0 through 5 {
+        @include mpadding($i);
+    }
+}
+
+.u- {
+    &m {
+        @for $i from 0 through 5 {
+            @include mpadding($i);
+        }
+    }
+}
+
+.u- {
+    &f {
+        @for $i from 0 through 10 {
+            @include fpadding($i);
+        }
     }
 }

@@ -74,7 +74,7 @@ relativePath: relativePath, css_js_Path:css_js_Path }; -%>
                   <div class="c-product__slidesbox">
                     <div class="c-product__slides">
                       <section class="p-item c-cols">
-                        <%- include(page.relativePath + '_common/ejs/_card', {page: page, modifier: 'u-rad__items', cols: '2', padding: 'u-pd1l u-pd1r u-mg1b', type: 'p-item'}); %>
+                        <%- include(page.relativePath + '_common/ejs/_card', {page: page, modifier: 'u-rad__items', cols: 'c-cols__md-2', padding: 'u-pd1l u-pd1r u-mg1b', type: 'p-item', fixed: 'c-cols__fixed--l'}); %>
                       </section>
                     </div>
                   </div>
@@ -86,7 +86,7 @@ relativePath: relativePath, css_js_Path:css_js_Path }; -%>
                     <div class="c-product__slidesbox">
                       <div class="c-product__slides">
                         <section class="p-additional">
-                          <%- include(page.relativePath + '_common/ejs/_additional', {page: page, modifier: 'u-rad__items', padding: 'u-pd1l u-pd1r u-mg1b'}); %>
+                          <%- include(page.relativePath + '_common/ejs/_additional', {page: page, modifier: 'u-rad__items', padding: 'u-pd1r u-mb3b'}); %>
                         </section>
                       </div>
                     </div>

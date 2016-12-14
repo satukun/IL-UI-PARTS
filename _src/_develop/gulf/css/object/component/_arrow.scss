@@ -23,6 +23,9 @@
             -o-transform: rotate(225deg);
             -ms-transform: rotate(225deg);
         }
+        &--middle {
+            width: 82%;
+        }
     }
     &arrowmenu {
         width: 15px;

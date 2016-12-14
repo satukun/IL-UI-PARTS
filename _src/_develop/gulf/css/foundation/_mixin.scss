@@ -37,7 +37,7 @@
 }
 
 //paddingsize
-@mixin padding($value) {
+@mixin mpadding($value) {
     &pd#{$value * 1} {
         padding: #{$value * 1+"%"};
         &t {
@@ -56,7 +56,7 @@
 }
 
 //marginsize
-@mixin margin($value) {
+@mixin mmargin($value) {
     &mg#{$value * 1} {
         margin: #{$value * 1+"%"};
         &t {
@@ -70,6 +70,44 @@
         }
         &r {
             margin-right: #{$value * 1+"%"};
+        }
+    }
+}
+
+//paddingsize
+@mixin fpadding($value) {
+    &pd#{$value * 3} {
+        padding: #{$value * 3+"px"};
+        &t {
+            padding-top: #{$value * 3+"px"};
+        }
+        &b {
+            padding-bottom: #{$value * 3+"px"};
+        }
+        &l {
+            padding-left: #{$value * 3+"px"};
+        }
+        &r {
+            padding-right: #{$value * 3+"px"};
+        }
+    }
+}
+
+//marginsize
+@mixin fmargin($value) {
+    &mg#{$value * 3} {
+        margin: #{$value * 3+"px"};
+        &t {
+            margin-top: #{$value * 3+"px"};
+        }
+        &b {
+            margin-bottom: #{$value * 3+"px"};
+        }
+        &l {
+            margin-left: #{$value * 3+"px"};
+        }
+        &r {
+            margin-right: #{$value * 3+"px"};
         }
     }
 }

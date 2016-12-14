@@ -15,7 +15,7 @@ relativePath: relativePath, css_js_Path:css_js_Path }; -%>
                   <div class="c-recommended__slidebox">
                     <div class="c-recommended__slide">
                       <section class="p-catalog c-cols">
-                        <%- include(page.relativePath + '_common/ejs/_card', {page: page, modifier: '', cols: '1', type: 'p-catalog'}); %>
+                        <%- include(page.relativePath + '_common/ejs/_card', {page: page, modifier: '', padding: 'u-pd1l', type: 'p-catalog', fixed: 'c-cols__fixed--m'}); %>
                       </section>
                     </div>
                   </div>
@@ -24,7 +24,7 @@ relativePath: relativePath, css_js_Path:css_js_Path }; -%>
                   <h2 class="c-contents__heading--recommended">Recommended Items</h2>
                   <div class="c-recommended__catalogs"></div>
                   <section class="p-item c-cols c-item">
-                    <%- include(page.relativePath + '_common/ejs/_card', {page: page, modifier: 'u-rad__items', cols: '3', type: 'p-item'}); %>
+                    <%- include(page.relativePath + '_common/ejs/_card', {page: page, modifier: 'u-rad__items', cols: 'c-cols__md-3', padding: 'u-pd2l u-pd2r u-mg3b', type: 'p-item';}); %>
                   </section>
                 </div>
               </section>

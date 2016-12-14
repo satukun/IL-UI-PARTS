@@ -1,6 +1,21 @@
 .u- {
-    @for $i from 0 through 10 {
-        @include margin($i);
-        @include margin($i);
+    @for $i from 0 through 5 {
+        @include mmargin($i);
+    }
+}
+
+.u- {
+    &m {
+        @for $i from 0 through 5 {
+            @include mmargin($i);
+        }
+    }
+}
+
+.u- {
+    &f {
+        @for $i from 0 through 10 {
+            @include fmargin($i);
+        }
     }
 }
