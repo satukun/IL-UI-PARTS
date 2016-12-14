@@ -1397,7 +1397,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 .c-arrow
 {
     position: absolute;
-    top: 50%;
+    top: 30%;
 
     display: inline-block;
 
@@ -1412,7 +1412,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
 .c-arrow--right
 {
-    right: 1.5rem;
+    right: -3rem;
 
     -webkit-transform: rotate(45deg);
        -moz-transform: rotate(45deg);
@@ -1422,7 +1422,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
 .c-arrow--left
 {
-    left: 1.5rem;
+    left: -3rem;
 
     -webkit-transform: rotate(225deg);
        -moz-transform: rotate(225deg);
@@ -1433,6 +1433,8 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 .c-arrow--middle
 {
     width: 82%;
+
+    border-radius: 0 !important;
 }
 
 .c-arrowmenu
@@ -1561,12 +1563,11 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 {
     position: relative;
 
-    margin-bottom: 5rem;
     padding: 3rem;
 
     border-radius: 5px;
     background-color: #fff;
-    box-shadow: 0 0 6px rgba(0, 0, 0, .25);
+    box-shadow: 0 5px 6px rgba(0, 0, 0, .25);
 }
 
 .p-recommended

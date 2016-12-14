@@ -6,18 +6,18 @@
         height: 30px;
         border-top: 4px solid #999999;
         border-right: 4px solid #999999;
-        top: 50%;
+        top: 30%;
         -webkit-transform: translate(0, -50%);
         transform: translate(0, -50%);
         &--right {
-            right: 1.5rem;
+            right: -3rem;
             -moz-transform: rotate(45deg);
             -webkit-transform: rotate(45deg);
             -o-transform: rotate(45deg);
             -ms-transform: rotate(45deg);
         }
         &--left {
-            left: 1.5rem;
+            left: -3rem;
             -moz-transform: rotate(225deg);
             -webkit-transform: rotate(225deg);
             -o-transform: rotate(225deg);
@@ -25,6 +25,7 @@
         }
         &--middle {
             width: 82%;
+            border-radius: 0!important;
         }
     }
     &arrowmenu {
