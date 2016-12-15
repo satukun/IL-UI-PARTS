@@ -431,7 +431,8 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
     color: #fff;
     border-radius: 100%;
-    background: #c0392a;
+    background: url(../img/icon--star.png) no-repeat center center;
+    background-size: contain;
     box-shadow: 0 2px 2px rgba(0, 0, 0, .25);
 }
 
