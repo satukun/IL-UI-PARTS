@@ -103,7 +103,7 @@
             background-color: #C2C2C2;
             padding: 1rem;
         }
-        &__update {
+        &__list {
             color: #fff;
             letter-spacing: -.4em;
             display: block;
@@ -117,11 +117,9 @@
                 word-break: break-all;
             }
             dt {
-                width: 50%;
+                width: 13rem;
             }
-            dd {
-                width: 50%;
-            }
+            dd {}
             &:last-child {
                 border: none;
             }

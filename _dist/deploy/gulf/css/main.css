@@ -420,6 +420,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     font-weight: bold;
 
     position: absolute;
+    z-index: 10;
     top: 15px;
     left: 15px;
 
@@ -529,19 +530,24 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     color: #333;
 }
 
-.c-cols__fixed--l
+.c-cols__fixed--ll
 {
-    width: 25rem;
+    width: 30rem;
 }
 
-.c-cols__fixed--m
+.c-cols__fixed--l
 {
-    width: 10rem;
+    width: 20rem;
 }
 
 .c-cols__fixed--mm
 {
     width: 15rem;
+}
+
+.c-cols__fixed--m
+{
+    width: 10rem;
 }
 
 .c-cols__fixed--s
@@ -824,10 +830,11 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 {
     float: right;
 
-    width: 100%;
+    width: 90%;
     padding: 1rem;
 
     background-color: #c2c2c2;
+    box-shadow: 7px 7px 11px rgba(0, 0, 0, .25);
 }
 
 .c-catalog__updatesettype
@@ -839,44 +846,6 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
     background-color: #c2c2c2;
     box-shadow: 7px 7px 11px rgba(0, 0, 0, .25);
-}
-
-.c-catalog__update
-{
-    font-size: 1.3rem;
-
-    display: block;
-
-    padding: .5rem 0;
-
-    letter-spacing: -.4em;
-
-    color: #fff;
-    border-bottom: 1px solid #fff;
-}
-
-.c-catalog__update dt,
-.c-catalog__update dd
-{
-    display: inline-block;
-
-    letter-spacing: normal;
-    word-break: break-all;
-}
-
-.c-catalog__update dt
-{
-    width: 40%;
-}
-
-.c-catalog__update dd
-{
-    width: 60%;
-}
-
-.c-catalog__update:last-child
-{
-    border: none;
 }
 
 .c-catalog__add
@@ -905,6 +874,39 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     transform: translate(-50%, -50%);
 
     color: #999;
+}
+
+.c-catalog__list
+{
+    font-size: 1.3rem;
+
+    display: block;
+
+    padding: .5rem 0;
+
+    letter-spacing: -.4em;
+
+    color: #fff;
+    border-bottom: 1px solid #fff;
+}
+
+.c-catalog__list dt,
+.c-catalog__list dd
+{
+    display: inline-block;
+
+    letter-spacing: normal;
+    word-break: break-all;
+}
+
+.c-catalog__list dt
+{
+    width: 7rem;
+}
+
+.c-catalog__list:last-child
+{
+    border: none;
 }
 
 .c-product
@@ -1078,7 +1080,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     background-color: #c2c2c2;
 }
 
-.c-product__update
+.c-product__list
 {
     font-size: 1.3rem;
 
@@ -1092,8 +1094,8 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     border-bottom: 1px solid #fff;
 }
 
-.c-product__update dt,
-.c-product__update dd
+.c-product__list dt,
+.c-product__list dd
 {
     display: inline-block;
 
@@ -1101,17 +1103,12 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     word-break: break-all;
 }
 
-.c-product__update dt
+.c-product__list dt
 {
-    width: 50%;
+    width: 13rem;
 }
 
-.c-product__update dd
-{
-    width: 50%;
-}
-
-.c-product__update:last-child
+.c-product__list:last-child
 {
     border: none;
 }
@@ -1189,8 +1186,9 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 {
     position: relative;
 
-    display: block;
+    display: table;
 
+    width: 100%;
     padding: 2rem 0;
 
     text-align: center;
@@ -1212,6 +1210,13 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     word-break: break-all;
 
     color: #999;
+}
+
+.c-link__addText
+{
+    position: relative;
+
+    padding-right: 50px;
 }
 
 .c-form
@@ -1275,6 +1280,8 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
 .c-menu ul li:nth-of-type(1)
 {
+    position: relative;
+
     width: 20%;
 }
 
@@ -1392,7 +1399,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 .c-arrow
 {
     position: absolute;
-    top: 50%;
+    top: 30%;
 
     display: inline-block;
 
@@ -1407,7 +1414,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
 .c-arrow--right
 {
-    right: 1.5rem;
+    right: -3rem;
 
     -webkit-transform: rotate(45deg);
        -moz-transform: rotate(45deg);
@@ -1417,7 +1424,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
 .c-arrow--left
 {
-    left: 1.5rem;
+    left: -3rem;
 
     -webkit-transform: rotate(225deg);
        -moz-transform: rotate(225deg);
@@ -1425,9 +1432,24 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
          -o-transform: rotate(225deg);
 }
 
+.c-arrow--middle
+{
+    position: relative;
+
+    width: 82%;
+    margin: -1px auto;
+    padding: 3rem;
+
+    border-radius: 0 !important;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 5px 6px rgba(0, 0, 0, .25);
+}
+
 .c-arrowmenu
 {
-    top: 20px;
+    top: 2px;
+    left: 1rem;
 
     width: 15px;
     height: 15px;
@@ -1555,7 +1577,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
     border-radius: 5px;
     background-color: #fff;
-    box-shadow: 0 0 6px rgba(0, 0, 0, .25);
+    box-shadow: 0 5px 6px rgba(0, 0, 0, .25);
 }
 
 .p-recommended
@@ -1563,6 +1585,11 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     position: relative;
 
     overflow: hidden;
+}
+
+.p-arrow
+{
+    width: 100%;
 }
 
 /* Utility --------------- */

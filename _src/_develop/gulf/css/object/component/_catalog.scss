@@ -27,10 +27,11 @@
               }
           }
           &__updateset {
-              width: 100%;
+              width: 90%;
               float: right;
               background-color: #C2C2C2;
               padding: 1rem;
+              box-shadow: 7px 7px 11px rgba(0, 0, 0, .25);
           }
           &__updatesettype {
               width: 90%;
@@ -38,29 +39,6 @@
               box-shadow: 7px 7px 11px rgba(0, 0, 0, 0.25);
               background-color: #C2C2C2;
               padding: 1rem;
-          }
-          &__update {
-              color: #fff;
-              letter-spacing: -.4em;
-              display: block;
-              padding: 0.5rem 0;
-              border-bottom: 1px solid #fff;
-              font-size: 1.3rem;
-              dt,
-              dd {
-                  letter-spacing: normal;
-                  display: inline-block;
-                  word-break: break-all;
-              }
-              dt {
-                  width: 40%;
-              }
-              dd {
-                  width: 60%;
-              }
-              &:last-child {
-                  border: none;
-              }
           }
           &__add {
               display: table;
@@ -79,6 +57,27 @@
               transform: translate(-50%, -50%);
               font-weight: bold;
               color: #999999;
+          }
+          &__list {
+              color: #fff;
+              letter-spacing: -.4em;
+              display: block;
+              padding: 0.5rem 0;
+              border-bottom: 1px solid #fff;
+              font-size: 1.3rem;
+              dt,
+              dd {
+                  letter-spacing: normal;
+                  display: inline-block;
+                  word-break: break-all;
+              }
+              dt {
+                  width: 7rem;
+              }
+              dd {}
+              &:last-child {
+                  border: none;
+              }
           }
       }
   }
