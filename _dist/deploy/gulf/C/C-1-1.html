@@ -15,21 +15,42 @@
 
 <body>
 
-  <div class="c-menu">
-    <ul>
-      <li>
-        <a class="c-arrow c-arrowmenu c-arrow--left" href=""></a>
-      </li>
-      <li>Soy sauce</li>
-      <li>
-        <a class="c-menu__ham" href="#">
-          <span></span>
-          <span></span>
-          <span></span>
-        </a>
-      </li>
-    </ul>
+  <div class="p-category">
+    <div class="c-category">
+      <ul class="c-category__item">
+        <li class="c-category__list c-category__cl--category">
+          <label onclick="null">
+            <input type="checkbox" value="カテゴリ名" />カテゴリ名</label>
+          <label class="c-category__checkbox c-category__checkbox--on"></label>
+        </li>
+        <li class="c-category__list c-category__cl--brand">
+          <label onclick="null">
+            <input type="checkbox" value="ブランド名" />ブランド名</label>
+          <label class="c-category__checkbox c-category__checkbox--off"></label>
+        </li>
+        <li class="c-category__list c-category__cl--maker">
+          <label onclick="null">
+            <input type="checkbox" value="メーカー名" />メーカー名</label>
+          <label class="c-category__checkbox c-category__checkbox--on"></label>
+        </li>
+        <li class="c-category__list c-category__cl--tag">
+          <label onclick="null">
+            <input type="checkbox" value="タグ名" />タグ名</label>
+          <label class="c-category__checkbox c-category__checkbox--on"></label>
+        </li>
+      </ul>
+      <input type="button" class="c-category__text" value="検索">
+    </div>
   </div>
+
+  <ul class="u-list">
+    <li class="u-list__item">
+      <a class="c-button__regist" href="#">登録</a>
+    </li>
+    <li class="u-list__item">
+      <a class="c-button__cancel" href="#">キャンセル</a>
+    </li>
+  </ul>
 
   <!-- contents -->
   <article class="l-contents">
@@ -131,6 +152,7 @@
               </dl>
             </a>
           </div>
+
         </section>
       </div>
 

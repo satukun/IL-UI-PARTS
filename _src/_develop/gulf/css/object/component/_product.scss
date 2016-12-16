@@ -13,19 +13,24 @@
             box-sizing: border-box;
             width: 30%;
             text-align: center;
-            max-height: 31.4rem;
+            max-height: 294px;
+            width: 294px;
+            height: 294px;
+            display: table-cell;
+            vertical-align: top;
             img {
                 height: 100%;
             }
         }
         &__info {
-            width: 70%;
-            word-wrap: break-word;
             font-size: 1.4rem;
-            color: #434343;
-            box-sizing: border-box;
-            padding: 0 0 0 3rem;
             line-height: 1.3;
+            box-sizing: border-box;
+            padding: 0 0 0 10px;
+            word-wrap: break-word;
+            color: #434343;
+            display: table-cell;
+            vertical-align: top;
         }
         &__headding {
             display: block;
@@ -38,16 +43,14 @@
         }
         &__keyword {
             display: block;
-            padding-bottom: 1rem;
             font-size: 1.4rem;
-            margin-bottom: 1rem;
             letter-spacing: -.4em;
             font-size: 1.2rem;
             font-weight: bold;
             li {
                 display: inline-block;
                 letter-spacing: normal;
-                margin: 0 1rem 1rem 0;
+                margin: 0 1rem 0 0;
             }
             a {
                 display: block;
@@ -114,12 +117,14 @@
             dd {
                 letter-spacing: normal;
                 display: inline-block;
-                word-break: break-all;
+                word-break: break-word;
             }
             dt {
-                width: 13rem;
+                width: 50%;
             }
-            dd {}
+            dd {
+                width: 50%;
+            }
             &:last-child {
                 border: none;
             }

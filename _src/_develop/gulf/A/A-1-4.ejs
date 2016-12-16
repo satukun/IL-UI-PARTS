@@ -26,7 +26,7 @@ var page = {
     <section class="p-product c-product">
       <a class="c-button__star" href="#"></a>
 
-      <div class="c-product__container u-flex">
+      <div class="c-product__container u-table">
         <div class="c-product__imgbox">
           <img src="../img/bottle.png" alt="">
         </div>
@@ -85,7 +85,7 @@ After buying wind please save in the refrigerator, please use as soon as possibl
         <div class="c-product__slidesbox">
           <div class="c-product__slides">
             <section class="p-item c-cols">
-              <%- include(page.relativePath + '_common/ejs/_card', {page: page, modifier: 'u-rad__items', cols: '', padding:'u-fpd18l u-fpd18r u-fpd18b', type:'p-item', fixed:'c-cols__fixed--l', height:'c-card__mv--fixed'}); %>
+              <%- include(page.relativePath + '_common/ejs/_card', {page: page, modifier: 'u-rad__items', cols: '', padding:'u-fpd18l u-fpd18r u-fpd18b', type:'p-item', fixed:'c-cols__fixed--ll', height:'c-card__mv--fixed'}); %>
             </section>
           </div>
         </div>

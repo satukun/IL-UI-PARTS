@@ -14,7 +14,7 @@
 
 .u- {
     &f {
-        @for $i from 0 through 10 {
+        @for $i from 0 through 50 {
             @include fmargin($i);
         }
     }

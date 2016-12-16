@@ -58,6 +58,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 @import "object/component/_recommended";
 @import "object/component/_item";
 @import "object/component/_additional";
+@import "object/component/_category";
 
 /* Project --------------- */
 
@@ -77,6 +78,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 @import "object/project/_recommended";
 @import "object/project/_item";
 @import "object/project/_arrow";
+@import "object/project/_category";
 
 /* Utility --------------- */
 
@@ -92,3 +94,4 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 @import "object/utility/_radius";
 @import "object/utility/_flex";
 @import "object/utility/_padding";
+@import "object/utility/_list";

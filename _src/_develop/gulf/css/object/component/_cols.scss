@@ -12,19 +12,19 @@
         }
         &__fixed {
             &--ll {
-                width: 30rem;
+                width: 278px;
             }
             &--l {
-                width: 20rem;
+                width: 200px;
             }
             &--mm {
-                width: 15rem;
+                width: 150px;
             }
             &--m {
-                width: 10rem;
+                width: 100px;
             }
             &--s {
-                width: 5rem;
+                width: 50px;
             }
         }
         &__md-12 {
@@ -46,16 +46,19 @@
             width: 58.33333333%;
         }
         &__md-6 {
-            width: 50%;
+            //width: 50%;
+            width: 332px;
         }
         &__md-5 {
             width: 41.66666667%;
         }
         &__md-4 {
-            width: 33.33333333%;
+            //width: 33.33333333%;
+            width: 240px;
         }
         &__md-3 {
-            width: 25%;
+            //width: 25%;
+            width: 180px;
         }
         &__md-2 {
             width: 16.66666667%;

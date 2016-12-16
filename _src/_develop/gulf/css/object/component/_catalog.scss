@@ -15,7 +15,8 @@
           }
           &__text {
               color: #999999;
-              font-size: 1rem;
+              font-size: 10px;
+              text-align: left;
           }
           &__mv {
               max-height: 19rem;
@@ -32,6 +33,10 @@
               background-color: #C2C2C2;
               padding: 1rem;
               box-shadow: 7px 7px 11px rgba(0, 0, 0, .25);
+              box-sizing: border-box;
+          }
+          &__updateall {
+              width: 100%;
           }
           &__updatesettype {
               width: 90%;
@@ -43,7 +48,7 @@
           &__add {
               display: table;
               width: 100%;
-              min-height: 553px;
+              min-height: 516px;
               background-color: #eee;
               box-shadow: 0 0 4px rgba(0, 0, 0, .25) inset;
           }
@@ -65,16 +70,19 @@
               padding: 0.5rem 0;
               border-bottom: 1px solid #fff;
               font-size: 1.3rem;
+              text-align: left;
               dt,
               dd {
                   letter-spacing: normal;
                   display: inline-block;
-                  word-break: break-all;
+                  word-break: break-word;
               }
               dt {
-                  width: 7rem;
+                  width: 30%;
               }
-              dd {}
+              dd {
+                  width: 70%;
+              }
               &:last-child {
                   border: none;
               }

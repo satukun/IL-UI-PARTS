@@ -1,9 +1,11 @@
 .p- {
     &product {
-        background-color: #fff;
-        padding: 3rem;
         position: relative;
+        padding: 40px;
         border-radius: 5px;
+        background-color: #fff;
+        background-color: #fff;
         box-shadow: 0 5px 6px rgba(0, 0, 0, .25);
+        box-sizing: border-box;
     }
 }
