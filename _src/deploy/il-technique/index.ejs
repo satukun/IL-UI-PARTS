@@ -1,0 +1,55 @@
+<% var absolutePath=f ilename.split(site.developDir)[filename.split(site.developDir).length -1].replace( '.ejs', '.html'); var relativePath='../' .repeat([absolutePath.split( '/').length -1]); var css_js_Path='../' .repeat([absolutePath.split( '/').length
+-3]); var page={ title: site.title + "｜" + site.name, description: site.description, keywords: site.keywords, projectName: "il-technique", bodyClass: "", singleCss: [ "main.css"], singleJs: [], ogpType: "website", ogpImage: site.ogpImage, absolutePath:
+absolutePath, relativePath: relativePath, css_js_Path:css_js_Path }; -%>
+
+  <%- include(page.relativePath + '_common/ejs/_head', {page: page, modifier: ''}); %>
+    <%- include(page.relativePath + '_common/ejs/_header', {page: page, modifier: ''}); %>
+      <!-- contents -->
+
+      <article>
+        <header>
+          <h1>CSS_technique</h1>
+          <p>このサイトは、CSSだけで表現させるテクニック集となっています。jsに頼らないアニメーションや画像を使わずにできる表現方法を極限まで求めていくことが目的です。 定期的に発信していき、フロントエンジニアの技術レベルを向上させるきっかけに少しでも貢献できれば幸いです。
+          </p>
+        </header>
+        <section>
+          <header>
+            <h1>視覚効果</h1>
+          </header>
+          <ul>
+            <li><a href="#">単一方向の影</a>
+            </li>
+            <li><a href="#">不規則な形状のドロップシャドウ</a>
+            </li>
+            <li><a href="#">色調の調整</a>
+            </li>
+            <li><a href="#">曇りガラスの効果</a>
+            </li>
+            <li><a href="#">角の折り返し</a>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <header>
+            <h1>いろんな形状</h1>
+          </header>
+          <ul>
+            <li><a href="#">様々な楕円形</a>
+            </li>
+            <li><a href="#">平行四辺形</a>
+            </li>
+            <li><a href="#">ひし形の画像</a>
+            </li>
+            <li><a href="#">角の切り落とし</a>
+            </li>
+            <li><a href="#">台形のタブ</a>
+            </li>
+            <li><a href="#">円グラフ</a>
+            </li>
+          </ul>
+        </section>
+      </article>
+
+      <!-- /contents -->
+      <%- include(page.relativePath + '_common/ejs/_footer', {page: page, modifier: '',}); %>
+        <%- include(page.relativePath + '_common/ejs/_script', {page: page, modifier: '',}); %>

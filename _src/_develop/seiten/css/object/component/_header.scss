@@ -1,0 +1,18 @@
+.c- {
+    &header {
+        color: $color-font-c;
+        &__heading {
+            float: left;
+        }
+        &__nav {
+            float: right;
+            color: white;
+        }
+        &__list {
+            display: inline-block;
+        }
+        &__link {
+            color: white;
+        }
+    }
+}

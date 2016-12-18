@@ -1,0 +1,44 @@
+.c- {
+    &contents {
+        &__heading {
+            &--name {
+                font-size: 1.4rem;
+                text-align: center;
+                margin: 0 0 2rem;
+                display: block;
+                text-align: center;
+                span {
+                    display: inline-block;
+                    border: 1px solid #C0392A;
+                    color: #C0392A;
+                    padding: 0.75rem;
+                }
+            }
+            &--product {
+                font-size: 2.4rem;
+                margin: 0 0 3rem;
+                word-wrap: break-word;
+                font-weight: bold;
+            }
+            &--recommended {
+                font-size: 1.4rem;
+                margin: 0 0 3rem;
+                word-wrap: break-word;
+                font-weight: bold;
+                color: #999999;
+                text-align: center;
+            }
+        }
+        &__description {
+            text-align: center;
+            font-size: 1.4rem;
+            margin: 0 auto 6rem;
+            width: 70%;
+            span {
+                display: inline-block;
+                padding-bottom: 2rem;
+                border-bottom: 0.1rem solid #ccc;
+            }
+        }
+    }
+}

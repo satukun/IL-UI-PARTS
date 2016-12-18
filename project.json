@@ -1,5 +1,6 @@
 {
     "gulf": true,
     "seiten": false,
-    "work": false
+    "il-work": false,
+    "il-technique": false
 }
