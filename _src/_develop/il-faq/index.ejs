@@ -1,0 +1,44 @@
+<%
+var absolutePath = filename.split(site.developDir)[filename.split(site.developDir).length -1].replace('.ejs','.html');
+var relativePath = '../'.repeat([absolutePath.split('/').length -1]);
+var css_js_Path = '../'.repeat([absolutePath.split('/').length -3]);
+var page = {
+  title: site.title + "｜" + site.name,
+  description: site.description,
+  keywords: site.keywords,
+  projectName: site.name,
+  categoryName: site.faqlist,
+  bodyClass: "",
+  singleCss: ["main.css"],
+  singleJs: [],
+  ogpType: "website",
+  ogpImage: site.ogpImage,
+  absolutePath: absolutePath,
+  relativePath: relativePath,
+  css_js_Path:css_js_Path
+};
+-%>
+
+<%- include(page.relativePath + '_common/ejs/_head', {page: page, modifier:''}); %>
+<%- include(page.relativePath + '_common/ejs/_header', {page: page, modifier:''}); %>
+<!-- contents -->
+
+<article>
+<% if(page.categoryName) { %>
+  <% page.categoryName.forEach(function(data) { %>
+    <% for(var index in data){ %>
+        <h1><%- data[index].name %></h1>
+        <% for(var text in data[index].lists){ %>
+          <dl>
+            <dt><%- data[index].lists[text].q %></dt>
+            <dd style="display:none;"><%- data[index].lists[text].a %></dd>
+          </dl>
+        <% }; %>
+    <% }; %>
+  <% }); %>
+<% } %>
+</article>
+
+<!-- /contents -->
+<%- include(page.relativePath + '_common/ejs/_footer', {page: page, modifier: '',}); %>
+<%- include(page.relativePath + '_common/ejs/_script', {page: page, modifier: '',}); %>

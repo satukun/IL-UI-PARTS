@@ -9,6 +9,18 @@
     //isFitWidth: true  //親要素の幅に合わせてカラム数を自動調整
   //});
 //});
+
+$(function(){
+  $('dt').on('click',function(){
+     if($("dd").is(":animated")){
+        return false;
+    }
+    if($(this).siblings().css("display") == 'none'){
+      $("dd").slideUp();
+      $(this).siblings().slideToggle("fast");
+    }
+  });
+});
 </script>
 </body>
 </html>
