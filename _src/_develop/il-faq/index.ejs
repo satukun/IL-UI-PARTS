@@ -10,7 +10,7 @@ var page = {
   categoryName: site.faqlist,
   bodyClass: "",
   singleCss: ["main.css"],
-  singleJs: [],
+  singleJs: ["main.js"],
   ogpType: "website",
   ogpImage: site.ogpImage,
   absolutePath: absolutePath,
@@ -23,21 +23,7 @@ var page = {
 <%- include(page.relativePath + '_common/ejs/_header', {page: page, modifier:''}); %>
 <!-- contents -->
 
-<article>
-<% if(page.categoryName) { %>
-  <% page.categoryName.forEach(function(data) { %>
-    <% for(var index in data){ %>
-        <h1><%- data[index].name %></h1>
-        <% for(var text in data[index].lists){ %>
-          <dl>
-            <dt><%- data[index].lists[text].q %></dt>
-            <dd style="display:none;"><%- data[index].lists[text].a %></dd>
-          </dl>
-        <% }; %>
-    <% }; %>
-  <% }); %>
-<% } %>
-</article>
+<article id="ques"></article>
 
 <!-- /contents -->
 <%- include(page.relativePath + '_common/ejs/_footer', {page: page, modifier: '',}); %>

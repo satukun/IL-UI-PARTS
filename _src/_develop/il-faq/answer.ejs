@@ -1,0 +1,34 @@
+<%
+var absolutePath = filename.split(site.developDir)[filename.split(site.developDir).length -1].replace('.ejs','.html');
+var relativePath = '../'.repeat([absolutePath.split('/').length -1]);
+var css_js_Path = '../'.repeat([absolutePath.split('/').length -3]);
+var page = {
+  title: site.title + "｜" + site.name,
+  description: site.description,
+  keywords: site.keywords,
+  projectName: site.name,
+  categoryName: site.faqlist,
+  bodyClass: "",
+  singleCss: ["main.css"],
+  singleJs: ["main.js"],
+  ogpType: "website",
+  ogpImage: site.ogpImage,
+  absolutePath: absolutePath,
+  relativePath: relativePath,
+  css_js_Path:css_js_Path
+};
+-%>
+
+<%- include(page.relativePath + '_common/ejs/_head', {page: page, modifier:''}); %>
+<%- include(page.relativePath + '_common/ejs/_header', {page: page, modifier:''}); %>
+<!-- contents -->
+
+<article>
+<h1>質問タイトル:</h1>
+<span>回答</span>
+<div></div>
+</article>
+
+<!-- /contents -->
+<%- include(page.relativePath + '_common/ejs/_footer', {page: page, modifier: '',}); %>
+<%- include(page.relativePath + '_common/ejs/_script', {page: page, modifier: '',}); %>

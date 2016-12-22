@@ -9,6 +9,14 @@
 @import "foundation/_reset";
 @import "foundation/_normalize";
 @import "foundation/_selector";
+dt {
+    font-size: 2rem;
+}
+
+dd {
+    font-size: 1.5rem;
+}
+
 
 /** Layout ***************************************/
 
@@ -17,11 +25,11 @@
 サイドバーやフッターといったプロジェクト共通のコンテナーブロックのスタイルを定義します。*/
 
 // .l-*
-@import "layout/_contents";
-@import "layout/_footer";
-@import "layout/_header";
-@import "layout/_main";
-@import "layout/_side";
+// @import "layout/_contents";
+// @import "layout/_footer";
+// @import "layout/_header";
+// @import "layout/_main";
+// @import "layout/_side";
 
 /** Object ***************************************/
 
@@ -34,56 +42,56 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
 // 再利用できるパターンとして、小さな単位のモジュールを定義します。
 // .c-*
-@import "object/component/_header";
-@import "object/component/_footer";
-@import "object/component/_breadcrumb";
-@import "object/component/_mv";
-@import "object/component/_box";
-@import "object/component/_buttons";
-@import "object/component/_text";
-@import "object/component/_thumbnail";
-@import "object/component/_title";
-@import "object/component/_article";
-@import "object/component/_contents";
-@import "object/component/_cols";
-@import "object/component/_card";
-@import "object/component/_catalog";
-@import "object/component/_product";
-@import "object/component/_link";
-@import "object/component/_form";
-@import "object/component/_menu";
-@import "object/component/_arrow";
-@import "object/component/_recommended";
-@import "object/component/_item";
+// @import "object/component/_header";
+// @import "object/component/_footer";
+// @import "object/component/_breadcrumb";
+// @import "object/component/_mv";
+// @import "object/component/_box";
+// @import "object/component/_buttons";
+// @import "object/component/_text";
+// @import "object/component/_thumbnail";
+// @import "object/component/_title";
+// @import "object/component/_article";
+// @import "object/component/_contents";
+// @import "object/component/_cols";
+// @import "object/component/_card";
+// @import "object/component/_catalog";
+// @import "object/component/_product";
+// @import "object/component/_link";
+// @import "object/component/_form";
+// @import "object/component/_menu";
+// @import "object/component/_arrow";
+// @import "object/component/_recommended";
+// @import "object/component/_item";
 
 /* Project --------------- */
 
 // プロジェクト固有のパターンであり、いくつかのComponentと、それに該当しない要素によって構成されるものを定義します。
 // 例えば、記事一覧や、ユーザープロフィール、画像ギャラリーなどコンテンツを構成する要素などが該当します。
 // .p-*
-@import "object/project/_mv";
-@import "object/project/_articles";
-@import "object/project/_comments";
-@import "object/project/_gallery";
-@import "object/project/_profile";
-@import "object/project/_breadcrumb";
-@import "object/project/_contents";
-@import "object/project/_card";
-@import "object/project/_catalog";
-@import "object/project/_product";
-@import "object/project/_recommended";
-@import "object/project/_item";
+// @import "object/project/_mv";
+// @import "object/project/_articles";
+// @import "object/project/_comments";
+// @import "object/project/_gallery";
+// @import "object/project/_profile";
+// @import "object/project/_breadcrumb";
+// @import "object/project/_contents";
+// @import "object/project/_card";
+// @import "object/project/_catalog";
+// @import "object/project/_product";
+// @import "object/project/_recommended";
+// @import "object/project/_item";
 
 /* Utility --------------- */
 
 // ComponentとProjectレイヤーのObjectのモディファイアで解決することが難しい・適切では無い、
 // わずかなスタイルの調整のための便利クラスなどを定義します。
 // .u-*
-@import "object/utility/_clearfix";
-@import "object/utility/_align";
-@import "object/utility/_margin";
-@import "object/utility/_position";
-@import "object/utility/_size";
-@import "object/utility/_text";
-@import "object/utility/_radius";
-@import "object/utility/_flex";
+// @import "object/utility/_clearfix";
+// @import "object/utility/_align";
+// @import "object/utility/_margin";
+// @import "object/utility/_position";
+// @import "object/utility/_size";
+// @import "object/utility/_text";
+// @import "object/utility/_radius";
+// @import "object/utility/_flex";

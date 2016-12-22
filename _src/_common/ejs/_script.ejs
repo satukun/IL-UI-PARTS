@@ -1,26 +1,5 @@
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <% if(page.singleJs) { %><% page.singleJs.forEach(function(data) { %>
 <script src="<%= page.css_js_Path %>js/<%= data %>"></script><% }); %><% } %>
-<script>
-//jQuery(function($){
- //$('#container').masonry({
-    //itemSelector: '.items',
-    //columnWidth: 180,
-    //isFitWidth: true  //親要素の幅に合わせてカラム数を自動調整
-  //});
-//});
-
-$(function(){
-  $('dt').on('click',function(){
-     if($("dd").is(":animated")){
-        return false;
-    }
-    if($(this).siblings().css("display") == 'none'){
-      $("dd").slideUp();
-      $(this).siblings().slideToggle("fast");
-    }
-  });
-});
-</script>
 </body>
 </html>

@@ -1,0 +1,27 @@
+{
+    "faqlist": [{
+        "CategoryName": "はじめに",
+        "ContentsTitle": [{
+            "Title": "フォトコレクションについて",
+            "Link": [{
+                "Name": "フォトコレクションについて",
+                "Contents": "asdfasfsadfasfdasfasdfasdfasdfasdfsadfasdfafsdsadfasdfafassdfsafdsfadsfsfsdafas"
+            }, {
+                "Name": "ご利用になる前に",
+                "Contents": "asdfasfsadfasfdasfasdfasdfasdfasdfsadfasdfafsdsadfasdfafassdfsafdsfadsfsfsdafas"
+            }]
+        }]
+    }, {
+        "CategoryName": "はじめに",
+        "ContentsTitle": [{
+            "Title": "フォトコレクションについて",
+            "Link": [{
+                "Name": "フォトコレクションについて",
+                "Contents": "asdfasfsadfasfdasfasdfasdfasdfasdfsadfasdfafsdsadfasdfafassdfsafdsfadsfsfsdafas"
+            }, {
+                "Name": "ご利用になる前に",
+                "Contents": "asdfasfsadfasfdasfasdfasdfasdfasdfsadfasdfafsdsadfasdfafassdfsafdsfadsfsfsdafas"
+            }]
+        }]
+    }]
+}
