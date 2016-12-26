@@ -1,36 +1,67 @@
-var yousuke = yousuke || {};
+var docomofaq = docomofaq || {};
+var CategoryName = '',
+    Title = '',
+    Name = '',
+    Url = document.location.href,
+    Hash = '',
+    faq = {};
 
-yousuke.common = function() {
+docomofaq.get = function() {
     $(function() {
         $.getJSON('js/faq.json')
             .done(function(data) {
-                var url = window.location.href;
-                if (url.indexOf("answer.html") != -1) {
-                    var category = "",
-                        ques = "";
-                    var hash = url.slice(1).split('?');
-                    hash = hash[1].split('&');
-                    category = hash[0].split('=');
-                    ques = hash[1].split('=');
-                    var test = eval("data.faqlist[0]." + category[1]);
-                    $('h1').append(test.name);
-                    $('span').append(test.lists[ques[1]].q);
+                if (Url.indexOf('answer.html') != -1) {
+                    docomofaq.Extraction(data, Url);
                 } else {
-                    if (data) {
-                        console.log(data);
-                        jQuery.each(data.faqlist[0], function(cate, val) {
-                            $('#ques').append(val.name);
-                            $(val.lists).each(function(i) {
-                                $('#ques').append('<p><a href="answer.html?category=' + cate + '&ques=' + i + '">' + $(this)[0].q + '</a></p>');
-                            });
-                        });
-                    } else {
-                        console.log("error.....");
-                    }
+                    docomofaq.CategoryName(data);
                 }
             });
     });
 }
 
+docomofaq.CategoryName = function(data) {
+    $(data.faqlist).each(function(i) {
+        faq.CategoryName = i;
+        $('#ques').append('<h1>' + [i + 1] + data.faqlist[i].CategoryName + '</h1><dl></dl>');
+        docomofaq.Title(data.faqlist, i);
+    });
+}
 
-yousuke.common();
+docomofaq.Title = function(data, count) {
+    $(data[count].ContentsTitle).each(function(v) {
+        faq.Title = v;
+        $('dl').eq(count).append('<dt>' + [count + 1] + '-' + [v + 1] + ' ' + data[count].ContentsTitle[v].Title + '</dt>');
+        docomofaq.Name(data[count].ContentsTitle[v], count);
+    });
+}
+
+docomofaq.Name = function(data, count) {
+    $(data.Link).each(function(x) {
+        faq.Name = x;
+        $('dl').eq(count).append('<dd><a href="answer.html?CategoryName=' + faq.CategoryName + '&Title=' + faq.Title + '&Name=' + faq.Name + '">' + data.Link[x].Name + '</a></dd>');
+    });
+}
+
+docomofaq.Extraction = function(data, Url) {
+    Hash = Url.slice(1).split('?');
+    Hash = Hash[1].split('&');
+    faq = {
+        CategoryName: Hash[0].split('=')[1],
+        Title: Hash[1].split('=')[1],
+        Name: Hash[2].split('=')[1]
+    }
+    docomofaq.Render(data, faq);
+};
+
+docomofaq.Render = function(data) {
+    if (data.faqlist[faq.CategoryName].ContentsTitle[faq.Title].Link[faq.Name].Name) {
+        $('h2').append(data.faqlist[faq.CategoryName].CategoryName);
+        $('h3').append(data.faqlist[faq.CategoryName].ContentsTitle[faq.Title].Title);
+        $('h4').append(data.faqlist[faq.CategoryName].ContentsTitle[faq.Title].Link[faq.Name].Name);
+        $('.main').append(data.faqlist[faq.CategoryName].ContentsTitle[faq.Title].Link[faq.Name].Contents);
+    } else {
+        location.href = "index.html";
+    }
+}
+
+docomofaq.get();
