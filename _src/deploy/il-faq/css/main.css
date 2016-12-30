@@ -669,9 +669,88 @@ dd
 /** Layout ***************************************/
 /* ページを構成するヘッダーやメインのコンテンツエリア、
 サイドバーやフッターといったプロジェクト共通のコンテナーブロックのスタイルを定義します。*/
+.l-contents
+{
+    height: 100%;
+}
+
+.l-main
+{
+    font-size: 1.4rem;
+    line-height: 2;
+
+    padding: 1rem;
+
+    text-align: center;
+}
+
 /** Object ***************************************/
 /* OOCSSのコンセプトを元に、プロジェクトにおける繰り返されるビジュアルパターンをすべてObjectと定義します。
 FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます。*/
 /* Component --------------- */
+.c-heading--a
+{
+    font-size: 2rem;
+
+    padding: 1rem;
+
+    color: #f5f5f5;
+    background-color: #4d4d4d;
+}
+
+.c-heading--b
+{
+    font-size: 1.8rem;
+
+    padding: .8rem 1rem;
+
+    color: #f5f5f5;
+    background-color: #3396ce;
+}
+
+.c-heading--c
+{
+    font-size: 1.4rem;
+
+    padding: .8rem 1rem;
+
+    color: #3396ce;
+    background-color: #f5f5f5;
+}
+
+.c-navi
+{
+    font-size: 1.4rem;
+
+    padding: 1rem;
+
+    text-align: center;
+    letter-spacing: -.4rem;
+}
+
+.c-navi__list
+{
+    display: inline-block;
+
+    letter-spacing: normal;
+}
+
+.c-navi__list:first-child a::before
+{
+    content: '←';
+}
+
+.c-navi__list:last-child a::after
+{
+    content: '→';
+}
+
+.c-navi__link
+{
+    padding: 1rem;
+
+    color: #333;
+}
+
 /* Project --------------- */
 /* Utility --------------- */

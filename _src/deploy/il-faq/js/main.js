@@ -58,7 +58,7 @@ docomofaq.Render = function(data) {
         $('h2').append(data.faqlist[faq.CategoryName].CategoryName);
         $('h3').append(data.faqlist[faq.CategoryName].ContentsTitle[faq.Title].Title);
         $('h4').append(data.faqlist[faq.CategoryName].ContentsTitle[faq.Title].Link[faq.Name].Name);
-        $('.main').append(data.faqlist[faq.CategoryName].ContentsTitle[faq.Title].Link[faq.Name].Contents);
+        $('.l-main').append(data.faqlist[faq.CategoryName].ContentsTitle[faq.Title].Link[faq.Name].Contents);
     } else {
         location.href = "index.html";
     }

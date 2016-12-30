@@ -25,10 +25,10 @@ dd {
 サイドバーやフッターといったプロジェクト共通のコンテナーブロックのスタイルを定義します。*/
 
 // .l-*
-// @import "layout/_contents";
+@import "layout/_contents";
 // @import "layout/_footer";
 // @import "layout/_header";
-// @import "layout/_main";
+@import "layout/_main";
 // @import "layout/_side";
 
 /** Object ***************************************/
@@ -43,6 +43,8 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 // 再利用できるパターンとして、小さな単位のモジュールを定義します。
 // .c-*
 // @import "object/component/_header";
+@import "object/component/_heading";
+@import "object/component/_navi";
 // @import "object/component/_footer";
 // @import "object/component/_breadcrumb";
 // @import "object/component/_mv";

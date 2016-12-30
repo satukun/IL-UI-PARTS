@@ -22,14 +22,20 @@ var page = {
 <%- include(page.relativePath + '_common/ejs/_head', {page: page, modifier:''}); %>
 <%- include(page.relativePath + '_common/ejs/_header', {page: page, modifier:''}); %>
 <!-- contents -->
-
-<article>
-  <h2></h2>
-  <h3></h3>
-  <h4></h4>
-  <div class="main"></div>
-</article>
-
+<div class="l-contents">
+  <article class="c-heading">
+    <h2 class="c-heading--a"></h2>
+    <h3 class="c-heading--b"></h3>
+    <h4 class="c-heading--c"></h4>
+    <div class="l-main"></div>
+  </article>
+  <aside>
+    <ul class="c-navi">
+      <li class="c-navi__list"><a href="#" class="c-navi__link">戻る</a></li>
+      <li class="c-navi__list"><a href="#" class="c-navi__link">次へ</a></li>
+    </ul>
+  </aside>
+</div>
 <!-- /contents -->
 <%- include(page.relativePath + '_common/ejs/_footer', {page: page, modifier: '',}); %>
 <%- include(page.relativePath + '_common/ejs/_script', {page: page, modifier: '',}); %>
