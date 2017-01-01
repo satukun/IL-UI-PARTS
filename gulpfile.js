@@ -63,7 +63,7 @@
         "ejs": dir.src + "/_develop/" + work + "/**/*.ejs",
         "ejsbase": dir.src + "/_common/**/*.ejs",
         "css": dir.src + "/deploy/" + work + "/**/*.css",
-        "js": dir.src + "/_develop/" + work + "/**/*.js",
+        "js": [dir.src + "/_develop/" + work + "/**/*.js", dir.src + "/_develop/" + work + "/**/*.json"],
         "jsdep": dir.src + "/deploy/" + work + "/**/*.js",
         "img": [dir.src + "/_develop/" + work + "/**/*.jpg", dir.src + "/_develop/" + work + "/**/*.gif", dir.src + "/_develop/" + work + "/**/*.png"]
     }
@@ -113,16 +113,17 @@
     });
 
     gulp.task("js", function() {
-        browserify({
-                entries: [
-                    '_src/_develop/work/js/names.js',
-                    '_src/_develop/work/js/action.js',
-                    '_src/_develop/work/js/style.js'
-                ]
-            })
-            .bundle()
-            .pipe(source('bundle.js'))
-            .pipe(gulp.dest(dir.src + '/deploy/' + work + '/js'))
+        return gulp.src(path.js)
+            //browserify({
+            //    entries: [
+            //        '_src/_develop/work/js/names.js',
+            //        '_src/_develop/work/js/action.js',
+            //        '_src/_develop/work/js/style.js'
+            //    ]
+            //})
+            //.bundle()
+            //.pipe(source('bundle.js'))
+            .pipe(gulp.dest(dir.src + '/deploy/' + work))
             .pipe(browser.reload({
                 stream: true
             }))
