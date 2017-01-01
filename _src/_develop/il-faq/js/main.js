@@ -10,6 +10,7 @@ docomofaq.get = function() {
     $(function() {
         $.getJSON('js/faq.json')
             .done(function(data) {
+                docomofaq.Count(data);
                 if (Url.indexOf('answer.html') != -1) {
                     docomofaq.Extraction(data, Url);
                 } else {
@@ -17,6 +18,12 @@ docomofaq.get = function() {
                 }
             });
     });
+}
+
+docomofaq.Count = function(data) {
+    console.log(data.faqlist);
+    console.log(data.faqlist[0].ContentsTitle.length);
+    console.log(data.faqlist[1].ContentsTitle.length);
 }
 
 docomofaq.CategoryName = function(data) {
@@ -50,7 +57,15 @@ docomofaq.Extraction = function(data, Url) {
         Title: Hash[1].split('=')[1],
         Name: Hash[2].split('=')[1]
     }
-    docomofaq.Render(data, faq);
+    docomofaq.Page(data);
+};
+
+docomofaq.Page = function(data) {
+    // console.log(data.faqlist[faq.CategoryName].ContentsTitle.length);
+    // console.log(data.faqlist[faq.CategoryName].CategoryName.length);
+    // console.log(data.faqlist[faq.CategoryName].ContentsTitle[faq.Title].Title.length);
+    // console.log(data.faqlist[faq.CategoryName].ContentsTitle[faq.Title].Link[faq.Name].Name.length);
+    docomofaq.Render(data);
 };
 
 docomofaq.Render = function(data) {
@@ -62,6 +77,6 @@ docomofaq.Render = function(data) {
     } else {
         location.href = "index.html";
     }
-}
+};
 
 docomofaq.get();

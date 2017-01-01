@@ -732,6 +732,8 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 {
     display: inline-block;
 
+    margin-right: 5px;
+
     letter-spacing: normal;
 }
 
@@ -745,11 +747,17 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     content: '→';
 }
 
+.c-navi__list:last-child
+{
+    margin-right: 0;
+}
+
 .c-navi__link
 {
     padding: 1rem;
 
-    color: #333;
+    color: #fff;
+    background-color: #999;
 }
 
 /* Project --------------- */
