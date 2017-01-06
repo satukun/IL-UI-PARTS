@@ -2,6 +2,6 @@
     "gulf": false,
     "seiten": false,
     "il-work": false,
-    "il-technique": false,
-    "il-faq": true
+    "il-technique": true,
+    "il-faq": false
 }

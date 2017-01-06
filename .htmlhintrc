@@ -16,8 +16,8 @@
     "head-script-disabled"     : false,//スクリプトタグは頭に使用できません
     "doctype-html5"            : false,//Doctypeはhtml5でなければなりません。
     "id-class-value"           : false,//IDとクラス値はいくつかのルールを満たさなければなりません：下線、ダッシュ、ハンプ。
-    "style-disabled"           : false,//スタイルタグは使用できません。
-    "inline-style-disabled"    : false,//インラインスタイル無効
+    "style-disabled"           : true,//スタイルタグは使用できません。
+    "inline-style-disabled"    : true,//インラインスタイル無効
     "inline-script-disabled"   : false,//インラインスクリプト無効
     "space-tab-mixed-disabled" : true,//スペースとタブが混ざっているかどうか
     "id-class-ad-disabled"     : false,

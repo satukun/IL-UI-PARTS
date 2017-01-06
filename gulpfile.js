@@ -238,10 +238,6 @@
         gulp.watch(path.js, ["js"]);
     });
 
-
-
-
-
     gulp.task("prepare", function(callback) {
         return sequence(
             ['ejs'], ["sass"], ["img"], ['lint:html'], ['watch'],
