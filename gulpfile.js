@@ -1,22 +1,6 @@
     var gulp = require("gulp");
     var fs = require("fs");
 
-    //html
-    var htmlhint = require("gulp-htmlhint");
-    var minifyhtml = require("gulp-minify-html");
-    var prettify = require('gulp-html-prettify');
-
-    //css
-    var cssmin = require("gulp-cssmin");
-    var sass = require("gulp-sass");
-    var csslint = require("gulp-csslint");
-    var csscomb = require("gulp-csscomb");
-    var autoprefixer = require("gulp-autoprefixer");
-
-    //js
-    var concat = require("gulp-concat");
-    var uglify = require('gulp-uglify');
-
     //Webサーバー、ユーティリティ
     var ejs = require("gulp-ejs");
     var browser = require("browser-sync");
@@ -28,14 +12,8 @@
     var browserify = require('browserify');
     var source = require('vinyl-source-stream');
 
-    // ファイル操作
-    var rename = require("gulp-rename");
-
-    // 画像
-    var imagemin = require("gulp-imagemin");
-    var resize = require("gulp-image-resize");
-    var pngquant = require('imagemin-pngquant');
-
+    var requireDir = require('require-dir');
+    requireDir('./gulp/tasks', { recurse: true });
     // --------------------------------------------------------
 
     var project = require('./project.json');
@@ -78,150 +56,6 @@
                 baseDir: '_src/deploy/' + work
             }
         });
-    });
-
-    gulp.task("html", function() {
-        return gulp.src(path.html)
-            .pipe(changed(dir.src))
-            .pipe(gulp.dest(dir.src))
-            .pipe(browser.reload({
-                stream: true
-            }))
-    });
-
-    gulp.task("sass", function() {
-        return gulp.src(path.scss)
-            .pipe(changed(dir.src + '/deploy/' + work))
-            .pipe(plumber({
-                errorHandler: notify.onError('SCSSでError出てまっせ: <%= error.message %>')
-            }))
-            .pipe(sass({ outputStyle: 'expanded' }))
-            .pipe(autoprefixer({
-                browsers: ['last 2 versions', "ie 8", "ie 7"],
-                cascade: false
-            }))
-            .pipe(csscomb())
-            .pipe(gulp.dest(dir.src + '/deploy/' + work))
-            .pipe(browser.reload({
-                stream: true
-            }))
-    });
-
-    gulp.task("img", function() {
-        return gulp.src(path.img)
-            .pipe(gulp.dest(dir.src + '/deploy/' + work))
-    });
-
-    gulp.task("js", function() {
-        return gulp.src(path.js)
-            //browserify({
-            //    entries: [
-            //        '_src/_develop/work/js/names.js',
-            //        '_src/_develop/work/js/action.js',
-            //        '_src/_develop/work/js/style.js'
-            //    ]
-            //})
-            //.bundle()
-            //.pipe(source('bundle.js'))
-            .pipe(gulp.dest(dir.src + '/deploy/' + work))
-            .pipe(browser.reload({
-                stream: true
-            }))
-    });
-
-    /***********************************************************
-    lint
-    ************************************************************/
-    gulp.task("lint:html", function() {
-        gulp.src(path.html)
-            .pipe(plumber({
-                errorHandler: notify.onError('HTMLでError出てまっせ: <%= error.message %>')
-            }))
-            .pipe(htmlhint('.htmlhintrc'))
-            .pipe(htmlhint.reporter());
-    });
-
-    gulp.task("lint:css", function() {
-        gulp.src(path.css)
-            .pipe(plumber({
-                errorHandler: notify.onError('CSSでError出てまっせ: <%= error.message %>')
-            }))
-            .pipe(csslint('.csslintrc'))
-            .pipe(csslint.formatter());
-    });
-
-    gulp.task("lint:js", function() {
-        return gulp.src(path.js)
-            .pipe(plumber({
-                errorHandler: notify.onError('JSでError出てまっせ: <%= error.message %>')
-            }))
-            .pipe(eslint({ useEslintrc: true }))
-            .pipe(eslint.format())
-            .pipe(eslint.failAfterError())
-            .pipe(plumber.stop());
-    });
-
-
-    /***********************************************************
-    min
-    ************************************************************/
-    gulp.task("min:html", function() {
-        return gulp.src(path.html)
-            .pipe(minifyhtml({ empty: true }))
-            .pipe(rename({
-                suffix: '.min'
-            }))
-            .pipe(gulp.dest(dir.dist))
-    });
-
-    gulp.task("min:css", function() {
-        return gulp.src(path.css)
-            .pipe(cssmin())
-            .pipe(rename({
-                suffix: '.min'
-            }))
-            .pipe(gulp.dest(dir.dist + '/deploy/' + work))
-    });
-
-    gulp.task("min:js", function() {
-        return gulp.src(path.jsdep)
-            .pipe(uglify())
-            .pipe(rename({
-                suffix: '.min'
-            }))
-            .pipe(gulp.dest(dir.dist + '/deploy/' + work))
-    });
-
-    gulp.task("min:img", function() {
-        gulp.src(path.img)
-            .pipe(imagemin({
-                use: [pngquant()]
-            }))
-
-        gulp.src(path.img)
-            .pipe(imagemin({
-                progressive: true
-            }))
-    });
-
-
-    /***********************************************************
-    ejs
-    ************************************************************/
-    gulp.task("ejs", function() {
-        return gulp.src(path.ejs)
-            .pipe(changed(dir.src + '/deploy/' + work + '/'))
-            .pipe(plumber({
-                errorHandler: notify.onError('ejsでError出てまっせ: <%= error.message %>')
-            }))
-            .pipe(ejs({
-                site: JSON.parse(fs.readFileSync(develop.data + 'site.json'))
-            }, { "ext": ".html" }))
-            .pipe(prettify({ indent_char: ' ', indent_size: 2 }))
-            .pipe(gulp.dest(dir.src + '/deploy/' + work + '/'))
-            .pipe(browser.reload({
-                stream: true
-            }))
     });
 
     gulp.task("copy", function() {
