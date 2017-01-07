@@ -10,7 +10,7 @@ docomofaq.get = function() {
     $(function() {
         $.getJSON('js/faq.json')
             .done(function(data) {
-                docomofaq.Count(data);
+                // docomofaq.Count(data);
                 if (Url.indexOf('answer.html') != -1) {
                     docomofaq.Extraction(data, Url);
                 } else {
@@ -50,6 +50,7 @@ docomofaq.Name = function(data, count) {
 }
 
 docomofaq.Extraction = function(data, Url) {
+
     Hash = Url.slice(1).split('?');
     Hash = Hash[1].split('&');
     faq = {
@@ -57,16 +58,9 @@ docomofaq.Extraction = function(data, Url) {
         Title: Hash[1].split('=')[1],
         Name: Hash[2].split('=')[1]
     }
-    docomofaq.Page(data);
-};
-
-docomofaq.Page = function(data) {
-    // console.log(data.faqlist[faq.CategoryName].ContentsTitle.length);
-    // console.log(data.faqlist[faq.CategoryName].CategoryName.length);
-    // console.log(data.faqlist[faq.CategoryName].ContentsTitle[faq.Title].Title.length);
-    // console.log(data.faqlist[faq.CategoryName].ContentsTitle[faq.Title].Link[faq.Name].Name.length);
     docomofaq.Render(data);
 };
+
 
 docomofaq.Render = function(data) {
     if (data.faqlist[faq.CategoryName].ContentsTitle[faq.Title].Link[faq.Name].Name) {
@@ -77,6 +71,33 @@ docomofaq.Render = function(data) {
     } else {
         location.href = "index.html";
     }
+    docomofaq.Page(data);
 };
+
+docomofaq.Page = function(data) {
+    var MaxLlist = data.faqlist.length;
+    var MaxMlist = data.faqlist[faq.CategoryName].ContentsTitle.length;
+    var MaxSlist = data.faqlist[faq.CategoryName].ContentsTitle[faq.Title].Link.length;
+
+    if (MaxSlist - 1 == parseInt(faq.Name)) {
+        faq.Name = 0;
+        if (MaxMlist - 1 == parseInt(faq.Title)) {
+            faq.Title = 0;
+            if (MaxLlist - 1 == parseInt(faq.CategoryName)) {
+                faq.CategoryName = 0;
+            } else {
+                faq.CategoryName = parseInt(faq.CategoryName) + 1;
+            }
+        } else {
+            faq.Title = parseInt(faq.Title) + 1;
+        }
+    } else {
+        faq.Name = parseInt(faq.Name) + 1;
+    }
+    $("#prev").attr("href", 'answer.html?CategoryName=' + faq.CategoryName + '&Title=' + parseInt(faq.Title) + '&Name=' + (parseInt(faq.Name - 1)));
+    $("#next").attr("href", 'answer.html?CategoryName=' + faq.CategoryName + '&Title=' + parseInt(faq.Title) + '&Name=' + parseInt(faq.Name));
+
+};
+
 
 docomofaq.get();
