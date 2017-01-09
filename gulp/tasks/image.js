@@ -1,13 +1,14 @@
 'use strict'
 var gulp = require('gulp');
+var changed = require('gulp-changed');
 var buffer = require('vinyl-buffer');
 var spritesmith = require('gulp.spritesmith');
 var imagemin = require('gulp-imagemin');
 var merge = require('merge-stream');
 var pngquant = require('imagemin-pngquant');
-var version = require('../config').version;
 
 // --------------------------------------------------------
+var version = require('../config').version;
 var f = require('../path');
 f = f.func();
 // --------------------------------------------------------
@@ -15,6 +16,7 @@ f = f.func();
 function image(device) {
     if (device === 'pc') {
         return gulp.src(f.path.img)
+            .pipe(changed(f.dir.src + '/deploy/' + f.work))
             .pipe(imagemin({
                 progressive: true,
                 svgoPlugins: [{ removeViewBox: false }],

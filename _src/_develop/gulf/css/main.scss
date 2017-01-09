@@ -1,19 +1,14 @@
 @charset "UTF-8";
-// FLOCSS設計
-
-/* Reset.cssやNormalize.cssなどを用いたブラウザのデフォルトスタイルの初期化や、プロジェクトにおける基本的なスタイルを定義します。
-ページの下地としての全体の背景や、基本的なタイポグラフィなどが該当します。*/
-
 @import "foundation/_webfont";
 @import "foundation/_variables";
 @import "foundation/_mixin";
-@import "foundation/_reset";
+// @import "foundation/_reset";
 // @import "foundation/_normalize";
 @import "foundation/_selector";
 @import "foundation/_ion";
 @import "foundation/_sprite";
 
-/** Layout ***************************************/
+/** Layout ******************************************************************************/
 
 
 /* ページを構成するヘッダーやメインのコンテンツエリア、
@@ -26,7 +21,7 @@
 @import "layout/_main";
 @import "layout/_side";
 
-/** Object ***************************************/
+/** Object ******************************************************************************/
 
 
 /* OOCSSのコンセプトを元に、プロジェクトにおける繰り返されるビジュアルパターンをすべてObjectと定義します。

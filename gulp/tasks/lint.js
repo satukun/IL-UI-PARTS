@@ -6,6 +6,7 @@ var htmlhint = require("gulp-htmlhint");
 var csslint = require("gulp-csslint");
 var sassLint = require("gulp-sass-lint");
 var notify = require("gulp-notify");
+var csscomb = require('gulp-csscomb');
 
 
 // --------------------------------------------------------
@@ -28,7 +29,8 @@ function lints(device, type) {
                     errorHandler: notify.onError('CSSでError出てまっせ: <%= error.message %>')
                 }))
                 .pipe(csslint('.csslintrc'))
-                .pipe(csslint.formatter());
+                .pipe(csslint.formatter())
+                .pipe(csscomb());
         } else {
             return gulp.src(f.path.js)
                 .pipe(plumber({

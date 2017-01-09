@@ -8,9 +8,10 @@ var notify = require("gulp-notify");
 var prettify = require("gulp-html-prettify");
 var browser = require("browser-sync");
 var replace = require('gulp-replace');
-var version = require('../config').version;
+var cache = require('gulp-cached');
 
 // --------------------------------------------------------
+var version = require('../config').version;
 var f = require('../path');
 f = f.func();
 // --------------------------------------------------------
@@ -19,19 +20,12 @@ f = f.func();
 // var gulp_config_name = '../gulp_' + mode;
 // var config = require(gulp_config_name);
 
-// gulp.task('replace:pc', function() {
-//     return replaceEct('pc');
-// });
-
-// gulp.task('replace:sp', function() {
-//     return replaceEct('sp');
-// });
-
 function replaceEjs(device) {
     if (device === 'pc') {
         return gulp.src(f.path.ejs)
-            .pipe(replace('main.js', 'main.js?' + version))
-            .pipe(replace('main.css', 'main.css?' + version))
+            // .pipe(cache('replace:pc'))
+            .pipe(replace('.js', '.js?' + version))
+            .pipe(replace('.css', '.css?' + version))
             .pipe(changed(f.dir.src + '/deploy/' + f.work + '/'))
             .pipe(plumber({
                 errorHandler: notify.onError('ejsでError出てまっせ: <%= error.message %>')
