@@ -1,0 +1,129 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$sprite-check-off-name: 'sprite-check--off';
+$sprite-check-off-x: 54px;
+$sprite-check-off-y: 36px;
+$sprite-check-off-offset-x: -54px;
+$sprite-check-off-offset-y: -36px;
+$sprite-check-off-width: 16px;
+$sprite-check-off-height: 12px;
+$sprite-check-off-total-width: 90px;
+$sprite-check-off-total-height: 53px;
+$sprite-check-off-image: '_src/_develop/gulf/img/sprites/v20170109180238.png';
+$sprite-check-off: (54px, 36px, -54px, -36px, 16px, 12px, 90px, 53px, '_src/_develop/gulf/img/sprites/v20170109180238.png', 'sprite-check--off', );
+$sprite-check-on-name: 'sprite-check--on';
+$sprite-check-on-x: 70px;
+$sprite-check-on-y: 36px;
+$sprite-check-on-offset-x: -70px;
+$sprite-check-on-offset-y: -36px;
+$sprite-check-on-width: 16px;
+$sprite-check-on-height: 12px;
+$sprite-check-on-total-width: 90px;
+$sprite-check-on-total-height: 53px;
+$sprite-check-on-image: '_src/_develop/gulf/img/sprites/v20170109180238.png';
+$sprite-check-on: (70px, 36px, -70px, -36px, 16px, 12px, 90px, 53px, '_src/_develop/gulf/img/sprites/v20170109180238.png', 'sprite-check--on', );
+$sprite-i-search-name: 'sprite-i-search';
+$sprite-i-search-x: 0px;
+$sprite-i-search-y: 0px;
+$sprite-i-search-offset-x: 0px;
+$sprite-i-search-offset-y: 0px;
+$sprite-i-search-width: 54px;
+$sprite-i-search-height: 53px;
+$sprite-i-search-total-width: 90px;
+$sprite-i-search-total-height: 53px;
+$sprite-i-search-image: '_src/_develop/gulf/img/sprites/v20170109180238.png';
+$sprite-i-search: (0px, 0px, 0px, 0px, 54px, 53px, 90px, 53px, '_src/_develop/gulf/img/sprites/v20170109180238.png', 'sprite-i-search', );
+$sprite-icon-star-name: 'sprite-icon--star';
+$sprite-icon-star-x: 54px;
+$sprite-icon-star-y: 0px;
+$sprite-icon-star-offset-x: -54px;
+$sprite-icon-star-offset-y: 0px;
+$sprite-icon-star-width: 36px;
+$sprite-icon-star-height: 36px;
+$sprite-icon-star-total-width: 90px;
+$sprite-icon-star-total-height: 53px;
+$sprite-icon-star-image: '_src/_develop/gulf/img/sprites/v20170109180238.png';
+$sprite-icon-star: (54px, 0px, -54px, 0px, 36px, 36px, 90px, 53px, '_src/_develop/gulf/img/sprites/v20170109180238.png', 'sprite-icon--star', );
+$spritesheet-width: 90px;
+$spritesheet-height: 53px;
+$spritesheet-image: '_src/_develop/gulf/img/sprites/v20170109180238.png';
+$spritesheet-sprites: ($sprite-check-off, $sprite-check-on, $sprite-i-search, $sprite-icon-star, );
+$spritesheet: (90px, 53px, '_src/_develop/gulf/img/sprites/v20170109180238.png', $spritesheet-sprites, );
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

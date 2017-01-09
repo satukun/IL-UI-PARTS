@@ -1,47 +1,52 @@
 'use strict'
 var gulp = require('gulp');
+var fs = require("fs");
 var ejs = require("gulp-ejs");
-var rename = require('gulp-rename');
+var changed = require('gulp-changed');
+var plumber = require("gulp-plumber");
+var notify = require("gulp-notify");
+var prettify = require("gulp-html-prettify");
+var browser = require("browser-sync");
 var replace = require('gulp-replace');
-var htmlmin = require('gulp-htmlmin');
 var version = require('../config').version;
-var mode = process.env.ENV_MODE || 'development';
-var gulp_config_name = '../gulp_' + mode;
-var config = require(gulp_config_name);
 
-function replaceEct(device) {
-    return gulp.src('./views/' + device + '/_*.ect')
-        .pipe(replace('/bundle.js', config.hashtag_cdn_static_domain + 'bundle_' + device + '_' + version + '.js'))
-        .pipe(replace('/hash.css', config.hashtag_cdn_static_domain + 'hash_' + device + '_' + version + '.css'))
-        .pipe(replace('http://stat100.ameba.jp', config.ameba_stat_domain))
-        .pipe(htmlmin({ collapseWhitespace: true }))
-        .pipe(rename(function(path) {
-            path.basename = path.basename.replace(/_/g, '')
-        }))
-        .pipe(gulp.dest('./views/' + device));
+// --------------------------------------------------------
+var f = require('../path');
+f = f.func();
+// --------------------------------------------------------
+
+// var mode = process.env.ENV_MODE || 'development';
+// var gulp_config_name = '../gulp_' + mode;
+// var config = require(gulp_config_name);
+
+// gulp.task('replace:pc', function() {
+//     return replaceEct('pc');
+// });
+
+// gulp.task('replace:sp', function() {
+//     return replaceEct('sp');
+// });
+
+function replaceEjs(device) {
+    if (device === 'pc') {
+        return gulp.src(f.path.ejs)
+            .pipe(replace('main.js', 'main.js?' + version))
+            .pipe(replace('main.css', 'main.css?' + version))
+            .pipe(changed(f.dir.src + '/deploy/' + f.work + '/'))
+            .pipe(plumber({
+                errorHandler: notify.onError('ejsでError出てまっせ: <%= error.message %>')
+            }))
+            .pipe(ejs({
+                site: JSON.parse(fs.readFileSync(f.develop.data + 'site.json'))
+            }, { "ext": ".html" }))
+            .pipe(prettify({ indent_char: ' ', indent_size: 2 }))
+            .pipe(gulp.dest(f.dir.src + '/deploy/' + f.work + '/'))
+            .pipe(browser.reload({
+                stream: true
+            }))
+    }
 }
 
 gulp.task('replace:pc', function() {
-    return replaceEct('pc');
-});
-
-gulp.task('replace:sp', function() {
-    return replaceEct('sp');
-});
-
-
-gulp.task("ejs", function() {
-    return gulp.src(path.ejs)
-        .pipe(changed(dir.src + '/deploy/' + work + '/'))
-        .pipe(plumber({
-            errorHandler: notify.onError('ejsでError出てまっせ: <%= error.message %>')
-        }))
-        .pipe(ejs({
-            site: JSON.parse(fs.readFileSync(develop.data + 'site.json'))
-        }, { "ext": ".html" }))
-        .pipe(prettify({ indent_char: ' ', indent_size: 2 }))
-        .pipe(gulp.dest(dir.src + '/deploy/' + work + '/'))
-        .pipe(browser.reload({
-            stream: true
-        }))
+    return replaceEjs('pc');
 });

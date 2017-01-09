@@ -3,11 +3,18 @@ var gulp = require('gulp');
 var plumber = require('gulp-plumber');
 var sass = require('gulp-sass');
 // var csso = require('gulp-csso');
+var changed = require('gulp-changed');
 var autoprefixer = require('gulp-autoprefixer');
 var csscomb = require('gulp-csscomb');
+var browser = require("browser-sync");
+var notify = require("gulp-notify");
 // var rename = require('gulp-rename');
 // var filter = require('gulp-filter');
 
+// --------------------------------------------------------
+var f = require('../path');
+f = f.func();
+// --------------------------------------------------------
 
 
 // var version = require('../config').version;
@@ -38,22 +45,25 @@ var csscomb = require('gulp-csscomb');
 //     return cssBuild('pc', ['last 2 versions', 'ie >= 8']);
 // });
 
-
-
-gulp.task("sass", function() {
-    return gulp.src(path.scss)
-        .pipe(changed(dir.src + '/deploy/' + work))
-        .pipe(plumber({
-            errorHandler: notify.onError('SCSSでError出てまっせ: <%= error.message %>')
-        }))
-        .pipe(sass({ outputStyle: 'expanded' }))
-        .pipe(autoprefixer({
-            browsers: ['last 2 versions', "ie 8", "ie 7"],
-            cascade: false
-        }))
-        .pipe(csscomb())
-        .pipe(gulp.dest(dir.src + '/deploy/' + work))
-        .pipe(browser.reload({
-            stream: true
-        }))
+function cssBuild(device, versions) {
+    if (device === 'pc') {
+        return gulp.src(f.path.scss)
+            .pipe(changed(f.dir.src + '/deploy/' + f.work))
+            .pipe(plumber({
+                errorHandler: notify.onError('SCSSでError出てまっせ: <%= error.message %>')
+            }))
+            .pipe(sass({ outputStyle: 'expanded' }))
+            .pipe(autoprefixer({
+                browsers: versions,
+                cascade: false
+            }))
+            .pipe(csscomb())
+            .pipe(gulp.dest(f.dir.src + '/deploy/' + f.work))
+            .pipe(browser.reload({
+                stream: true
+            }))
+    }
+}
+gulp.task('css-build:pc', function() {
+    return cssBuild('pc', ['last 2 versions', 'ie >= 8']);
 });

@@ -247,6 +247,51 @@ dl
     -webkit-overflow-scrolling: touch;
 }
 
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
 /** Layout ***************************************/
 /* ページを構成するヘッダーやメインのコンテンツエリア、
 サイドバーやフッターといったプロジェクト共通のコンテナーブロックのスタイルを定義します。*/
@@ -355,7 +400,8 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
     width: 100%;
 
-    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
     text-align: center;
 
     color: #fff;
@@ -380,7 +426,8 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     width: 30px;
     height: 30px;
 
-    transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+        transform: translate(0, -50%);
 
     color: #999;
     border-radius: 100%;
@@ -405,14 +452,16 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 {
     top: -6px;
 
-    transform: translateY(20px) rotate(-45deg);
+    -ms-transform: translateY(20px) rotate(-45deg);
+        transform: translateY(20px) rotate(-45deg);
 }
 
 .c-button__close span:nth-of-type(2)
 {
     top: 14px;
 
-    transform: translateY(0) rotate(45deg);
+    -ms-transform: translateY(0) rotate(45deg);
+        transform: translateY(0) rotate(45deg);
 }
 
 .c-button__star
@@ -750,7 +799,8 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     top: 50%;
     left: 50%;
 
-    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
 
     color: #999;
 }
@@ -914,7 +964,8 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
     padding-right: 45px;
 
-    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
 
     color: #999;
 }
@@ -1479,7 +1530,8 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     width: 30px;
     height: 30px;
 
-    transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+        transform: translate(0, -50%);
 
     border-top: 4px solid #999;
     border-right: 4px solid #999;
