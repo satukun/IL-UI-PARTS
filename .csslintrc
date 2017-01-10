@@ -1,6 +1,6 @@
 {
     "adjoining-classes"           : false,
-    "box-model"                   : true,
+    "box-model"                   : false,
     "box-sizing"                  : false,
     "bulletproof-font-face"       : false,
     "compatible-vendor-prefixes"  : false,
@@ -16,6 +16,7 @@
     "ids"                         : false,
     "import"                      : false,
     "important"                   : false,
+    "order-alphabetical"          : false,
     "known-properties"            : false,
     "non-link-hover"              : false,
     "outline-none"                : false,
