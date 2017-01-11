@@ -6,6 +6,7 @@ var changed = require('gulp-changed');
 var autoprefixer = require('gulp-autoprefixer');
 var browser = require("browser-sync");
 var notify = require("gulp-notify");
+var csscomb = require('gulp-csscomb');
 
 // --------------------------------------------------------
 var f = require('../path');
@@ -24,6 +25,7 @@ function cssBuild(device, versions) {
                 browsers: versions,
                 cascade: false
             }))
+            .pipe(csscomb())
             .pipe(gulp.dest(f.dir.src + '/deploy/' + f.work))
             .pipe(browser.reload({
                 stream: true
