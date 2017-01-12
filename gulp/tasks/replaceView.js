@@ -9,6 +9,7 @@ var prettify = require("gulp-html-prettify");
 var browser = require("browser-sync");
 var replace = require('gulp-replace');
 var cache = require('gulp-cached');
+var through = require('through2');
 
 // --------------------------------------------------------
 var version = require('../config').version;

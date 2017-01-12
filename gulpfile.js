@@ -1,6 +1,7 @@
 'use strict'
 var gulp = require("gulp");
 var fs = require("fs");
+var path = require('path');
 
 //Webサーバー、ユーティリティ
 var browser = require("browser-sync");
@@ -17,6 +18,43 @@ requireDir('./gulp/tasks', { recurse: true });
 var f = require('./gulp/path');
 f = f.func();
 // --------------------------------------------------------
+
+// 検索するディレクトリ
+var _dir = '_src/deploy/' + f.work;
+
+var walk = function(path, fileCallback, errCallback) {
+    // 指定ディレクトリを検索して一覧を表示
+    fs.readdir(path, function(err, files) {
+
+        if (err) {
+            errCallback(err);
+            return;
+        }
+
+
+
+        // filesの中身を繰り替えして出力
+        files.forEach(function(file, i) {
+            console.log(file);
+            var _f = path + "/" + file;
+            if (fs.statSync(_f).isDirectory()) {
+                fileCallback(_f);
+                walk(_f, fileCallback);
+            } else {
+                fileCallback(_f);
+            }
+        });
+
+    });
+}
+
+walk(_dir, function(path) {
+    console.log(path);
+}, function(err) {
+    console.log("err");
+});
+
+
 
 gulp.task("server", function() {
     return browser({
@@ -38,7 +76,7 @@ gulp.task("watch", function() {
     gulp.watch(f.path.ejsbase, ["replace:pc", 'lint-html:pc']);
     gulp.watch(f.path.scss, ["css-build:pc", 'lint-css:pc']);
     gulp.watch(f.path.js, ["js"]);
-    gulp.watch(f.path.img, ["image"]);
+    gulp.watch(f.path.img, ["prepare", 'img:pc']);
 
 });
 
