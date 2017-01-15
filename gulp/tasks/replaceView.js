@@ -1,6 +1,7 @@
 'use strict'
 var gulp = require('gulp');
 var fs = require("fs");
+var del = require('del');
 var ejs = require("gulp-ejs");
 var changed = require('gulp-changed');
 var plumber = require("gulp-plumber");
@@ -9,7 +10,8 @@ var prettify = require("gulp-html-prettify");
 var browser = require("browser-sync");
 var replace = require('gulp-replace');
 var cache = require('gulp-cached');
-var through = require('through2');
+var rev = require('gulp-rev');
+var revReplace = require('gulp-rev-replace');
 
 // --------------------------------------------------------
 var version = require('../config').version;
@@ -24,9 +26,6 @@ f = f.func();
 function replaceEjs(device) {
     if (device === 'pc') {
         return gulp.src(f.path.ejs)
-            // .pipe(cache('replace:pc'))
-            .pipe(replace('.js', '.js?' + version))
-            .pipe(replace('.css', '.css?' + version))
             .pipe(changed(f.dir.src + '/deploy/' + f.work + '/'))
             .pipe(plumber({
                 errorHandler: notify.onError('ejsでError出てまっせ: <%= error.message %>')
@@ -42,6 +41,29 @@ function replaceEjs(device) {
     }
 }
 
-gulp.task('replace:pc', function() {
+function replaceFile(device) {
+    return gulp.src([f.dir.src + '/deploy/' + f.work + '/**/*.+(png|gif|jpg|jpeg|svg|woff)', f.path.css, f.path.jsdep])
+        .pipe(rev())
+        .pipe(gulp.dest(f.dir.dist + '/deploy/' + f.work + '/'))
+        .pipe(rev.manifest())
+        .pipe(gulp.dest(f.dir.src + '/deploy/' + f.work + '/'))
+}
+
+function replaceHtml(device) {
+    var manifest = gulp.src(f.dir.src + '/deploy/' + f.work + '/rev-manifest.json');
+    return gulp.src(f.dir.src + '/deploy/' + f.work + '/**/*.+(html|css|js)')
+        .pipe(revReplace({ manifest: manifest }))
+        .pipe(gulp.dest(f.dir.dist + '/deploy/' + f.work + '/'));
+}
+
+gulp.task('replaceEjs:pc', function() {
     return replaceEjs('pc');
+});
+
+gulp.task('replaceFile:pc', function() {
+    return replaceFile('pc');
+});
+
+gulp.task('replaceHtml:pc', function() {
+    return replaceHtml('pc');
 });

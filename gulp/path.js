@@ -15,13 +15,14 @@
         }
         var path = {
             "html": [dir.src + "/**/*.html", "!" + dir.src + "/**/*min.html"],
+            "jsdep": dir.src + "/deploy/" + work + "/**/*.js",
+            "imgdep": [dir.src + "/develop/" + work + "/**/*.+(png|gif|jpg|jpeg|svg|woff)", "!" + dir.src + "/develop/" + work + "/**/sprites/*.png"],
             "scss": dir.src + "/_develop/" + work + "/**/*.scss",
             "ejs": dir.src + "/_develop/" + work + "/**/*.ejs",
             "ejsbase": dir.src + "/_common/**/*.ejs",
             "css": dir.src + "/deploy/" + work + "/**/*.css",
             "js": dir.src + "/_develop/" + work + "/**/*.js",
-            "jsdep": dir.src + "/deploy/" + work + "/**/*.js",
-            "img": [dir.src + "/_develop/" + work + "/**/*.jpg", dir.src + "/_develop/" + work + "/**/*.gif", dir.src + "/_develop/" + work + "/**/*.png", "!" + dir.src + "/_develop/" + work + "/**/sprites/*.png"],
+            "img": [dir.src + "/_develop/" + work + "/**/*.+(png|gif|jpg|jpeg|svg|woff)", "!" + dir.src + "/_develop/" + work + "/**/sprites/*.png"],
             "sprites": dir.src + "/_develop/" + work + "/**/sprites/*.png"
         }
         return {

@@ -19,7 +19,7 @@
     word-break: break-all;
 
     border: 0;
-    background: url('../img/bg-e47b185dab.png');
+    background: url('../img/bg.png');
 
     -webkit-text-size-adjust: 100%;
         -ms-text-size-adjust: 100%;
@@ -262,7 +262,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
     color: #fff;
     border-radius: 100%;
-    background: url(../img/icon--star-f895f76e3b.png) no-repeat center center;
+    background: url(../img/icon--star.png) no-repeat center center;
     background-size: contain;
     box-shadow: 0 2px 2px rgba(0, 0, 0, .25);
 }
@@ -1138,7 +1138,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
 .c-form__search
 {
-    background: #f5f5f5 url(../img/i-search-609f848f47.png) no-repeat left 1rem top .6rem;
+    background: #f5f5f5 url(../img/i-search.png) no-repeat left 1rem top .6rem;
     background-size: 2.5rem;
 }
 
@@ -1519,13 +1519,13 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
 .c-category__checkbox--on
 {
-    background: #fff url(../img/check--on-ebf4723f5c.png) no-repeat center 0;
+    background: #fff url(../img/check--on.png) no-repeat center 0;
     background-size: contain;
 }
 
 .c-category__checkbox--off
 {
-    background: #fff url(../img/check--off-cc05ebd25e.png) no-repeat center 0;
+    background: #fff url(../img/check--off.png) no-repeat center 0;
     background-size: contain;
 }
 

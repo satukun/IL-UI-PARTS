@@ -21,21 +21,21 @@ function min(device, type) {
                 .pipe(rename({
                     suffix: '.min'
                 }))
-                .pipe(gulp.dest(f.dir.dist))
+                .pipe(gulp.dest(f.dir.src))
         } else if (type === 'css') {
-            return gulp.src(f.path.css)
+            return gulp.src([f.path.css, "!" + f.dir.src + "/deploy/" + f.work + "/**/*min.css"])
                 .pipe(csso())
                 .pipe(rename({
                     suffix: '.min'
                 }))
-                .pipe(gulp.dest(f.dir.dist + '/deploy/' + f.work))
+                .pipe(gulp.dest(f.dir.src + '/deploy/' + f.work))
         } else {
-            return gulp.src(f.path.jsdep)
+            return gulp.src([f.path.jsdep, "!" + f.dir.src + "/deploy/" + f.work + "/**/*min.js"])
                 .pipe(uglify())
                 .pipe(rename({
                     suffix: '.min'
                 }))
-                .pipe(gulp.dest(f.dir.dist + '/deploy/' + f.work))
+                .pipe(gulp.dest(f.dir.src + '/deploy/' + f.work))
         }
     }
 }

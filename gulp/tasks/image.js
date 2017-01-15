@@ -6,6 +6,7 @@ var spritesmith = require('gulp.spritesmith');
 var imagemin = require('gulp-imagemin');
 var merge = require('merge-stream');
 var pngquant = require('imagemin-pngquant');
+var del = require('del');
 
 // --------------------------------------------------------
 var version = require('../config').version;
@@ -14,9 +15,9 @@ f = f.func();
 // --------------------------------------------------------
 
 function image(device) {
+
     if (device === 'pc') {
         return gulp.src(f.path.img)
-            .pipe(changed(f.dir.src + '/deploy/' + f.work))
             .pipe(imagemin({
                 progressive: true,
                 svgoPlugins: [{ removeViewBox: false }],
