@@ -1,0 +1,40 @@
+.c- {
+    &recommended {
+        position: relative;
+        margin-bottom: 5rem;
+        &__slide {
+            width: 800rem;
+            min-width: 800rem;
+            padding-bottom: 1rem;
+        }
+        &__slidebox {
+            overflow-x: scroll;
+            &::after {
+                position: absolute;
+                content: " ";
+                bottom: 0;
+                height: 5rem;
+                background-color: #999;
+                width: 100%;
+                min-width: 800rem;
+            }
+        }
+        &__catalogs {
+            width: 800rem;
+        }
+        &__table {
+            width: 800rem;
+            &::after {
+                position: absolute;
+                content: " ";
+                bottom: 0;
+                height: 5rem;
+                background-color: #999;
+                width: 100%;
+            }
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

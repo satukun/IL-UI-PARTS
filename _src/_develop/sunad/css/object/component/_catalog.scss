@@ -1,0 +1,91 @@
+  .c- {
+      &catalog {
+          background-color: #fff;
+          display: block;
+          padding: 1rem;
+          font-size: 1.8rem;
+          box-shadow: 7px 7px 11px rgba(0, 0, 0, 0.25);
+          word-wrap: break-word;
+          &__title {
+              margin-bottom: 1rem;
+              font-weight: bold;
+              text-align: center;
+              font-size: 1.4rem;
+              text-align: left;
+          }
+          &__text {
+              color: #999999;
+              font-size: 10px;
+              text-align: left;
+          }
+          &__mv {
+              max-height: 19rem;
+              margin-bottom: 1rem;
+              text-align: center;
+              img {
+                  max-width: 100%;
+                  max-height: 100%;
+              }
+          }
+          &__updateset {
+              width: 90%;
+              float: right;
+              background-color: #C2C2C2;
+              padding: 1rem;
+              box-shadow: 7px 7px 11px rgba(0, 0, 0, .25);
+              box-sizing: border-box;
+          }
+          &__updateall {
+              width: 100%;
+          }
+          &__updatesettype {
+              width: 90%;
+              float: right;
+              box-shadow: 7px 7px 11px rgba(0, 0, 0, 0.25);
+              background-color: #C2C2C2;
+              padding: 1rem;
+          }
+          &__add {
+              display: table;
+              width: 100%;
+              min-height: 516px;
+              background-color: #eee;
+              box-shadow: 0 0 4px rgba(0, 0, 0, .25) inset;
+          }
+          &__addInner {
+              display: inline-block;
+              padding-right: 45px;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              -webkit-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%);
+              font-weight: bold;
+              color: #999999;
+          }
+          &__list {
+              color: #fff;
+              letter-spacing: -.4em;
+              display: block;
+              padding: 0.5rem 0;
+              border-bottom: 1px solid #fff;
+              font-size: 1.3rem;
+              text-align: left;
+              dt,
+              dd {
+                  letter-spacing: normal;
+                  display: inline-block;
+                  word-break: break-word;
+              }
+              dt {
+                  width: 30%;
+              }
+              dd {
+                  width: 70%;
+              }
+              &:last-child {
+                  border: none;
+              }
+          }
+      }
+  }

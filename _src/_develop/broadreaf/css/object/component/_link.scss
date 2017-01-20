@@ -1,0 +1,65 @@
+.c- {
+    &link {
+        font-size: 1.4rem;
+        &__inner {
+            border-top: 1px solid #ccc;
+        }
+        &__list {
+            border-bottom: 1px solid #ccc;
+            align-items: center;
+            padding: 1rem;
+        }
+        &__store {
+            flex-grow: 1;
+            align-items: center;
+        }
+        &__text {
+            width: 30%;
+            align-items: center;
+            word-break: break-all;
+        }
+        &__ph {
+            height: 73px;
+            width: 73px;
+            border-radius: 100%;
+            margin-right: 1rem;
+            overflow: hidden;
+            &--mini {
+                height: 41px;
+                width: 41px;
+                border-radius: 100%;
+                overflow: hidden;
+            }
+            img {
+                width: 100%;
+            }
+        }
+        &__name {
+            &--text {
+                word-break: break-all;
+            }
+        }
+        &__add {
+            position: relative;
+            display: table;
+            padding: 2rem 0;
+            text-align: center;
+            color: #666;
+            border-bottom: 1px solid #ccc;
+            width: 100%;
+        }
+        &__addInner {
+            font-weight: bold;
+            display: table-cell;
+            width: 100%;
+            text-align: center;
+            vertical-align: middle;
+            color: #999;
+            word-break: break-all;
+        }
+        &__addText {
+            position: relative;
+            padding-right: 3.3rem;
+        }
+    }
+}

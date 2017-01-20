@@ -42,7 +42,6 @@ gulp.task("watch", function() {
     gulp.watch(f.path.ejs, ["replaceEjs:pc", 'lint-html:pc']);
     gulp.watch(f.path.ejsbase, ["replaceEjs:pc", 'lint-html:pc']);
     gulp.watch(f.path.scss, ["css-build:pc", 'lint-css:pc']);
-    gulp.watch(f.path.js, ["js"]);
     gulp.watch(f.path.img, ['image']);
     gulp.watch(f.path.sprites, ['image']);
 
@@ -50,7 +49,7 @@ gulp.task("watch", function() {
 
 gulp.task("prepare", function(callback) {
     return sequence(
-        ['replaceEjs:pc'], ['clean:img'], ['sprite:pc'], ['img:pc'], ['css-build:pc'], ['lint-html:pc', 'lint-css:pc', 'lint-js:pc'],
+        ['replaceEjs:pc'], ['clean:img'], ['sprite:pc'], ['img:pc'], ['css-build:pc'], ['lint-html:pc', 'lint-css:pc'],
         callback
     );
 });

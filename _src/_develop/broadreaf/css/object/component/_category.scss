@@ -1,0 +1,76 @@
+  .c- {
+      &category {
+          width: 96%;
+          margin: 0 auto 0;
+          text-align: center;
+          border-radius: 10px;
+          overflow: hidden;
+          background-color: #F1F1F1;
+          box-shadow: 7px 7px 11px rgba(0, 0, 0, .25);
+          position: relative;
+          &__item {
+              display: -webkit-flex;
+              display: -moz-flex;
+              display: -ms-flex;
+              display: -o-flex;
+              display: flex;
+              -webkit-justify-content: flex-start;
+              /*--- safari（PC）用 ---*/
+              justify-content: flex-start;
+              flex-direction: row;
+              flex-wrap: nowrap;
+              background-color: #fff;
+              padding: 15px;
+          }
+          &__list {
+              font-size: 14px;
+              margin-right: 24px;
+              input {
+                  margin-right: 14px;
+              }
+          }
+          &__checkbox {
+              display: block;
+              height: 100%;
+              width: 20px;
+              position: absolute;
+              top: 0;
+              &--on {
+                  background: #fff url(../img/check--on.png) no-repeat center 0px;
+                  background-size: contain;
+              }
+              &--off {
+                  background: #fff url(../img/check--off.png) no-repeat center 0px;
+                  background-size: contain;
+              }
+          }
+          &__text {
+              font-size: 17px;
+              font-weight: bold;
+              padding: 10px;
+              color: #95989A;
+              border: none;
+              width: 100%;
+              cursor: pointer;
+              background-color: #eee;
+          }
+          &__cl {
+              &--category {
+                  position: relative;
+                  color: #70B6C4;
+              }
+              &--brand {
+                  position: relative;
+                  color: #79C67D;
+              }
+              &--maker {
+                  position: relative;
+                  color: #CB7A7B;
+              }
+              &--tag {
+                  position: relative;
+                  color: #95989A;
+              }
+          }
+      }
+  }

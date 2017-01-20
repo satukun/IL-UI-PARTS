@@ -1,0 +1,76 @@
+.c- {
+    &cols {
+        width: 100%;
+        letter-spacing: -.4em;
+        a {
+            color: #333;
+            display: block;
+            clear: both;
+            position: relative;
+            z-index: 5;
+            width: 100%;
+        }
+        &__fixed {
+            &--ll {
+                width: 278px;
+            }
+            &--l {
+                width: 200px;
+            }
+            &--mm {
+                width: 150px;
+            }
+            &--m {
+                width: 100px;
+            }
+            &--s {
+                width: 50px;
+            }
+        }
+        &__md-12 {
+            width: 100%;
+        }
+        &__md-11 {
+            width: 91.66666667%;
+        }
+        &__md-10 {
+            width: 83.33333333%;
+        }
+        &__md-9 {
+            width: 75%;
+        }
+        &__md-8 {
+            width: 66.66666667%;
+        }
+        &__md-7 {
+            width: 58.33333333%;
+        }
+        &__md-6 {
+            //width: 50%;
+            width: 332px;
+        }
+        &__md-5 {
+            width: 41.66666667%;
+        }
+        &__md-4 {
+            //width: 33.33333333%;
+            width: 240px;
+        }
+        &__md-3 {
+            //width: 25%;
+            width: 180px;
+        }
+        &__md-2 {
+            width: 16.66666667%;
+        }
+        &__md-1 {
+            width: 8.33333333%;
+        }
+    }
+}
+
+[class^="c-cols__"] {
+    display: inline-block;
+    letter-spacing: normal;
+    vertical-align: top;
+}

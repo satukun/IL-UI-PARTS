@@ -1,0 +1,17 @@
+.c- {
+    &additional {
+        letter-spacing: -.4em;
+        &__list {
+            letter-spacing: normal;
+            display: inline-block;
+            width: 80px;
+        }
+        &__link {
+            display: block;
+            img {
+                width: 100%;
+                border-radius: 25%;
+            }
+        }
+    }
+}
