@@ -1,0 +1,231 @@
+.c- {
+    &contact {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        &__headding {
+            font-size: 1.4rem;
+            margin: 0.5rem 0 1rem;
+            padding: 0.2rem 0;
+            text-align: center;
+        }
+        &__textarea {
+            padding: 1rem 1rem 1.5rem;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            box-shadow: 0 1px 9px rgba(1, 0, 0, .25);
+            color: #989898;
+            width: 86%;
+            margin: 1.6rem auto 0;
+            &--inner {
+                line-height: 1.5;
+                overflow-y: auto;
+                max-height: 270px;
+                padding: 0 0 1rem;
+            }
+        }
+        &__menu {
+            width: 270px;
+            background-color: #fff;
+            border-right: 1px solid #95989A;
+        }
+        &__area {
+            position: relative;
+            -webkit-box-flex: 1;
+            -moz-box-flex: 1;
+            -webkit-flex-grow: 1;
+            -moz-flex-grow: 1;
+            flex-grow: 1;
+            padding: 1rem;
+        }
+        &__nav {
+            font-size: 1.2rem;
+            margin-top: 1.6rem;
+        }
+        &__box {}
+        &__list {
+            width: 100%;
+        }
+        &__link {
+            display: block;
+            color: #989898;
+            div {
+                width: 86%;
+                margin: auto;
+                height: 70px;
+                padding: 14px 0;
+                border-bottom: 2px solid #95989a;
+                h2 {
+                    font-size: 1.4rem;
+                    margin-bottom: 10px;
+                    font-weight: bold;
+                }
+                span {
+                    font-size: 1rem;
+                    white-space: nowrap;
+                    width: 100%;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: inline-block;
+                    line-height: 1.2;
+                }
+            }
+        }
+        &__text {
+            font-size: 1.4rem;
+            width: 100%;
+            margin: 0 auto 2rem;
+            padding: 1rem 0.5rem;
+            border: 1px solid #95989a;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        &__btn {
+            font-size: 1.4rem;
+            width: 40%;
+            margin: 0 auto;
+            padding: 0.5rem 1rem;
+            background-color: #fff;
+            &--copy {
+                border: 1px solid #95989a;
+                border-radius: 5px;
+                box-shadow: 5px 5px 0 black;
+                color: #95989a;
+            }
+        }
+        &__copy {
+            position: absolute;
+            text-align: center;
+            width: 80%;
+            top: 20%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+        &__contact {
+            overflow: hidden;
+            display: flex;
+            margin-bottom: 3rem;
+            align-items: flex-start;
+            padding: 0 5px 5px;
+            &:nth-child(odd) {
+                flex-direction: row;
+                .c-contact__fukidashi {
+                    &::before {
+                        position: absolute;
+                        z-index: -1;
+                        top: -18px;
+                        left: 3px;
+                        width: 40px;
+                        height: 40px;
+                        content: '';
+                        border-radius: 25px;
+                        background: #fff;
+                        border: 1px solid #999;
+                    }
+                    &::after {
+                        position: absolute;
+                        z-index: -1;
+                        top: -34px;
+                        left: -2px;
+                        width: 40px;
+                        height: 40px;
+                        content: '';
+                        border-radius: 25px;
+                        background: url(../img/bg.png) no-repeat;
+                        border: 1px solid #999;
+                    }
+                    &--text {
+                        border: 1px solid #999;
+                        &::before {
+                            position: absolute;
+                            z-index: 20;
+                            top: 7px;
+                            left: -2px;
+                            width: 10px;
+                            height: 15px;
+                            border-radius: 10px;
+                            content: '';
+                            background-color: #fff;
+                        }
+                    }
+                }
+            }
+            &:nth-child(even) {
+                flex-direction: row-reverse;
+                .c-contact__fukidashi {
+                    flex-direction: row-reverse;
+                    &::before {
+                        position: absolute;
+                        z-index: -1;
+                        top: -18px;
+                        right: 2px;
+                        width: 40px;
+                        height: 40px;
+                        content: '';
+                        border-radius: 25px;
+                        background: #fff;
+                        border: 1px solid #0081B4;
+                    }
+                    &::after {
+                        position: absolute;
+                        z-index: -1;
+                        top: -34px;
+                        right: -3px;
+                        width: 40px;
+                        height: 40px;
+                        content: '';
+                        border-radius: 25px;
+                        border: 1px solid #0081B4;
+                        background: url(../img/bg.png) no-repeat;
+                    }
+                    &--text {
+                        border: 1px solid #0081B4;
+                        &::before {
+                            position: absolute;
+                            z-index: 20;
+                            top: 7px;
+                            right: -2px;
+                            width: 10px;
+                            height: 15px;
+                            content: '';
+                            border-radius: 10px;
+                            background-color: #fff;
+                        }
+                    }
+                }
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        &__fukidashi {
+            align-items: flex-end;
+            display: flex;
+            width: 77%;
+            position: relative;
+            z-index: 10;
+            &--text {
+                font-size: 1.2rem;
+                line-height: 1.5;
+                display: block;
+                height: 100%;
+                margin: 0 15px;
+                padding: 0rem;
+                padding: .6rem 1rem;
+                border-radius: 17px;
+                background-color: #fff;
+                position: relative;
+            }
+            span {
+                white-space: pre;
+                color: #989898;
+            }
+        }
+        &__ph {
+            margin: 0;
+            border: 1px solid #95989A;
+            box-shadow: 0 2px 5px rgba(1, 0, 0, .4);
+        }
+    }
+}

@@ -247,9 +247,24 @@ dl
     -webkit-overflow-scrolling: touch;
 }
 
+.u-align--left
+{
+    float: left;
+}
+
+.u-align--right
+{
+    float: right;
+}
+
 /** Layout ***************************************/
 /* ページを構成するヘッダーやメインのコンテンツエリア、
 サイドバーやフッターといったプロジェクト共通のコンテナーブロックのスタイルを定義します。*/
+.l-contents
+{
+    height: 100%;
+}
+
 .l-footer
 {
     font-size: 1.4rem;
@@ -1738,6 +1753,358 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     color: #95989a;
 }
 
+.c-contact
+{
+    display: -ms-flexbox;
+    display: flex;
+
+    width: 100%;
+    height: 100%;
+}
+
+.c-contact__headding
+{
+    font-size: 1.4rem;
+
+    margin: .5rem 0 1rem;
+    padding: .2rem 0;
+
+    text-align: center;
+}
+
+.c-contact__textarea
+{
+    font-size: 1.2rem;
+
+    width: 86%;
+    margin: 1.6rem auto 0;
+    padding: 1rem 1rem 1.5rem;
+
+    color: #989898;
+    border-radius: 5px;
+    box-shadow: 0 1px 9px rgba(1, 0, 0, .25);
+}
+
+.c-contact__textarea--inner
+{
+    line-height: 1.5;
+
+    overflow-y: auto;
+
+    max-height: 270px;
+    padding: 0 0 1rem;
+}
+
+.c-contact__menu
+{
+    width: 270px;
+
+    border-right: 1px solid #95989a;
+    background-color: #fff;
+}
+
+.c-contact__area
+{
+    position: relative;
+
+    padding: 1rem;
+
+    -moz-flex-grow: 1;
+    -ms-flex-positive: 1;
+         flex-grow: 1;
+}
+
+.c-contact__nav
+{
+    font-size: 1.2rem;
+
+    margin-top: 1.6rem;
+}
+
+.c-contact__list
+{
+    width: 100%;
+}
+
+.c-contact__link
+{
+    display: block;
+
+    color: #989898;
+}
+
+.c-contact__link div
+{
+    width: 86%;
+    height: 70px;
+    margin: auto;
+    padding: 14px 0;
+
+    border-bottom: 2px solid #95989a;
+}
+
+.c-contact__link div h2
+{
+    font-size: 1.4rem;
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+.c-contact__link div span
+{
+    font-size: 1rem;
+    line-height: 1.2;
+
+    display: inline-block;
+    overflow: hidden;
+
+    width: 100%;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.c-contact__text
+{
+    font-size: 1.4rem;
+
+    width: 100%;
+    margin: 0 auto 2rem;
+    padding: 1rem .5rem;
+
+    border: 1px solid #95989a;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.c-contact__btn
+{
+    font-size: 1.4rem;
+
+    width: 40%;
+    margin: 0 auto;
+    padding: .5rem 1rem;
+
+    background-color: #fff;
+}
+
+.c-contact__btn--copy
+{
+    color: #95989a;
+    border: 1px solid #95989a;
+    border-radius: 5px;
+    box-shadow: 5px 5px 0 black;
+}
+
+.c-contact__copy
+{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+
+    width: 80%;
+
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.c-contact__contact
+{
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden;
+
+    margin-bottom: 3rem;
+    padding: 0 5px 5px;
+
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+
+.c-contact__contact:nth-child(odd)
+{
+        flex-direction: row;
+
+    -ms-flex-direction: row;
+}
+
+.c-contact__contact:nth-child(odd) .c-contact__fukidashi::before
+{
+    position: absolute;
+    z-index: -1;
+    top: -18px;
+    left: 3px;
+
+    width: 40px;
+    height: 40px;
+
+    content: '';
+
+    border: 1px solid #999;
+    border-radius: 25px;
+    background: #fff;
+}
+
+.c-contact__contact:nth-child(odd) .c-contact__fukidashi::after
+{
+    position: absolute;
+    z-index: -1;
+    top: -34px;
+    left: -2px;
+
+    width: 40px;
+    height: 40px;
+
+    content: '';
+
+    border: 1px solid #999;
+    border-radius: 25px;
+    background: url(../img/bg.png) no-repeat;
+}
+
+.c-contact__contact:nth-child(odd) .c-contact__fukidashi--text
+{
+    border: 1px solid #999;
+}
+
+.c-contact__contact:nth-child(odd) .c-contact__fukidashi--text::before
+{
+    position: absolute;
+    z-index: 20;
+    top: 7px;
+    left: -2px;
+
+    width: 10px;
+    height: 15px;
+
+    content: '';
+
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.c-contact__contact:nth-child(even)
+{
+        flex-direction: row-reverse;
+
+    -ms-flex-direction: row-reverse;
+}
+
+.c-contact__contact:nth-child(even) .c-contact__fukidashi
+{
+        flex-direction: row-reverse;
+
+    -ms-flex-direction: row-reverse;
+}
+
+.c-contact__contact:nth-child(even) .c-contact__fukidashi::before
+{
+    position: absolute;
+    z-index: -1;
+    top: -18px;
+    right: 2px;
+
+    width: 40px;
+    height: 40px;
+
+    content: '';
+
+    border: 1px solid #0081b4;
+    border-radius: 25px;
+    background: #fff;
+}
+
+.c-contact__contact:nth-child(even) .c-contact__fukidashi::after
+{
+    position: absolute;
+    z-index: -1;
+    top: -34px;
+    right: -3px;
+
+    width: 40px;
+    height: 40px;
+
+    content: '';
+
+    border: 1px solid #0081b4;
+    border-radius: 25px;
+    background: url(../img/bg.png) no-repeat;
+}
+
+.c-contact__contact:nth-child(even) .c-contact__fukidashi--text
+{
+    border: 1px solid #0081b4;
+}
+
+.c-contact__contact:nth-child(even) .c-contact__fukidashi--text::before
+{
+    position: absolute;
+    z-index: 20;
+    top: 7px;
+    right: -2px;
+
+    width: 10px;
+    height: 15px;
+
+    content: '';
+
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.c-contact__contact:last-child
+{
+    margin-bottom: 0;
+}
+
+.c-contact__fukidashi
+{
+    position: relative;
+    z-index: 10;
+
+    display: -ms-flexbox;
+    display: flex;
+
+    width: 77%;
+
+    -ms-flex-align: end;
+    align-items: flex-end;
+}
+
+.c-contact__fukidashi--text
+{
+    font-size: 1.2rem;
+    line-height: 1.5;
+
+    position: relative;
+
+    display: block;
+
+    height: 100%;
+    margin: 0 15px;
+    padding: 0rem;
+    padding: .6rem 1rem;
+
+    border-radius: 17px;
+    background-color: #fff;
+}
+
+.c-contact__fukidashi span
+{
+    white-space: pre;
+
+    color: #989898;
+}
+
+.c-contact__ph
+{
+    margin: 0;
+
+    border: 1px solid #95989a;
+    box-shadow: 0 2px 5px rgba(1, 0, 0, .4);
+}
+
 /* Project --------------- */
 .p-mv
 {
@@ -1759,6 +2126,8 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     position: relative;
 
     overflow: hidden;
+
+    height: 100%;
 }
 
 .p-product
@@ -1792,6 +2161,12 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     margin-bottom: 20px;
 }
 
+.p-contact
+{
+    width: 100%;
+    height: 100%;
+}
+
 /* Utility --------------- */
 .u-clearfix
 {
@@ -1806,14 +2181,41 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     content: '';
 }
 
-.u-align--left
+.sam-contents
 {
-    float: left;
+    padding: 20px;
 }
 
-.u-align--right
+.sam-headding
 {
-    float: right;
+    margin-bottom: 15px;
+}
+
+.sam-headding--top
+{
+    font-size: 1rem;
+}
+
+.sam-headding--sec
+{
+    font-size: 1.6rem;
+
+    padding-top: 20px;
+    padding-bottom: 16px;
+
+    border-bottom: 1px solid #333;
+}
+
+.sam-lists
+{
+    font-size: 1.5rem;
+
+    margin-bottom: 10px;
+}
+
+.sam-lists a
+{
+    display: block;
 }
 
 .u-mg0
@@ -3389,6 +3791,16 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 .u-fmg150r
 {
     margin-right: 150px;
+}
+
+.u-posi--left
+{
+    float: left;
+}
+
+.u-posi--right
+{
+    float: right;
 }
 
 .u-fsize--l
@@ -5031,4 +5443,42 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     display: inline-block;
 
     margin-right: 10px;
+}
+
+.u-contact__center
+{
+    width: 100%;
+}
+
+.u-contact__center h2
+{
+    display: table-cell;
+
+    vertical-align: middle;
+}
+
+.u-contact__center div
+{
+    display: table;
+}
+
+.u-contact__ov
+{
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.u-icon--product
+{
+    background: url(../img/product.svg) no-repeat right 0;
+    background-size: contain;
+}
+
+.u-posi--left
+{
+    float: left;
+}
+
+.u-posi--right
+{
+    float: right;
 }

@@ -1,0 +1,85 @@
+<% if (typeof modifier === undefined) { var modifier = ''; } -%>
+<% if (typeof type === undefined) { var type = ''; } -%>
+<% if(page.projectName === "gulf"){ -%>
+ <%# 顧客情報 %>
+  <% var info = function(){ %>
+        <section class="c-contact__textarea">
+          <h2 class="c-contact__headding u-icon--product">顧客情報</h2>
+          <div class="c-contact__textarea--inner">
+            このお客さんは◯◯〜このこのお客さんは◯◯〜このお客さんは◯◯〜このお客さんは◯◯〜このお客さんは◯◯〜このお客さんは◯◯〜このお客さんは◯◯〜このお客さんは◯◯〜このお客さんは◯◯〜このお客さんは◯◯〜このお客さんは◯◯〜このお客さんは◯◯〜このお客さんは◯◯〜このお客さんは◯◯〜このお客さんお客さんは◯◯〜このお客さんは◯◯〜このお客さんは◯◯〜このお客さんは◯◯〜このお客さんは◯◯〜このお客さんは◯◯〜このお客さんは◯◯〜このお客さんは◯◯〜このお客さんは◯◯〜このお客さんは◯◯〜このお客さんは◯◯〜このお客さんは◯◯〜このお客さん
+          </div>
+        </section>
+  <% }; %>
+ <%# クラス変更 %>
+  <% var typeClass = function(type){ %>
+        <nav class="c-contact__nav">
+          <ul class="c-contact__box">
+          <li class="c-contact__list">
+            <% if(type === 'contact'){ -%>
+            <a href="#" class="c-contact__link u-contact__ov">
+            <% }else{ -%>
+            <a href="#" class="c-contact__link">
+            <% }; -%>
+              <div>
+                <h2>お問い合わせ</h2>
+                <span>よろしくお願いします。</span>
+              </div>
+            </a>
+          </li>
+          <li class="c-contact__list">
+            <a href="#" class="c-contact__link">
+              <div>
+                <h2>クレーム</h2>
+                <span>このあいだの◯◯の××が何々でアレこのあいだの◯◯の××が何々でアレ</span>
+              </div>
+            </a>
+          </li>
+          <li class="c-contact__list">
+            <a href="#" class="c-contact__link">
+              <div>
+                <h2>見積もり</h2>
+                <span>このあいだの◯◯の××が何々でアレこのあいだの◯◯の××が何々でアレ</span>
+              </div>
+            </a>
+          </li>
+          <li class="c-contact__list">
+            <% if(type === 'catalog'){ -%>
+            <a href="#" class="c-contact__link u-contact__center u-contact__ov">
+            <% }else{ -%>
+            <a href="#" class="c-contact__link u-contact__center">
+            <% }; -%>
+              <div>
+                <h2>共有するカタログを選択</h2>
+              </div>
+            </a>
+          </li>
+          <li class="c-contact__list">
+            <% if(type === 'copy'){ -%>
+            <a href="#" class="c-contact__link u-contact__center u-contact__ov">
+            <% }else{ -%>
+            <a href="#" class="c-contact__link u-contact__center">
+            <% }; -%>
+              <div>
+                <h2>URL共有</h2>
+              </div>
+            </a>
+          </li>
+          </ul>
+        </nav>
+  <% }; %>
+
+  <div class="c-contact__menu">
+  <% if(type === 'contact'){ -%>
+    <%- info(); %>
+    <%- typeClass('contact'); %>
+  <% }else if(type === 'copy'){ -%>
+    <%- info(); %>
+    <%- typeClass('copy'); %>
+  <% }else if(type === 'catalog'){ -%>
+    <%- info(); %>
+    <%- typeClass('catalog'); %>
+  <% } -%>
+</div>
+
+
+<% } -%>

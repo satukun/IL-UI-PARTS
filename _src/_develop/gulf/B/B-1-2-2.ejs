@@ -1,0 +1,34 @@
+<%
+var absolutePath = filename.split(site.developDir)[filename.split(site.developDir).length -1].replace('.ejs','.html');
+var relativePath = '../'.repeat([absolutePath.split('/').length -1]);
+var css_js_Path = '../'.repeat([absolutePath.split('/').length -3]);
+var page = {
+  title: site.title.B122 + "｜" + site.name,
+  description: site.description.B122,
+  keywords: site.keywords,
+  projectName: site.name,
+  bodyClass: "c-top",
+  singleCss: ["main.css"],
+  singleJs: [],
+  ogpType: "website",
+  ogpImage: site.ogpImage,
+  absolutePath: absolutePath,
+  relativePath: relativePath,
+  css_js_Path:css_js_Path
+};
+-%>
+
+<%- include(page.relativePath + '_common/ejs/_head', {page: page, modifier: '',}); %>
+<%# include(page.relativePath + '_common/ejs/_menu', {page: page, modifier: 'menuLink',}); %>
+<!-- contents -->
+<article class="l-contents">
+  <div class="p-contents">
+    <div class="c-contact">
+        <%- include(page.relativePath + '_common/ejs/_linkLeft', {page: page, modifier: '', type:'catalog',}); %>
+        <%- include(page.relativePath + '_common/ejs/_link', {page: page, modifier: '', type:'catalog',}); %>
+    </div>
+  </div>
+</article>
+<!-- /contents -->
+<%- include(page.relativePath + '_common/ejs/_footer', {page: page, modifier: '',}); %>
+<%- include(page.relativePath + '_common/ejs/_script', {page: page, modifier: '',}); %>

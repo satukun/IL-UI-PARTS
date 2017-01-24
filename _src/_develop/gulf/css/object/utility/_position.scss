@@ -1,6 +1,10 @@
 .u-posi {
-    &--left {}
-    &--right {}
+    &--left {
+        float: left;
+    }
+    &--right {
+        float: right;
+    }
     &--bottom {}
     &--top {}
 }
