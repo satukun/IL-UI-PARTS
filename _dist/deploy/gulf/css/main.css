@@ -1297,7 +1297,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     position: relative;
 
     width: 96%;
-    margin: 0 auto 2rem;
+    margin: 0 auto;
 }
 
 .c-form__catalog
@@ -2103,6 +2103,145 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
     border: 1px solid #95989a;
     box-shadow: 0 2px 5px rgba(1, 0, 0, .4);
+}
+
+.c-contact__catalog
+{
+    display: -ms-flexbox;
+    display: flex;
+
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+}
+
+.c-contact__catalog__list
+{
+    font-size: 1.1rem;
+
+    position: relative;
+}
+
+.c-contact__catalog__list a
+{
+    height: 360px;
+    padding: 1rem;
+
+    color: #95989a;
+    border: 1px solid #95989a;
+    background-color: #fff;
+}
+
+.c-contact__catalog__list:first-child
+{
+    font-size: 1.3rem;
+}
+
+.c-contact__catalog__list:first-child p
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+.c-contact__cols
+{
+    width: 100%;
+
+    letter-spacing: -.4em;
+}
+
+.c-contact__cols a
+{
+    position: relative;
+    z-index: 5;
+
+    display: block;
+    clear: both;
+
+    width: 100%;
+
+    letter-spacing: normal;
+}
+
+.c-contact__cols__md-12
+{
+    width: 100%;
+}
+
+.c-contact__cols__md-11
+{
+    width: 91.66666667%;
+}
+
+.c-contact__cols__md-10
+{
+    width: 83.33333333%;
+}
+
+.c-contact__cols__md-9
+{
+    width: 75%;
+}
+
+.c-contact__cols__md-8
+{
+    width: 66.66666667%;
+}
+
+.c-contact__cols__md-7
+{
+    width: 58.33333333%;
+}
+
+.c-contact__cols__md-6
+{
+    width: 50%;
+}
+
+.c-contact__cols__md-5
+{
+    width: 41.66666667%;
+}
+
+.c-contact__cols__md-4
+{
+    width: 33.33333333%;
+}
+
+.c-contact__cols__md-3
+{
+    width: 25%;
+}
+
+.c-contact__cols__md-2
+{
+    width: 16.66666667%;
+}
+
+.c-contact__cols__md-1
+{
+    width: 8.33333333%;
+}
+
+.c-contact__add
+{
+    background-color: #fff;
+}
+
+.c-contact__add > div
+{
+    font-size: 1.3rem;
+}
+
+.c-contact__add:first-child p
+{
+    position: initial;
+    top: initial;
+    left: initial;
+
+    transform: initial;
 }
 
 /* Project --------------- */
@@ -5471,6 +5610,18 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 {
     background: url(../img/product.svg) no-repeat right 0;
     background-size: contain;
+}
+
+.u-icon__check--off
+{
+    background: url(../img/check--off.svg) no-repeat right .5rem top .5rem;
+    background-size: 2rem;
+}
+
+.u-icon__check--on
+{
+    background: url(../img/check--on.svg) no-repeat right .5rem top .5rem;
+    background-size: 2rem;
 }
 
 .u-posi--left

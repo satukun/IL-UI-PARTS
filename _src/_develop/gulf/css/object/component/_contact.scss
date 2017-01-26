@@ -42,7 +42,6 @@
             font-size: 1.2rem;
             margin-top: 1.6rem;
         }
-        &__box {}
         &__list {
             width: 100%;
         }
@@ -226,6 +225,92 @@
             margin: 0;
             border: 1px solid #95989A;
             box-shadow: 0 2px 5px rgba(1, 0, 0, .4);
+        }
+        &__catalog {
+            display: flex;
+            flex-wrap: wrap;
+            &__list {
+                position: relative;
+                font-size: 1.1rem;
+                a {
+                    height: 360px;
+                    background-color: #fff;
+                    padding: 1rem;
+                    border: 1px solid #95989A;
+                    color: #95989A;
+                }
+                &:first-child {
+                    font-size: 1.3rem;
+                    p {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+            }
+        }
+        &__cols {
+            width: 100%;
+            letter-spacing: -.4em;
+            a {
+                display: block;
+                clear: both;
+                position: relative;
+                z-index: 5;
+                width: 100%;
+                letter-spacing: normal;
+            }
+            &__md-12 {
+                width: 100%;
+            }
+            &__md-11 {
+                width: 91.66666667%;
+            }
+            &__md-10 {
+                width: 83.33333333%;
+            }
+            &__md-9 {
+                width: 75%;
+            }
+            &__md-8 {
+                width: 66.66666667%;
+            }
+            &__md-7 {
+                width: 58.33333333%;
+            }
+            &__md-6 {
+                width: 50%;
+            }
+            &__md-5 {
+                width: 41.66666667%;
+            }
+            &__md-4 {
+                width: 33.33333333%;
+            }
+            &__md-3 {
+                width: 25%;
+            }
+            &__md-2 {
+                width: 16.66666667%;
+            }
+            &__md-1 {
+                width: 8.33333333%;
+            }
+        }
+        &__add {
+            background-color: #fff;
+            >div {
+                font-size: 1.3rem;
+            }
+            &:first-child {
+                p {
+                    position: initial;
+                    top: initial;
+                    left: initial;
+                    transform: initial;
+                }
+            }
         }
     }
 }
