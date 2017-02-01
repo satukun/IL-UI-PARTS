@@ -430,6 +430,60 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     transform: translateY(0) rotate(45deg);
 }
 
+.c-button__closemini
+{
+    font-weight: bold;
+
+    position: absolute;
+    top: 50%;
+    right: 10px;
+
+    display: inline-block;
+
+    width: 20px;
+    height: 20px;
+
+    transform: translate(0, -50%);
+
+    color: #999;
+    border-radius: 100%;
+    background: #fff;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .25);
+}
+
+.c-button__closemini--black
+{
+    background-color: rgba(0, 0, 0, .5);
+    box-shadow: none;
+}
+
+.c-button__closemini span
+{
+    position: absolute;
+    left: 4px;
+
+    display: inline-block;
+
+    width: 60%;
+    height: 2px;
+
+    background-color: #aaa8a8;
+}
+
+.c-button__closemini span:nth-of-type(1)
+{
+    top: -11px;
+
+    transform: translateY(20px) rotate(-45deg);
+}
+
+.c-button__closemini span:nth-of-type(2)
+{
+    top: 9px;
+
+    transform: translateY(0) rotate(45deg);
+}
+
 .c-button__star
 {
     font-weight: bold;
@@ -481,6 +535,15 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     color: #989898;
     background-color: #fff;
     box-shadow: 2px 2px 11px rgba(0, 0, 0, .25);
+}
+
+.c-button__plus
+{
+    top: 24px;
+
+    transform: rotate(45deg);
+
+    box-shadow: 1px 1.5px 2px rgba(0, 0, 0, .25);
 }
 
 .c-article
@@ -1232,7 +1295,9 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     height: 73px;
     margin-right: 1rem;
 
+    border: 1px solid #95989a;
     border-radius: 100%;
+    box-shadow: 0 2px 5px rgba(1, 0, 0, .4);
 }
 
 .c-link__ph--mini
@@ -1322,6 +1387,29 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 {
     background: #f5f5f5 url(../img/i-search.png) no-repeat left 1rem top .6rem;
     background-size: 2.5rem;
+}
+
+.c-form__searchmini
+{
+    background: rgba(0, 0, 0, .2) url(../img/i-search.png) no-repeat left .8rem center;
+    background-size: 17px;
+}
+
+.c-form__mini
+{
+    display: block;
+
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 auto 1rem;
+    padding: .8rem 0rem .8rem 0rem;
+
+    text-indent: 3rem;
+
+    color: #999;
+    border: none;
+    border-radius: 6px;
+    outline: 0;
 }
 
 .c-menu
@@ -1541,6 +1629,17 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
     width: 15px;
     height: 15px;
+}
+
+.c-arrowedit
+{
+    right: 1rem;
+
+    width: 13px;
+    height: 13px;
+
+    border-top: 2px solid #999;
+    border-right: 2px solid #999;
 }
 
 .c-recommended
@@ -1900,7 +1999,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 .c-contact__copy
 {
     position: absolute;
-    top: 20%;
+    top: 50%;
     left: 50%;
 
     width: 80%;
@@ -2100,9 +2199,6 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 .c-contact__ph
 {
     margin: 0;
-
-    border: 1px solid #95989a;
-    box-shadow: 0 2px 5px rgba(1, 0, 0, .4);
 }
 
 .c-contact__catalog
@@ -2244,6 +2340,199 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     transform: initial;
 }
 
+.c-config
+{
+    width: 100%;
+}
+
+.c-config__box
+{
+    border-top: 2px solid #ceced2;
+    border-bottom: 2px solid #ceced2;
+}
+
+.c-config__list
+{
+    font-size: 1.2rem;
+
+    border-bottom: 1px solid #eee;
+}
+
+.c-config__list a
+{
+    display: block;
+
+    padding: 1.5rem 3rem 1.5rem 1rem;
+
+    color: #000;
+}
+
+.c-config__list:last-child
+{
+    border: none;
+}
+
+.c-config__link
+{
+    position: relative;
+}
+
+.c-config__text
+{
+    font-size: .5rem;
+
+    float: right;
+
+    color: #808080;
+}
+
+.c-config__textarea
+{
+    font-size: 1rem;
+    line-height: 1.8;
+
+    display: block;
+
+    width: 96%;
+    margin: 0 auto;
+    padding: 1rem;
+
+    color: #95989a;
+    border: 1px solid #95989a;
+}
+
+.c-config__headding
+{
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-weight: bold;
+    line-height: 1.2;
+
+    width: 96%;
+    margin: 0 auto 3rem;
+}
+
+.c-config__profile
+{
+    overflow: hidden;
+
+    width: 100px;
+
+    border: 1px solid #95989a;
+    border-radius: 120px;
+}
+
+.c-config__face
+{
+    width: 100%;
+    height: 58px;
+}
+
+.c-config__change
+{
+    font-size: 1.2rem;
+
+    display: block;
+
+    width: 100%;
+    height: 40px;
+    padding: .9rem 0rem;
+
+    text-align: center;
+
+    color: #fff;
+    background-color: #95989a;
+}
+
+.c-config__input
+{
+    font-size: 1rem;
+
+    display: block;
+
+    width: 96%;
+    margin: 0 auto 1rem;
+    padding-bottom: .5rem;
+
+    color: #434343;
+}
+
+.c-config__input--edit
+{
+    border: none;
+    border-bottom: 1px solid #eee;
+}
+
+.c-edit
+{
+    display: -ms-flexbox;
+    display: flex;
+
+    width: 100%;
+    height: 100%;
+
+    color: #95989a;
+}
+
+.c-edit__staff--all
+{
+    position: relative;
+
+    padding: 1rem;
+
+    border-right: 1px solid #95989a;
+
+    -moz-flex-grow: 1;
+    -ms-flex-positive: 1;
+         flex-grow: 1;
+}
+
+.c-edit__staff--current
+{
+    position: relative;
+
+    padding: 1rem;
+
+    -moz-flex-grow: 1;
+    -ms-flex-positive: 1;
+         flex-grow: 1;
+}
+
+.c-edit__staff--current .c-edit__member
+{
+    border-bottom: 1px solid #0081b4;
+}
+
+.c-edit__headding
+{
+    font-size: 1.3rem;
+
+    margin-bottom: 2rem;
+
+    text-align: center;
+
+    color: #95989a;
+}
+
+.c-edit__name--text
+{
+    font-size: 1rem;
+}
+
+.c-edit__member
+{
+    position: relative;
+
+    padding: 1rem 1rem;
+
+    border-bottom: 1px solid #95989a;
+}
+
+.c-edit__current
+{
+    color: #0081b4;
+}
+
 /* Project --------------- */
 .p-mv
 {
@@ -2260,13 +2549,18 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     padding: 10px;
 }
 
+body > .p-contents
+{
+    height: auto;
+}
+
 .p-contents
 {
     position: relative;
 
-    overflow: hidden;
-
+    width: 100%;
     height: 100%;
+    min-height: 100%;
 }
 
 .p-product
@@ -2300,10 +2594,20 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     margin-bottom: 20px;
 }
 
-.p-contact
+.p-config
 {
     width: 100%;
     height: 100%;
+
+    background-color: #fff;
+}
+
+.p-edit
+{
+    height: 100%;
+    min-height: 100%;
+
+    background-color: #fff;
 }
 
 /* Utility --------------- */

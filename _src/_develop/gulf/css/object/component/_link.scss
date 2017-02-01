@@ -24,6 +24,8 @@
             border-radius: 100%;
             margin-right: 1rem;
             overflow: hidden;
+            border: 1px solid #95989a;
+            box-shadow: 0 2px 5px rgba(1, 0, 0, .4);
             &--mini {
                 height: 41px;
                 width: 41px;

@@ -1,0 +1,41 @@
+<%
+var absolutePath = filename.split(site.developDir)[filename.split(site.developDir).length -1].replace('.ejs','.html');
+var relativePath = '../'.repeat([absolutePath.split('/').length -1]);
+var css_js_Path = '../'.repeat([absolutePath.split('/').length -3]);
+var page = {
+  title: site.title + "｜" + site.name,
+  description: site.description,
+  keywords: site.keywords,
+  projectName: site.name,
+  categoryName: site.faqlist,
+  bodyClass: "",
+  singleCss: ["main.css"],
+  singleJs: ["main.js"],
+  ogpType: "website",
+  ogpImage: site.ogpImage,
+  absolutePath: absolutePath,
+  relativePath: relativePath,
+  css_js_Path:css_js_Path
+};
+-%>
+
+<%- include(page.relativePath + '_common/ejs/_head', {page: page, modifier:''}); %>
+<%- include(page.relativePath + '_common/ejs/_header', {page: page, modifier:''}); %>
+<!-- contents -->
+<div class="l-contents">
+  <article class="c-heading">
+    <h2 class="c-heading--a"></h2>
+    <h3 class="c-heading--b"></h3>
+    <h4 class="c-heading--c"></h4>
+    <div class="l-main"></div>
+  </article>
+  <aside>
+    <ul class="c-navi">
+      <li class="c-navi__list"><a href="answer.html?CategoryName=1&Title=1&Name=1" class="c-navi__link">戻る</a></li>
+      <li class="c-navi__list"><a href="answer.html?CategoryName=1&Title=1&Name=0" class="c-navi__link">次へ</a></li>
+    </ul>
+  </aside>
+</div>
+<!-- /contents -->
+<%- include(page.relativePath + '_common/ejs/_footer', {page: page, modifier: '',}); %>
+<%- include(page.relativePath + '_common/ejs/_script', {page: page, modifier: '',}); %>
