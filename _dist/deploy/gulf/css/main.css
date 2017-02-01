@@ -247,9 +247,24 @@ dl
     -webkit-overflow-scrolling: touch;
 }
 
+.u-align--left
+{
+    float: left;
+}
+
+.u-align--right
+{
+    float: right;
+}
+
 /** Layout ***************************************/
 /* ページを構成するヘッダーやメインのコンテンツエリア、
 サイドバーやフッターといったプロジェクト共通のコンテナーブロックのスタイルを定義します。*/
+.l-contents
+{
+    height: 100%;
+}
+
 .l-footer
 {
     font-size: 1.4rem;
@@ -415,6 +430,60 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     transform: translateY(0) rotate(45deg);
 }
 
+.c-button__closemini
+{
+    font-weight: bold;
+
+    position: absolute;
+    top: 50%;
+    right: 10px;
+
+    display: inline-block;
+
+    width: 20px;
+    height: 20px;
+
+    transform: translate(0, -50%);
+
+    color: #999;
+    border-radius: 100%;
+    background: #fff;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .25);
+}
+
+.c-button__closemini--black
+{
+    background-color: rgba(0, 0, 0, .5);
+    box-shadow: none;
+}
+
+.c-button__closemini span
+{
+    position: absolute;
+    left: 4px;
+
+    display: inline-block;
+
+    width: 60%;
+    height: 2px;
+
+    background-color: #aaa8a8;
+}
+
+.c-button__closemini span:nth-of-type(1)
+{
+    top: -11px;
+
+    transform: translateY(20px) rotate(-45deg);
+}
+
+.c-button__closemini span:nth-of-type(2)
+{
+    top: 9px;
+
+    transform: translateY(0) rotate(45deg);
+}
+
 .c-button__star
 {
     font-weight: bold;
@@ -466,6 +535,15 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     color: #989898;
     background-color: #fff;
     box-shadow: 2px 2px 11px rgba(0, 0, 0, .25);
+}
+
+.c-button__plus
+{
+    top: 24px;
+
+    transform: rotate(45deg);
+
+    box-shadow: 1px 1.5px 2px rgba(0, 0, 0, .25);
 }
 
 .c-article
@@ -1217,7 +1295,9 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     height: 73px;
     margin-right: 1rem;
 
+    border: 1px solid #95989a;
     border-radius: 100%;
+    box-shadow: 0 2px 5px rgba(1, 0, 0, .4);
 }
 
 .c-link__ph--mini
@@ -1282,7 +1362,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     position: relative;
 
     width: 96%;
-    margin: 0 auto 2rem;
+    margin: 0 auto;
 }
 
 .c-form__catalog
@@ -1307,6 +1387,29 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 {
     background: #f5f5f5 url(../img/i-search.png) no-repeat left 1rem top .6rem;
     background-size: 2.5rem;
+}
+
+.c-form__searchmini
+{
+    background: rgba(0, 0, 0, .2) url(../img/i-search.png) no-repeat left .8rem center;
+    background-size: 17px;
+}
+
+.c-form__mini
+{
+    display: block;
+
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 auto 1rem;
+    padding: .8rem 0rem .8rem 0rem;
+
+    text-indent: 3rem;
+
+    color: #999;
+    border: none;
+    border-radius: 6px;
+    outline: 0;
 }
 
 .c-menu
@@ -1528,6 +1631,17 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     height: 15px;
 }
 
+.c-arrowedit
+{
+    right: 1rem;
+
+    width: 13px;
+    height: 13px;
+
+    border-top: 2px solid #999;
+    border-right: 2px solid #999;
+}
+
 .c-recommended
 {
     position: relative;
@@ -1738,6 +1852,687 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     color: #95989a;
 }
 
+.c-contact
+{
+    display: -ms-flexbox;
+    display: flex;
+
+    width: 100%;
+    height: 100%;
+}
+
+.c-contact__headding
+{
+    font-size: 1.4rem;
+
+    margin: .5rem 0 1rem;
+    padding: .2rem 0;
+
+    text-align: center;
+}
+
+.c-contact__textarea
+{
+    font-size: 1.2rem;
+
+    width: 86%;
+    margin: 1.6rem auto 0;
+    padding: 1rem 1rem 1.5rem;
+
+    color: #989898;
+    border-radius: 5px;
+    box-shadow: 0 1px 9px rgba(1, 0, 0, .25);
+}
+
+.c-contact__textarea--inner
+{
+    line-height: 1.5;
+
+    overflow-y: auto;
+
+    max-height: 270px;
+    padding: 0 0 1rem;
+}
+
+.c-contact__menu
+{
+    width: 270px;
+
+    border-right: 1px solid #95989a;
+    background-color: #fff;
+}
+
+.c-contact__area
+{
+    position: relative;
+
+    padding: 1rem;
+
+    -moz-flex-grow: 1;
+    -ms-flex-positive: 1;
+         flex-grow: 1;
+}
+
+.c-contact__nav
+{
+    font-size: 1.2rem;
+
+    margin-top: 1.6rem;
+}
+
+.c-contact__list
+{
+    width: 100%;
+}
+
+.c-contact__link
+{
+    display: block;
+
+    color: #989898;
+}
+
+.c-contact__link div
+{
+    width: 86%;
+    height: 70px;
+    margin: auto;
+    padding: 14px 0;
+
+    border-bottom: 2px solid #95989a;
+}
+
+.c-contact__link div h2
+{
+    font-size: 1.4rem;
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+.c-contact__link div span
+{
+    font-size: 1rem;
+    line-height: 1.2;
+
+    display: inline-block;
+    overflow: hidden;
+
+    width: 100%;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.c-contact__text
+{
+    font-size: 1.4rem;
+
+    width: 100%;
+    margin: 0 auto 2rem;
+    padding: 1rem .5rem;
+
+    border: 1px solid #95989a;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.c-contact__btn
+{
+    font-size: 1.4rem;
+
+    width: 40%;
+    margin: 0 auto;
+    padding: .5rem 1rem;
+
+    background-color: #fff;
+}
+
+.c-contact__btn--copy
+{
+    color: #95989a;
+    border: 1px solid #95989a;
+    border-radius: 5px;
+    box-shadow: 5px 5px 0 black;
+}
+
+.c-contact__copy
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 80%;
+
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.c-contact__contact
+{
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden;
+
+    margin-bottom: 3rem;
+    padding: 0 5px 5px;
+
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+
+.c-contact__contact:nth-child(odd)
+{
+        flex-direction: row;
+
+    -ms-flex-direction: row;
+}
+
+.c-contact__contact:nth-child(odd) .c-contact__fukidashi::before
+{
+    position: absolute;
+    z-index: -1;
+    top: -18px;
+    left: 3px;
+
+    width: 40px;
+    height: 40px;
+
+    content: '';
+
+    border: 1px solid #999;
+    border-radius: 25px;
+    background: #fff;
+}
+
+.c-contact__contact:nth-child(odd) .c-contact__fukidashi::after
+{
+    position: absolute;
+    z-index: -1;
+    top: -34px;
+    left: -2px;
+
+    width: 40px;
+    height: 40px;
+
+    content: '';
+
+    border: 1px solid #999;
+    border-radius: 25px;
+    background: url(../img/bg.png) no-repeat;
+}
+
+.c-contact__contact:nth-child(odd) .c-contact__fukidashi--text
+{
+    border: 1px solid #999;
+}
+
+.c-contact__contact:nth-child(odd) .c-contact__fukidashi--text::before
+{
+    position: absolute;
+    z-index: 20;
+    top: 7px;
+    left: -2px;
+
+    width: 10px;
+    height: 15px;
+
+    content: '';
+
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.c-contact__contact:nth-child(even)
+{
+        flex-direction: row-reverse;
+
+    -ms-flex-direction: row-reverse;
+}
+
+.c-contact__contact:nth-child(even) .c-contact__fukidashi
+{
+        flex-direction: row-reverse;
+
+    -ms-flex-direction: row-reverse;
+}
+
+.c-contact__contact:nth-child(even) .c-contact__fukidashi::before
+{
+    position: absolute;
+    z-index: -1;
+    top: -18px;
+    right: 2px;
+
+    width: 40px;
+    height: 40px;
+
+    content: '';
+
+    border: 1px solid #0081b4;
+    border-radius: 25px;
+    background: #fff;
+}
+
+.c-contact__contact:nth-child(even) .c-contact__fukidashi::after
+{
+    position: absolute;
+    z-index: -1;
+    top: -34px;
+    right: -3px;
+
+    width: 40px;
+    height: 40px;
+
+    content: '';
+
+    border: 1px solid #0081b4;
+    border-radius: 25px;
+    background: url(../img/bg.png) no-repeat;
+}
+
+.c-contact__contact:nth-child(even) .c-contact__fukidashi--text
+{
+    border: 1px solid #0081b4;
+}
+
+.c-contact__contact:nth-child(even) .c-contact__fukidashi--text::before
+{
+    position: absolute;
+    z-index: 20;
+    top: 7px;
+    right: -2px;
+
+    width: 10px;
+    height: 15px;
+
+    content: '';
+
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.c-contact__contact:last-child
+{
+    margin-bottom: 0;
+}
+
+.c-contact__fukidashi
+{
+    position: relative;
+    z-index: 10;
+
+    display: -ms-flexbox;
+    display: flex;
+
+    width: 77%;
+
+    -ms-flex-align: end;
+    align-items: flex-end;
+}
+
+.c-contact__fukidashi--text
+{
+    font-size: 1.2rem;
+    line-height: 1.5;
+
+    position: relative;
+
+    display: block;
+
+    height: 100%;
+    margin: 0 15px;
+    padding: 0rem;
+    padding: .6rem 1rem;
+
+    border-radius: 17px;
+    background-color: #fff;
+}
+
+.c-contact__fukidashi span
+{
+    white-space: pre;
+
+    color: #989898;
+}
+
+.c-contact__ph
+{
+    margin: 0;
+}
+
+.c-contact__catalog
+{
+    display: -ms-flexbox;
+    display: flex;
+
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+}
+
+.c-contact__catalog__list
+{
+    font-size: 1.1rem;
+
+    position: relative;
+}
+
+.c-contact__catalog__list a
+{
+    height: 360px;
+    padding: 1rem;
+
+    color: #95989a;
+    border: 1px solid #95989a;
+    background-color: #fff;
+}
+
+.c-contact__catalog__list:first-child
+{
+    font-size: 1.3rem;
+}
+
+.c-contact__catalog__list:first-child p
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+.c-contact__cols
+{
+    width: 100%;
+
+    letter-spacing: -.4em;
+}
+
+.c-contact__cols a
+{
+    position: relative;
+    z-index: 5;
+
+    display: block;
+    clear: both;
+
+    width: 100%;
+
+    letter-spacing: normal;
+}
+
+.c-contact__cols__md-12
+{
+    width: 100%;
+}
+
+.c-contact__cols__md-11
+{
+    width: 91.66666667%;
+}
+
+.c-contact__cols__md-10
+{
+    width: 83.33333333%;
+}
+
+.c-contact__cols__md-9
+{
+    width: 75%;
+}
+
+.c-contact__cols__md-8
+{
+    width: 66.66666667%;
+}
+
+.c-contact__cols__md-7
+{
+    width: 58.33333333%;
+}
+
+.c-contact__cols__md-6
+{
+    width: 50%;
+}
+
+.c-contact__cols__md-5
+{
+    width: 41.66666667%;
+}
+
+.c-contact__cols__md-4
+{
+    width: 33.33333333%;
+}
+
+.c-contact__cols__md-3
+{
+    width: 25%;
+}
+
+.c-contact__cols__md-2
+{
+    width: 16.66666667%;
+}
+
+.c-contact__cols__md-1
+{
+    width: 8.33333333%;
+}
+
+.c-contact__add
+{
+    background-color: #fff;
+}
+
+.c-contact__add > div
+{
+    font-size: 1.3rem;
+}
+
+.c-contact__add:first-child p
+{
+    position: initial;
+    top: initial;
+    left: initial;
+
+    transform: initial;
+}
+
+.c-config
+{
+    width: 100%;
+}
+
+.c-config__box
+{
+    border-top: 2px solid #ceced2;
+    border-bottom: 2px solid #ceced2;
+}
+
+.c-config__list
+{
+    font-size: 1.2rem;
+
+    border-bottom: 1px solid #eee;
+}
+
+.c-config__list a
+{
+    display: block;
+
+    padding: 1.5rem 3rem 1.5rem 1rem;
+
+    color: #000;
+}
+
+.c-config__list:last-child
+{
+    border: none;
+}
+
+.c-config__link
+{
+    position: relative;
+}
+
+.c-config__text
+{
+    font-size: .5rem;
+
+    float: right;
+
+    color: #808080;
+}
+
+.c-config__textarea
+{
+    font-size: 1rem;
+    line-height: 1.8;
+
+    display: block;
+
+    width: 96%;
+    margin: 0 auto;
+    padding: 1rem;
+
+    color: #95989a;
+    border: 1px solid #95989a;
+}
+
+.c-config__headding
+{
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-weight: bold;
+    line-height: 1.2;
+
+    width: 96%;
+    margin: 0 auto 3rem;
+}
+
+.c-config__profile
+{
+    overflow: hidden;
+
+    width: 100px;
+
+    border: 1px solid #95989a;
+    border-radius: 120px;
+}
+
+.c-config__face
+{
+    width: 100%;
+    height: 58px;
+}
+
+.c-config__change
+{
+    font-size: 1.2rem;
+
+    display: block;
+
+    width: 100%;
+    height: 40px;
+    padding: .9rem 0rem;
+
+    text-align: center;
+
+    color: #fff;
+    background-color: #95989a;
+}
+
+.c-config__input
+{
+    font-size: 1rem;
+
+    display: block;
+
+    width: 96%;
+    margin: 0 auto 1rem;
+    padding-bottom: .5rem;
+
+    color: #434343;
+}
+
+.c-config__input--edit
+{
+    border: none;
+    border-bottom: 1px solid #eee;
+}
+
+.c-edit
+{
+    display: -ms-flexbox;
+    display: flex;
+
+    width: 100%;
+    height: 100%;
+
+    color: #95989a;
+}
+
+.c-edit__staff--all
+{
+    position: relative;
+
+    padding: 1rem;
+
+    border-right: 1px solid #95989a;
+
+    -moz-flex-grow: 1;
+    -ms-flex-positive: 1;
+         flex-grow: 1;
+}
+
+.c-edit__staff--current
+{
+    position: relative;
+
+    padding: 1rem;
+
+    -moz-flex-grow: 1;
+    -ms-flex-positive: 1;
+         flex-grow: 1;
+}
+
+.c-edit__staff--current .c-edit__member
+{
+    border-bottom: 1px solid #0081b4;
+}
+
+.c-edit__headding
+{
+    font-size: 1.3rem;
+
+    margin-bottom: 2rem;
+
+    text-align: center;
+
+    color: #95989a;
+}
+
+.c-edit__name--text
+{
+    font-size: 1rem;
+}
+
+.c-edit__member
+{
+    position: relative;
+
+    padding: 1rem 1rem;
+
+    border-bottom: 1px solid #95989a;
+}
+
+.c-edit__current
+{
+    color: #0081b4;
+}
+
 /* Project --------------- */
 .p-mv
 {
@@ -1754,11 +2549,18 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     padding: 10px;
 }
 
+body > .p-contents
+{
+    height: auto;
+}
+
 .p-contents
 {
     position: relative;
 
-    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
 }
 
 .p-product
@@ -1792,6 +2594,22 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     margin-bottom: 20px;
 }
 
+.p-config
+{
+    width: 100%;
+    height: 100%;
+
+    background-color: #fff;
+}
+
+.p-edit
+{
+    height: 100%;
+    min-height: 100%;
+
+    background-color: #fff;
+}
+
 /* Utility --------------- */
 .u-clearfix
 {
@@ -1806,14 +2624,41 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     content: '';
 }
 
-.u-align--left
+.sam-contents
 {
-    float: left;
+    padding: 20px;
 }
 
-.u-align--right
+.sam-headding
 {
-    float: right;
+    margin-bottom: 15px;
+}
+
+.sam-headding--top
+{
+    font-size: 1rem;
+}
+
+.sam-headding--sec
+{
+    font-size: 1.6rem;
+
+    padding-top: 20px;
+    padding-bottom: 16px;
+
+    border-bottom: 1px solid #333;
+}
+
+.sam-lists
+{
+    font-size: 1.5rem;
+
+    margin-bottom: 10px;
+}
+
+.sam-lists a
+{
+    display: block;
 }
 
 .u-mg0
@@ -3389,6 +4234,16 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 .u-fmg150r
 {
     margin-right: 150px;
+}
+
+.u-posi--left
+{
+    float: left;
+}
+
+.u-posi--right
+{
+    float: right;
 }
 
 .u-fsize--l
@@ -5031,4 +5886,54 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     display: inline-block;
 
     margin-right: 10px;
+}
+
+.u-contact__center
+{
+    width: 100%;
+}
+
+.u-contact__center h2
+{
+    display: table-cell;
+
+    vertical-align: middle;
+}
+
+.u-contact__center div
+{
+    display: table;
+}
+
+.u-contact__ov
+{
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.u-icon--product
+{
+    background: url(../img/product.svg) no-repeat right 0;
+    background-size: contain;
+}
+
+.u-icon__check--off
+{
+    background: url(../img/check--off.svg) no-repeat right .5rem top .5rem;
+    background-size: 2rem;
+}
+
+.u-icon__check--on
+{
+    background: url(../img/check--on.svg) no-repeat right .5rem top .5rem;
+    background-size: 2rem;
+}
+
+.u-posi--left
+{
+    float: left;
+}
+
+.u-posi--right
+{
+    float: right;
 }

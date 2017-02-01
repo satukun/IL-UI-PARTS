@@ -1,8 +1,25 @@
-.u-align {
-    &--left {
-        float: left;
+.sam- {
+    &contents {
+        padding: 20px;
     }
-    &--right {
-        float: right;
+    &headding {
+        margin-bottom: 15px;
+        &--top {
+            font-size: 1rem;
+        }
+        &--sec {
+            font-size: 1.6rem;
+            padding-top: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #333;
+        }
+    }
+    &box {}
+    &lists {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        a {
+            display: block;
+        }
     }
 }

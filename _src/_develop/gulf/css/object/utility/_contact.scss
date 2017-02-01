@@ -1,0 +1,17 @@
+.u- {
+    &contact {
+        &__center {
+            width: 100%;
+            h2 {
+                display: table-cell;
+                vertical-align: middle;
+            }
+            div {
+                display: table;
+            }
+        }
+        &__ov {
+            background-color: rgba(0, 0, 0, .1);
+        }
+    }
+}

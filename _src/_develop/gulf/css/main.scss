@@ -11,6 +11,7 @@
 // @import "foundation/_normalize";
 @import "foundation/_selector";
 @import "foundation/_ion";
+@import "foundation/_sample";
 
 /** Layout ***************************************/
 
@@ -59,6 +60,9 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 @import "object/component/_item";
 @import "object/component/_additional";
 @import "object/component/_category";
+@import "object/component/_contact";
+@import "object/component/_config";
+@import "object/component/_edit";
 
 /* Project --------------- */
 
@@ -79,6 +83,9 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 @import "object/project/_item";
 @import "object/project/_arrow";
 @import "object/project/_category";
+@import "object/project/_contact";
+@import "object/project/_config";
+@import "object/project/_edit";
 
 /* Utility --------------- */
 
@@ -95,3 +102,6 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 @import "object/utility/_flex";
 @import "object/utility/_padding";
 @import "object/utility/_list";
+@import "object/utility/_contact";
+@import "object/utility/_icon";
+@import "object/utility/_position";
