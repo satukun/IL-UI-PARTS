@@ -5,6 +5,10 @@
   }else if(cols){
     var boxtype = cols;
   } -%>
+
+  <% if (modifier == 'u-shadow--catalog'){
+    modifier = 'u-shadow--catalog'
+  } -%>
   <% if (typeof type === undefined) { var type = ''; } -%>
   <% if (typeof padding === undefined) { var padding = ''; } -%>
   <% if (typeof height === undefined) { var height = ''; } -%>

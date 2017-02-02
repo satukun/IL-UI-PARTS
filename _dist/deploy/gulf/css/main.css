@@ -905,6 +905,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
     background-color: #fff;
     box-shadow: 7px 7px 11px rgba(0, 0, 0, .25);
+    box-shadow: 7px 7px 11px rgba(0, 0, 0, .25);
 }
 
 .c-catalog__title
@@ -5936,4 +5937,62 @@ body > .p-contents
 .u-posi--right
 {
     float: right;
+}
+
+.u-shadow--catalog
+{
+    position: relative;
+    top: 0;
+    left: 0;
+
+    display: block;
+
+    height: 100%;
+
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .25);
+}
+
+.u-shadow--catalog:before
+{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: -5px;
+
+    display: block;
+
+    width: 20px;
+    height: 100%;
+
+    content: '';
+
+    background-color: #e3e0e0;
+}
+
+.u-shadow--catalog:after
+{
+    position: absolute;
+    z-index: -2;
+    right: -10px;
+    bottom: -13px;
+
+    display: block;
+
+    height:         calc(100% - 27px);
+    height: -webkit-calc(100% - 27px);
+
+    content: '';
+
+    opacity: .6;
+    border: transparent;
+    border-top: 0 solid #000;
+    border-right: 262px solid #95989a;
+    border-bottom: 29px solid transparent;
+    border-left: 50px solid transparent;
+
+    -moz-filter: blur(6px);
+      -o-filter: blur(6px);
+     -ms-filter: blur(6px);
+         filter: blur(6px);
 }
