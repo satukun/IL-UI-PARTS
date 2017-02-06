@@ -1,5 +1,11 @@
+<% if (typeof modifier === undefined) { var modifier = ''; } -%>
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <% if(page.singleJs) { %><% page.singleJs.forEach(function(data) { %>
 <script src="<%= page.css_js_Path %>js/<%= data %>"></script><% }); %><% } %>
+<% if (modifier === "ellipsis"){
+  <script type="text/javascript">
+    $(".ellipsis").ellipsis();
+  </script>
+} -%>
 </body>
 </html>

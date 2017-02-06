@@ -27,17 +27,19 @@
                 display: block;
                 height: calc(100% - 27px);
                 height: -webkit-calc(100% - 27px);
+                width: calc(100% - 140px);
+                right: -7px;
                 content: '';
+                opacity: .6;
                 border: transparent;
                 border-top: 0 solid #000;
-                border-right: 262px solid #95989a;
+                border-right: 131px solid #95989a;
                 border-bottom: 29px solid transparent;
                 border-left: 50px solid transparent;
                 -moz-filter: blur(6px);
                 -o-filter: blur(6px);
                 -ms-filter: blur(6px);
                 filter: blur(6px);
-                opacity: 0.6;
             }
         }
     }

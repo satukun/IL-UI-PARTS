@@ -19,7 +19,7 @@ var page = {
 -%>
 
 <%- include(page.relativePath + '_common/ejs/_head', {page: page, modifier: '',}); %>
-<%- include(page.relativePath + '_common/ejs/_menu', {page: page, modifier: '',}); %>
+
 <!-- contents -->
 <article class="l-contents">
   <div class="p-contents">
@@ -31,7 +31,7 @@ var page = {
             <div class="c-recommended__slidebox">
               <div class="c-recommended__slide">
                 <section class="p-catalog c-cols">
-                  <%- include(page.relativePath + '_common/ejs/_card', {page: page, modifier: '', cols: '', padding:'u-fpd9l u-fpd9r', type:'p-catalog', fixed:'c-cols__fixed--mm', height:'c-card__mv--fixed'}); %>
+                  <%- include(page.relativePath + '_common/ejs/_card', {page: page, modifier: 'u-shadow--catalog', cols: '', padding:'u-fpd9l u-fpd9r', type:'p-catalog', fixed:'c-cols__fixed--mm', height:'c-card__mv--fixed'}); %>
                 </section>
                </div>
             </div>

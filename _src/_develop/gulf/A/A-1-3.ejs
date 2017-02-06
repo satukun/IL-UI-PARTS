@@ -9,7 +9,7 @@ var page = {
   projectName: site.name,
   bodyClass: "c-top",
   singleCss: ["main.css"],
-  singleJs: ["masonry.pkgd.min.js"],
+  singleJs: ["masonry.pkgd.min.js","jquery.ellipsis.min.js"],
   ogpType: "website",
   ogpImage: site.ogpImage,
   absolutePath: absolutePath,
@@ -19,7 +19,6 @@ var page = {
 -%>
 
 <%- include(page.relativePath + '_common/ejs/_head', {page: page, modifier: '',}); %>
-<%- include(page.relativePath + '_common/ejs/_menu', {page: page, modifier: '',}); %>
 <!-- contents -->
 <article class="l-contents">
   <div class="p-contents">
@@ -33,4 +32,4 @@ var page = {
 </article>
 <!-- /contents -->
 <%- include(page.relativePath + '_common/ejs/_footer', {page: page, modifier: '',}); %>
-<%- include(page.relativePath + '_common/ejs/_script', {page: page, modifier: '',}); %>
+<%- include(page.relativePath + '_common/ejs/_script', {page: page, modifier: 'ellipsis',}); %>
