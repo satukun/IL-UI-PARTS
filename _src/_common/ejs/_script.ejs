@@ -2,10 +2,11 @@
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <% if(page.singleJs) { %><% page.singleJs.forEach(function(data) { %>
 <script src="<%= page.css_js_Path %>js/<%= data %>"></script><% }); %><% } %>
-<% if (modifier === "ellipsis"){
-  <script type="text/javascript">
-    $(".ellipsis").ellipsis();
-  </script>
-} -%>
+<script type="text/javascript">
+$(function() {
+  var elem = $('.u-ellipsis');
+  textOverflowEllipsis(elem);
+});
+</script>
 </body>
 </html>

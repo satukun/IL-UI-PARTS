@@ -9,7 +9,7 @@ var page = {
   projectName: site.name,
   bodyClass: "c-top",
   singleCss: ["main.css"],
-  singleJs: [],
+  singleJs: ["jquery.textOverflowEllipsis.js"],
   ogpType: "website",
   ogpImage: site.ogpImage,
   absolutePath: absolutePath,
@@ -19,7 +19,6 @@ var page = {
 -%>
 
 <%- include(page.relativePath + '_common/ejs/_head', {page: page, modifier: '',}); %>
-<%- include(page.relativePath + '_common/ejs/_menu', {page: page, modifier: '',}); %>
 <!-- contents -->
 <article class="l-contents">
 <div class="p-contents">
@@ -86,7 +85,7 @@ After buying wind please save in the refrigerator, please use as soon as possibl
         <div class="c-product__slidesbox">
           <div class="c-product__slides">
             <section class="p-item c-cols">
-              <%- include(page.relativePath + '_common/ejs/_card', {page: page, modifier: 'u-rad__items', cols: '', padding:'u-fpd18l u-fpd18r u-fpd18b', type:'p-item', fixed:'c-cols__fixed--ll', height:'c-card__mv--fixed'}); %>
+              <%- include(page.relativePath + '_common/ejs/_card', {page: page, modifier: 'u-rad__items', cols: '', ellipsis:'u-ellipsis', padding:'u-fpd18l u-fpd18r u-fpd18b', type:'p-item', fixed:'c-cols__fixed--ll', height:'c-card__mv--fixed'}); %>
             </section>
           </div>
         </div>
@@ -111,4 +110,4 @@ After buying wind please save in the refrigerator, please use as soon as possibl
 </article>
 <!-- /contents -->
 <%- include(page.relativePath + '_common/ejs/_footer', {page: page, modifier: '',}); %>
-<%- include(page.relativePath + '_common/ejs/_script', {page: page, modifier: '',}); %>
+<%- include(page.relativePath + '_common/ejs/_script', {page: page, modifier: 'ellipsis',}); %>

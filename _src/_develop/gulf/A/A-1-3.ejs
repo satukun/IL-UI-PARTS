@@ -9,7 +9,7 @@ var page = {
   projectName: site.name,
   bodyClass: "c-top",
   singleCss: ["main.css"],
-  singleJs: ["masonry.pkgd.min.js","jquery.ellipsis.min.js"],
+  singleJs: ["masonry.pkgd.min.js","jquery.textOverflowEllipsis.js"],
   ogpType: "website",
   ogpImage: site.ogpImage,
   absolutePath: absolutePath,
@@ -21,11 +21,16 @@ var page = {
 <%- include(page.relativePath + '_common/ejs/_head', {page: page, modifier: '',}); %>
 <!-- contents -->
 <article class="l-contents">
+
+
+
+
+
   <div class="p-contents">
     <div class="c-article">
       <%- include(page.relativePath + '_common/ejs/_form', {page: page, modifier: '',}); %>
       <section class="p-item c-cols c-item">
-        <%- include(page.relativePath + '_common/ejs/_card', {page: page, modifier: 'u-rad__items', cols: 'c-cols__md-4', padding:'u-fpd21l u-fpd21r u-fmg27b', type:'p-item', fixed:'', height:'c-card__mv--fixed'}); %>
+        <%- include(page.relativePath + '_common/ejs/_card', {page: page, modifier: 'u-rad__items', cols: 'c-cols__md-4', ellipsis:'u-ellipsis', padding:'u-fpd21l u-fpd21r u-fmg27b', type:'p-item', fixed:'', height:'c-card__mv--fixed'}); %>
       </section>
     </div>
   </div>
