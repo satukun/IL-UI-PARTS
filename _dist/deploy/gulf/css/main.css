@@ -759,6 +759,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
     display: table;
 
+    width: 100%;
     height: 8rem;
 
     text-align: center;
@@ -773,7 +774,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     display: table-cell;
 
     vertical-align: middle;
-    word-break: break-word;
+    word-break: break-all;
 }
 
 .c-card__titleonly
@@ -785,6 +786,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
     display: table;
 
+    width: 100%;
     margin: 0 0 7%;
 
     text-align: left;
@@ -797,7 +799,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     display: table-cell;
 
     vertical-align: middle;
-    word-break: break-word;
+    word-break: break-all;
 }
 
 .c-card__text
@@ -2021,14 +2023,14 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     align-items: flex-start;
 }
 
-.c-contact__contact:nth-child(odd)
+.c-contact__contact--left
 {
         flex-direction: row;
 
     -ms-flex-direction: row;
 }
 
-.c-contact__contact:nth-child(odd) .c-contact__fukidashi::before
+.c-contact__contact--left .c-contact__fukidashi::before
 {
     position: absolute;
     z-index: -1;
@@ -2045,7 +2047,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     background: #fff;
 }
 
-.c-contact__contact:nth-child(odd) .c-contact__fukidashi::after
+.c-contact__contact--left .c-contact__fukidashi::after
 {
     position: absolute;
     z-index: -1;
@@ -2062,12 +2064,12 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     background: url(../img/bg.png) no-repeat;
 }
 
-.c-contact__contact:nth-child(odd) .c-contact__fukidashi--text
+.c-contact__contact--left .c-contact__fukidashi--text
 {
     border: 1px solid #999;
 }
 
-.c-contact__contact:nth-child(odd) .c-contact__fukidashi--text::before
+.c-contact__contact--left .c-contact__fukidashi--text::before
 {
     position: absolute;
     z-index: 20;
@@ -2083,21 +2085,21 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     background-color: #fff;
 }
 
-.c-contact__contact:nth-child(even)
+.c-contact__contact--right
 {
         flex-direction: row-reverse;
 
     -ms-flex-direction: row-reverse;
 }
 
-.c-contact__contact:nth-child(even) .c-contact__fukidashi
+.c-contact__contact--right .c-contact__fukidashi
 {
         flex-direction: row-reverse;
 
     -ms-flex-direction: row-reverse;
 }
 
-.c-contact__contact:nth-child(even) .c-contact__fukidashi::before
+.c-contact__contact--right .c-contact__fukidashi::before
 {
     position: absolute;
     z-index: -1;
@@ -2114,7 +2116,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     background: #fff;
 }
 
-.c-contact__contact:nth-child(even) .c-contact__fukidashi::after
+.c-contact__contact--right .c-contact__fukidashi::after
 {
     position: absolute;
     z-index: -1;
@@ -2131,12 +2133,12 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     background: url(../img/bg.png) no-repeat;
 }
 
-.c-contact__contact:nth-child(even) .c-contact__fukidashi--text
+.c-contact__contact--right .c-contact__fukidashi--text
 {
     border: 1px solid #0081b4;
 }
 
-.c-contact__contact:nth-child(even) .c-contact__fukidashi--text::before
+.c-contact__contact--right .c-contact__fukidashi--text::before
 {
     position: absolute;
     z-index: 20;
@@ -5996,6 +5998,65 @@ body > .p-contents
       -o-filter: blur(6px);
      -ms-filter: blur(6px);
          filter: blur(6px);
+}
+
+.u-shadow--band
+{
+    position: relative;
+    top: 0;
+    left: 0;
+
+    display: block;
+
+    height: 100%;
+
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .25);
+}
+
+.u-shadow--band:before
+{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: -5px;
+
+    display: block;
+
+    width: 20px;
+    height: 100%;
+
+    content: '';
+
+    background-color: #e3e0e0;
+}
+
+.u-shadow--band:after
+{
+    position: absolute;
+    z-index: -2;
+    right: -10px;
+    right: -7px;
+    bottom: -13px;
+
+    display: block;
+
+    width: calc(100% - 140px);
+    height:         calc(100% - 27px);
+    height: -webkit-calc(100% - 27px);
+
+    content: '';
+
+    opacity: .6;
+    border: transparent;
+    border-top: 0 solid #000;
+    border-right: 131px solid #95989a;
+    border-bottom: 29px solid transparent;
+    border-left: 50px solid transparent;
+
+    -moz-filter: blur(6px);
+      -o-filter: blur(6px);
+     -ms-filter: blur(6px);
 }
 
 .u-ellipsis

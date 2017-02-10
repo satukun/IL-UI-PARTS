@@ -107,7 +107,7 @@
             margin-bottom: 3rem;
             align-items: flex-start;
             padding: 0 5px 5px;
-            &:nth-child(odd) {
+            &--left {
                 flex-direction: row;
                 .c-contact__fukidashi {
                     &::before {
@@ -150,7 +150,7 @@
                     }
                 }
             }
-            &:nth-child(even) {
+            &--right {
                 flex-direction: row-reverse;
                 .c-contact__fukidashi {
                     flex-direction: row-reverse;

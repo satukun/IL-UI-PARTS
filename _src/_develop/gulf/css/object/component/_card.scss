@@ -15,9 +15,10 @@
               height: 8rem;
               position: relative;
               display: table;
+              width: 100%;
               span {
                   display: table-cell;
-                  word-break: break-word;
+                  word-break: break-all;
                   vertical-align: middle;
                   font-size: 27px;
                   line-height: 1.2;
@@ -30,9 +31,10 @@
               position: relative;
               margin: 0 0 7%;
               display: table;
+              width: 100%;
               span {
                   display: table-cell;
-                  word-break: break-word;
+                  word-break: break-all;
                   vertical-align: middle;
                   line-height: 1.2;
               }

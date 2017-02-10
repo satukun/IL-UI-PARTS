@@ -1,0 +1,38 @@
+<% var absolutePath=f ilename.split(site.developDir)[filename.split(site.developDir).length -1].replace( '.ejs', '.html'); var relativePath='../' .repeat([absolutePath.split( '/').length -1]); var css_js_Path='../' .repeat([absolutePath.split( '/').length
+-3]); var page={ title: site.title.A15 + "｜" + site.name, description: site.description.A14, keywords: site.keywords, projectName: site.name, bodyClass: "c-top", singleCss: [ "main.css"], singleJs: [ "masonry.pkgd.min.js"], ogpType: "website", ogpImage:
+site.ogpImage, absolutePath: absolutePath, relativePath: relativePath, css_js_Path:css_js_Path }; -%>
+
+  <%- include(page.relativePath + '_common/ejs/_head', {page: page, modifier: '',}); %>
+
+    <!-- contents -->
+    <article class="l-contents">
+      <div class="p-contents">
+        <div class="c-article">
+          <%- include(page.relativePath + '_common/ejs/_form', {page: page, modifier: '',}); %>
+            <section class="p-recommended">
+              <div class="c-recommended">
+                <h2 class="c-contents__heading--recommended">Recommended Catalogs</h2>
+                <div class="c-recommended__slidebox">
+                  <div class="c-recommended__slide">
+                    <section class="p-catalog c-cols">
+                      <%- include(page.relativePath + '_common/ejs/_card', {page: page, modifier: 'u-shadow--catalog', cols: '', padding: 'u-fpd9l u-fpd9r', type: 'p-catalog', fixed: 'c-cols__fixed--mm', height: 'c-card__mv--fixed'}); %>
+                    </section>
+                  </div>
+                </div>
+              </div>
+              <div class="c-recommended">
+                <h2 class="c-contents__heading--recommended">Recommended Items</h2>
+                <div class="c-recommended__catalogs"></div>
+                <section class="p-item c-cols c-item">
+                  <div id="container">
+                    <%- include(page.relativePath + '_common/ejs/_card', {page: page, modifier: 'u-rad__items', cols: 'c-cols__md-3', padding: 'u-pd2l u-pd2r u-mg3b', type: 'p-item', fixed: ''}); %>
+                  </div>
+                </section>
+              </div>
+            </section>
+        </div>
+      </div>
+    </article>
+    <!-- /contents -->
+    <%- include(page.relativePath + '_common/ejs/_footer', {page: page, modifier: '',}); %>
+      <%- include(page.relativePath + '_common/ejs/_script', {page: page, modifier: '',}); %>
