@@ -177,7 +177,7 @@ body
     margin: 0;
     padding: 0;
 
-    background: url('../img/bg.png');
+    background: url('../image/bg.png');
 
     -webkit-text-size-adjust: 100%;
         -ms-text-size-adjust: 100%;
@@ -909,6 +909,49 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     background-color: #fff;
     box-shadow: 7px 7px 11px rgba(0, 0, 0, .25);
     box-shadow: 7px 7px 11px rgba(0, 0, 0, .25);
+}
+
+.c-catalog__band
+{
+    font-size: 1.5rem;
+
+    position: absolute;
+    z-index: 100;
+    top: 10px;
+    left: -1.5rem;
+
+    overflow: hidden;
+
+    width: 70%;
+    padding: .7rem 0 .7rem 1.5rem;
+    /* height: 50px; */
+
+    text-align: left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    background: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+}
+
+.c-catalog__band--back
+{
+    font-size: 20px;
+
+    position: absolute;
+    z-index: -1;
+    top: 46px;
+    left: -1.1rem;
+
+    width: 20px;
+    height: 20px;
+    /* padding: .5rem 1rem; */
+    /* height: 10px; */
+
+    transform: rotate(45deg);
+
+    background: rgba(255, 255, 255, .96);
+    box-shadow: 0 0 5px rgba(0, 0, 0, .3);
 }
 
 .c-catalog__title
