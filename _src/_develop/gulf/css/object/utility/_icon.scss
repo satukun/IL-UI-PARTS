@@ -1,16 +1,16 @@
 .u- {
     &icon {
         &--product {
-            background: url(../img/product.svg) no-repeat right 0;
+            background: url(../image/product.svg) no-repeat right 0;
             background-size: contain;
         }
         &__check {
             &--off {
-                background: url(../img/check--off.svg) no-repeat right 0.5rem top 0.5rem;
+                background: url(../image/check--off.svg) no-repeat right 0.5rem top 0.5rem;
                 background-size: 2rem;
             }
             &--on {
-                background: url(../img/check--on.svg) no-repeat right 0.5rem top 0.5rem;
+                background: url(../image/check--on.svg) no-repeat right 0.5rem top 0.5rem;
                 background-size: 2rem;
             }
         }

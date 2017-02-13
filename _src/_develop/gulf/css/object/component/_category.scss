@@ -36,11 +36,11 @@
               position: absolute;
               top: 0;
               &--on {
-                  background: #fff url(../img/check--on.png) no-repeat center 0px;
+                  background: #fff url(../image/check--on.png) no-repeat center 0px;
                   background-size: contain;
               }
               &--off {
-                  background: #fff url(../img/check--off.png) no-repeat center 0px;
+                  background: #fff url(../image/check--off.png) no-repeat center 0px;
                   background-size: contain;
               }
           }

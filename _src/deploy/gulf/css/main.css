@@ -237,7 +237,7 @@ dl
     word-break: break-all;
 
     border: 0;
-    background: url('../img/bg.png');
+    background: url('../image/bg.png');
 
     -webkit-text-size-adjust: 100%;
         -ms-text-size-adjust: 100%;
@@ -500,7 +500,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
     color: #fff;
     border-radius: 100%;
-    background: url(../img/icon--star.png) no-repeat center center;
+    background: url(../image/icon--star.png) no-repeat center center;
     background-size: contain;
     box-shadow: 0 2px 2px rgba(0, 0, 0, .25);
 }
@@ -544,6 +544,19 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     transform: rotate(45deg);
 
     box-shadow: 1px 1.5px 2px rgba(0, 0, 0, .25);
+}
+
+.c-button__contact
+{
+    font-size: 1.5rem;
+    line-height: 4rem;
+
+    display: block;
+
+    color: #fff;
+    border-radius: 5px;
+    background-color: #cc372d;
+    box-shadow: 2px 2px 0 #aa2d25;
 }
 
 .c-article
@@ -923,15 +936,15 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     overflow: hidden;
 
     width: 70%;
-    padding: .7rem 0 .7rem 1.5rem;
-    /* height: 50px; */
+    padding: .7rem 1.5rem .7rem 1.5rem;
 
     text-align: left;
     white-space: nowrap;
     text-overflow: ellipsis;
 
-    background: white;
-    box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+    border-radius: 0 4px 4px 0;
+    background: rgba(255, 255, 255, .8);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
 }
 
 .c-catalog__band--back
@@ -940,18 +953,15 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
     position: absolute;
     z-index: -1;
-    top: 46px;
-    left: -1.1rem;
-
-    width: 20px;
-    height: 20px;
-    /* padding: .5rem 1rem; */
-    /* height: 10px; */
+    top: 36px;
+    left: -.8rem;
 
     transform: rotate(45deg);
 
-    background: rgba(255, 255, 255, .96);
-    box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+    border-top: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid #fff;
+    border-left: 20px solid transparent;
 }
 
 .c-catalog__title
@@ -1437,13 +1447,13 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
 .c-form__search
 {
-    background: #f5f5f5 url(../img/i-search.png) no-repeat left 1rem top .6rem;
+    background: #f5f5f5 url(../image/i-search.png) no-repeat left 1rem top .6rem;
     background-size: 2.5rem;
 }
 
 .c-form__searchmini
 {
-    background: rgba(0, 0, 0, .2) url(../img/i-search.png) no-repeat left .8rem center;
+    background: rgba(0, 0, 0, .2) url(../image/i-search.png) no-repeat left .8rem center;
     background-size: 17px;
 }
 
@@ -1844,13 +1854,13 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
 .c-category__checkbox--on
 {
-    background: #fff url(../img/check--on.png) no-repeat center 0;
+    background: #fff url(../image/check--on.png) no-repeat center 0;
     background-size: contain;
 }
 
 .c-category__checkbox--off
 {
-    background: #fff url(../img/check--off.png) no-repeat center 0;
+    background: #fff url(../image/check--off.png) no-repeat center 0;
     background-size: contain;
 }
 
@@ -2104,7 +2114,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
     border: 1px solid #999;
     border-radius: 25px;
-    background: url(../img/bg.png) no-repeat;
+    background: url(../image/bg.png) no-repeat;
 }
 
 .c-contact__contact--left .c-contact__fukidashi--text
@@ -2173,7 +2183,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
     border: 1px solid #0081b4;
     border-radius: 25px;
-    background: url(../img/bg.png) no-repeat;
+    background: url(../image/bg.png) no-repeat;
 }
 
 .c-contact__contact--right .c-contact__fukidashi--text
@@ -2576,6 +2586,22 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 .c-edit__current
 {
     color: #0081b4;
+}
+
+.c-banner
+{
+    font-size: 2rem;
+    line-height: 9rem;
+
+    position: relative;
+
+    width: 96%;
+    margin: 3rem auto 2rem;
+
+    text-align: center;
+
+    color: #95989a;
+    background-color: #fff;
 }
 
 /* Project --------------- */
@@ -5957,19 +5983,19 @@ body > .p-contents
 
 .u-icon--product
 {
-    background: url(../img/product.svg) no-repeat right 0;
+    background: url(../image/product.svg) no-repeat right 0;
     background-size: contain;
 }
 
 .u-icon__check--off
 {
-    background: url(../img/check--off.svg) no-repeat right .5rem top .5rem;
+    background: url(../image/check--off.svg) no-repeat right .5rem top .5rem;
     background-size: 2rem;
 }
 
 .u-icon__check--on
 {
-    background: url(../img/check--on.svg) no-repeat right .5rem top .5rem;
+    background: url(../image/check--on.svg) no-repeat right .5rem top .5rem;
     background-size: 2rem;
 }
 
