@@ -1,10 +1,13 @@
-.u-posi {
-    &--left {
-        float: left;
-    }
-    &--right {
-        float: right;
-    }
-    &--bottom {}
-    &--top {}
-}
+  .u-posi {
+      &__form {
+          &--a {
+              top: 2.4rem;
+              left: 1rem;
+          }
+          &--b {
+              top: initial;
+              right: 1rem;
+              bottom: .6rem;
+          }
+      }
+  }

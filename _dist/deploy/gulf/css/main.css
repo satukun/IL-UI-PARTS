@@ -430,6 +430,102 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     transform: translateY(0) rotate(45deg);
 }
 
+.c-button__close--m
+{
+    font-weight: bold;
+
+    position: absolute;
+    top: 50%;
+    right: 10px;
+
+    display: inline-block;
+
+    width: 20px;
+    height: 20px;
+
+    transform: translate(0, -50%);
+
+    color: #999;
+    border-radius: 100%;
+    background: #fff;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .25);
+}
+
+.c-button__close--m span
+{
+    position: absolute;
+    left: 4px;
+
+    display: inline-block;
+
+    width: 60%;
+    height: 2px;
+
+    background-color: #aaa8a8;
+}
+
+.c-button__close--m span:nth-of-type(1)
+{
+    top: -11px;
+
+    transform: translateY(20px) rotate(-45deg);
+}
+
+.c-button__close--m span:nth-of-type(2)
+{
+    top: 9px;
+
+    transform: translateY(0) rotate(45deg);
+}
+
+.c-button__add
+{
+    font-weight: bold;
+
+    position: absolute;
+    top: 50%;
+    right: 10px;
+
+    display: inline-block;
+
+    width: 30px;
+    height: 30px;
+
+    transform: translate(0, -50%);
+
+    color: #999;
+    border-radius: 100%;
+    background: #fff;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .25);
+}
+
+.c-button__add span
+{
+    position: absolute;
+    left: 6px;
+
+    display: inline-block;
+
+    width: 60%;
+    height: 2px;
+
+    background-color: #aaa8a8;
+}
+
+.c-button__add span:nth-of-type(1)
+{
+    top: -6px;
+
+    transform: translateY(20px) rotate(-90deg);
+}
+
+.c-button__add span:nth-of-type(2)
+{
+    top: 14px;
+
+    transform: translateY(0) rotate(0deg);
+}
+
 .c-button__closemini
 {
     font-weight: bold;
@@ -557,6 +653,22 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     border-radius: 5px;
     background-color: #cc372d;
     box-shadow: 2px 2px 0 #aa2d25;
+}
+
+.c-button__form
+{
+    font-size: 1.4rem;
+    line-height: 2.3;
+
+    display: inline-block;
+    float: right;
+
+    margin-bottom: 10px;
+    padding: 0rem 2rem;
+
+    text-align: center;
+
+    box-shadow: none;
 }
 
 .c-article
@@ -1419,6 +1531,35 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     padding-right: 3.3rem;
 }
 
+.c-link__line
+{
+    position: relative;
+
+    height: 1px;
+    margin: 0 0 3rem;
+
+    text-align: center;
+
+    border: transparent;
+    background-color: #95989a;
+}
+
+.c-link__line span
+{
+    font-size: 1rem;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    padding: 1rem;
+
+    transform: translate(-50%, -50%);
+
+    color: #95989a;
+    background: url(../image/bg.png);
+}
+
 .c-form
 {
     position: relative;
@@ -1961,11 +2102,15 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 {
     position: relative;
 
-    padding: 1rem;
-
     -moz-flex-grow: 1;
     -ms-flex-positive: 1;
          flex-grow: 1;
+}
+
+.c-contact__area--inner
+{
+    margin-bottom: 12.8rem;
+    padding: 1rem;
 }
 
 .c-contact__nav
@@ -1984,7 +2129,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 {
     display: block;
 
-    color: #989898;
+    color: #95989a;
 }
 
 .c-contact__link div
@@ -2164,9 +2309,8 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
     content: '';
 
-    border: 1px solid #0081b4;
     border-radius: 25px;
-    background: #fff;
+    background-color: #7bbad4;
 }
 
 .c-contact__contact--right .c-contact__fukidashi::after
@@ -2181,14 +2325,14 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
     content: '';
 
-    border: 1px solid #0081b4;
     border-radius: 25px;
     background: url(../image/bg.png) no-repeat;
+    background-color: #7bbad4;
 }
 
 .c-contact__contact--right .c-contact__fukidashi--text
 {
-    border: 1px solid #0081b4;
+    background-color: #7bbad4;
 }
 
 .c-contact__contact--right .c-contact__fukidashi--text::before
@@ -2204,7 +2348,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     content: '';
 
     border-radius: 10px;
-    background-color: #fff;
+    background-color: #7bbad4;
 }
 
 .c-contact__contact:last-child
@@ -2240,6 +2384,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     padding: 0rem;
     padding: .6rem 1rem;
 
+    color: #091612;
     border-radius: 17px;
     background-color: #fff;
 }
@@ -2248,7 +2393,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 {
     white-space: pre;
 
-    color: #989898;
+    color: #091612;
 }
 
 .c-contact__ph
@@ -2393,6 +2538,90 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     left: initial;
 
     transform: initial;
+}
+
+.c-contact__attachment
+{
+    display: block;
+    overflow: hidden;
+
+    margin-bottom: 10px;
+    padding: 0 0 0 10px;
+
+    color: black;
+    border-left: 1px solid #0081b4;
+}
+
+.c-contact__attachment--link
+{
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    text-decoration: underline;
+
+    color: #0081b4;
+}
+
+.c-contact__attachment a
+{
+    color: #000;
+}
+
+.c-contact__attachment:before
+{
+    display: table;
+
+    content: ' ';
+}
+
+.c-contact__attachment--img
+{
+    float: right;
+
+    max-width: 100px;
+    height: auto;
+    max-height: 100px;
+}
+
+.c-contact__attachment--pushed
+{
+    margin-right: 110px;
+}
+
+.c-contact__attachment--heading
+{
+    font-weight: bold;
+}
+
+.c-contact__attachment:after
+{
+    clear: both;
+}
+
+.c-contact__form
+{
+    position: fixed;
+    z-index: 100;
+    bottom: 0;
+
+    width: calc(100% - 270px);
+    padding: .5rem;
+
+    background-color: #e3e3e3;
+}
+
+.c-contact__form textarea
+{
+    font-size: 1.4rem;
+
+    width: 100%;
+    height: 7rem;
+    padding: .5rem 3rem .5rem .5rem;
+
+    border: none;
+    border-radius: 10px;
+    background-color: #f5f5f5;
 }
 
 .c-config
@@ -4307,14 +4536,17 @@ body > .p-contents
     margin-right: 150px;
 }
 
-.u-posi--left
+.u-posi__form--a
 {
-    float: left;
+    top: 2.4rem;
+    left: 1rem;
 }
 
-.u-posi--right
+.u-posi__form--b
 {
-    float: right;
+    top: initial;
+    right: 1rem;
+    bottom: .6rem;
 }
 
 .u-fsize--l
@@ -5999,14 +6231,17 @@ body > .p-contents
     background-size: 2rem;
 }
 
-.u-posi--left
+.u-posi__form--a
 {
-    float: left;
+    top: 2.4rem;
+    left: 1rem;
 }
 
-.u-posi--right
+.u-posi__form--b
 {
-    float: right;
+    top: initial;
+    right: 1rem;
+    bottom: .6rem;
 }
 
 .u-shadow--catalog
@@ -6134,4 +6369,24 @@ body > .p-contents
 
     width: 100%;
     height: 88px;
+}
+
+.u-ellipsis--two
+{
+    overflow: hidden;
+
+    height: 40px;
+}
+
+.u-posi__form--a
+{
+    top: 2.4rem;
+    left: 1rem;
+}
+
+.u-posi__form--b
+{
+    top: initial;
+    right: 1rem;
+    bottom: .6rem;
 }

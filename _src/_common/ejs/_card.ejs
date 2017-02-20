@@ -22,8 +22,10 @@
 <% for(var i =0; i<3; i++){ -%>
   <div class="<%= boxtype %> <%= padding %> items">
     <a href="../A/A-1-3.html">
+    <% if (band === 'c-catalog__band') { -%>
       <div class="c-catalog__band">Soy sauceSoy sauceSoy sauce</div>
       <div class="c-catalog__band--back"></div>
+    <% } -%>
       <dl class="c-card <%= modifier %>">
         <dt class="c-card__mv <%= height %>">
         <span class="c-card__mv--noImg">TitleStringテスト</span>

@@ -63,5 +63,23 @@
             position: relative;
             padding-right: 3.3rem;
         }
+        &__line {
+            height: 1px;
+            margin: 0px 0 3rem;
+            border: transparent;
+            background-color: #95989a;
+            position: relative;
+            text-align: center;
+            span {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                padding: 1rem;
+                transform: translate(-50%, -50%);
+                background: url(../image/bg.png);
+                color: #95989A;
+                font-size: 1rem;
+            }
+        }
     }
 }

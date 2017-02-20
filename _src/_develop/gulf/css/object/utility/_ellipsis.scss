@@ -3,5 +3,9 @@
         overflow: hidden;
         width: 100%;
         height: 88px;
+        &--two {
+            overflow: hidden;
+            height: 40px;
+        }
     }
 }

@@ -9,27 +9,28 @@ site.ogpImage, absolutePath: absolutePath, relativePath: relativePath, css_js_Pa
       <div class="p-contents">
         <div class="c-article">
           <%- include(page.relativePath + '_common/ejs/_form', {page: page, modifier: '',}); %>
-            <section class="p-recommended">
-              <div class="c-recommended">
-                <h2 class="c-contents__heading--recommended">Recommended Catalogs</h2>
-                <div class="c-recommended__slidebox">
-                  <div class="c-recommended__slide">
-                    <section class="p-catalog c-cols">
-                      <%- include(page.relativePath + '_common/ejs/_card', {page: page, modifier: 'u-shadow--catalog', cols: '', padding: 'u-fpd9l u-fpd9r', type: 'p-catalog', fixed: 'c-cols__fixed--mm', height: 'c-card__mv--fixed'}); %>
-                    </section>
+            <%- include(page.relativePath + '_common/ejs/_banner', {page: page, modifier: '',}); %>
+              <section class="p-recommended">
+                <div class="c-recommended">
+                  <h2 class="c-contents__heading--recommended">Recommended Catalogs</h2>
+                  <div class="c-recommended__slidebox">
+                    <div class="c-recommended__slide">
+                      <section class="p-catalog c-cols">
+                        <%- include(page.relativePath + '_common/ejs/_card', {page: page, modifier: 'u-shadow--catalog', cols: '', padding: 'u-fpd9l u-fpd9r', type: 'p-catalog', fixed: 'c-cols__fixed--mm', height: 'c-card__mv--fixed'}); %>
+                      </section>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="c-recommended">
-                <h2 class="c-contents__heading--recommended">Recommended Items</h2>
-                <div class="c-recommended__catalogs"></div>
-                <section class="p-item c-cols c-item">
-                  <div id="container">
-                    <%- include(page.relativePath + '_common/ejs/_card', {page: page, modifier: 'u-rad__items', cols: 'c-cols__md-3', padding: 'u-pd2l u-pd2r u-mg3b', type: 'p-item', fixed: ''}); %>
-                  </div>
-                </section>
-              </div>
-            </section>
+                <div class="c-recommended">
+                  <h2 class="c-contents__heading--recommended">Recommended Items</h2>
+                  <div class="c-recommended__catalogs"></div>
+                  <section class="p-item c-cols c-item">
+                    <div id="container">
+                      <%- include(page.relativePath + '_common/ejs/_card', {page: page, modifier: 'u-rad__items', cols: 'c-cols__md-3', padding: 'u-pd2l u-pd2r u-mg3b', type: 'p-item', fixed: ''}); %>
+                    </div>
+                  </section>
+                </div>
+              </section>
         </div>
       </div>
     </article>
