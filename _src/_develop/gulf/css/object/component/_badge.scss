@@ -1,0 +1,19 @@
+.c- {
+    &badge {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 1;
+        display: inline-block;
+        min-width: 10px;
+        padding: 4px 7px;
+        text-align: center;
+        vertical-align: middle;
+        white-space: nowrap;
+        color: #fff;
+        border-radius: 10px;
+        background-color: #0081b4;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}

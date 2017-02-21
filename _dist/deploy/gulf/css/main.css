@@ -585,7 +585,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     font-weight: bold;
 
     position: absolute;
-    z-index: 10;
+    z-index: 50;
     top: 15px;
     left: 15px;
 
@@ -596,9 +596,24 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
     color: #fff;
     border-radius: 100%;
-    background: url(../image/icon--star.png) no-repeat center center;
-    background-size: contain;
     box-shadow: 0 2px 2px rgba(0, 0, 0, .25);
+}
+
+.c-button__star--on
+{
+    background: #fff url(../image/favorite--on.svg) no-repeat center center;
+    background-size: contain;
+}
+
+.c-button__star--off
+{
+    background: #fff url(../image/favorite--off.svg) no-repeat center center;
+    background-size: contain;
+}
+
+.c-button__star--hidden
+{
+    display: none;
 }
 
 .c-button__regist
@@ -669,6 +684,82 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     text-align: center;
 
     box-shadow: none;
+}
+
+.c-button__favorite
+{
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    display: block;
+
+    margin-bottom: .8rem;
+
+    color: #fff;
+    border: 1px solid #cc372d;
+    border-radius: 5px;
+    box-shadow: 2px 2px 0 #aa2d25;
+}
+
+.c-button__favorite:last-child
+{
+    margin-bottom: 0;
+}
+
+.c-button__favorite--on,
+.c-button__favorite--off
+{
+    display: block;
+
+    width: 100%;
+}
+
+.c-button__favorite--on a,
+.c-button__favorite--off a
+{
+    color: #cc372d;
+}
+
+.c-button__favorite--on a ul,
+.c-button__favorite--off a ul
+{
+    display: block;
+
+    width: 100%;
+
+    letter-spacing: -.4em;
+}
+
+.c-button__favorite--on a ul li,
+.c-button__favorite--off a ul li
+{
+    display: inline-block;
+
+    box-sizing: border-box;
+    width: 60%;
+    padding: 1rem .5rem;
+
+    letter-spacing: normal;
+}
+
+.c-button__favorite--on a ul li:first-child,
+.c-button__favorite--off a ul li:first-child
+{
+    width: 40%;
+    padding-left: 2.8rem;
+
+    border-right: 1px solid #cc372d;
+    background: url(../image/favorite--on.svg) no-repeat .5rem center;
+    background-size: 23%;
+}
+
+.c-button__favorite--off a ul li:first-child
+{
+    padding-left: 2.8rem;
+
+    color: #c7c7c7;
+    background: url(../image/favorite--off.svg) no-repeat .5rem center;
+    background-size: 23%;
 }
 
 .c-article
@@ -2052,6 +2143,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 {
     display: -ms-flexbox;
     display: flex;
+    overflow: hidden;
 
     width: 100%;
     height: 100%;
@@ -2102,6 +2194,8 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 {
     position: relative;
 
+    overflow-y: auto;
+
     -moz-flex-grow: 1;
     -ms-flex-positive: 1;
          flex-grow: 1;
@@ -2109,6 +2203,8 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
 .c-contact__area--inner
 {
+    overflow: hidden;
+
     margin-bottom: 12.8rem;
     padding: 1rem;
 }
@@ -2351,6 +2447,28 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     background-color: #7bbad4;
 }
 
+.c-contact__contact--right .c-contact__fukidashi__ph
+{
+        flex-direction: row-reverse;
+
+    -ms-flex-direction: row-reverse;
+}
+
+.c-contact__contact--right .c-contact__fukidashi__ph--text::before
+{
+    position: absolute;
+    z-index: 20;
+    top: 7px;
+    right: -2px;
+
+    width: 10px;
+    height: 15px;
+
+    content: '';
+
+    border-radius: 10px;
+}
+
 .c-contact__contact:last-child
 {
     margin-bottom: 0;
@@ -2387,6 +2505,50 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     color: #091612;
     border-radius: 17px;
     background-color: #fff;
+}
+
+.c-contact__fukidashi__ph
+{
+    position: relative;
+    z-index: 10;
+
+    display: -ms-flexbox;
+    display: flex;
+
+    width: 72%;
+
+    -ms-flex-align: end;
+    align-items: flex-end;
+}
+
+.c-contact__fukidashi__ph--text
+{
+    font-size: 1.2rem;
+
+    position: relative;
+
+    display: block;
+    overflow: hidden;
+
+    height: 100%;
+    margin: 0 15px;
+    padding: 0rem;
+
+    color: #091612;
+    border-radius: 17px;
+}
+
+.c-contact__fukidashi__ph--text img
+{
+    max-width: 100%;
+    height: auto;
+}
+
+.c-contact__fukidashi__ph span
+{
+    white-space: pre;
+
+    color: #091612;
 }
 
 .c-contact__fukidashi span
@@ -2579,9 +2741,11 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 {
     float: right;
 
-    max-width: 100px;
+    width: 60px;
     height: auto;
-    max-height: 100px;
+    height: 60px;
+
+    border-radius: 5px;
 }
 
 .c-contact__attachment--pushed
@@ -2605,7 +2769,19 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     z-index: 100;
     bottom: 0;
 
+    overflow: hidden;
+
     width: calc(100% - 270px);
+    padding-top: 1rem;
+}
+
+.c-contact__form__inner
+{
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, .25);
+}
+
+.c-contact__form__shadow
+{
     padding: .5rem;
 
     background-color: #e3e3e3;
@@ -2831,6 +3007,626 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
     color: #95989a;
     background-color: #fff;
+}
+
+.c-modal
+{
+    position: fixed;
+    z-index: 110;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, .4);
+}
+
+.c-modal__box
+{
+    font-size: 1.4rem;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 27rem;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 1.5rem;
+    background-color: white;
+}
+
+.c-modal__box--hidden
+{
+    display: none;
+}
+
+.c-modal__confirm
+{
+    display: table;
+
+    width: 100%;
+    height: 13rem;
+    padding: 1rem;
+
+    text-align: center;
+
+    border-bottom: 1px solid #95989a;
+}
+
+.c-modal__confirm p
+{
+    font-size: 1.7rem;
+
+    margin-bottom: 1rem;
+}
+
+.c-modal__text
+{
+    display: table-cell;
+
+    vertical-align: middle;
+}
+
+.c-modal__choice
+{
+    text-align: center;
+    letter-spacing: -.4em;
+}
+
+.c-modal__choice li
+{
+    display: inline-block;
+
+    width: 50%;
+
+    letter-spacing: normal;
+}
+
+.c-modal__choice li:first-child
+{
+    border-right: 1px solid #95989a;
+}
+
+.c-modal__choice li a
+{
+    display: block;
+
+    padding: 1rem;
+}
+
+.c-button__close
+{
+    font-weight: bold;
+
+    position: absolute;
+    top: 50%;
+    right: 10px;
+
+    display: inline-block;
+
+    width: 30px;
+    height: 30px;
+
+    transform: translate(0, -50%);
+
+    color: #999;
+    border-radius: 100%;
+    background: #fff;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .25);
+}
+
+.c-button__close span
+{
+    position: absolute;
+    left: 6px;
+
+    display: inline-block;
+
+    width: 60%;
+    height: 2px;
+
+    background-color: #aaa8a8;
+}
+
+.c-button__close span:nth-of-type(1)
+{
+    top: -6px;
+
+    transform: translateY(20px) rotate(-45deg);
+}
+
+.c-button__close span:nth-of-type(2)
+{
+    top: 14px;
+
+    transform: translateY(0) rotate(45deg);
+}
+
+.c-button__close--m
+{
+    font-weight: bold;
+
+    position: absolute;
+    top: 50%;
+    right: 10px;
+
+    display: inline-block;
+
+    width: 20px;
+    height: 20px;
+
+    transform: translate(0, -50%);
+
+    color: #999;
+    border-radius: 100%;
+    background: #fff;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .25);
+}
+
+.c-button__close--m span
+{
+    position: absolute;
+    left: 4px;
+
+    display: inline-block;
+
+    width: 60%;
+    height: 2px;
+
+    background-color: #aaa8a8;
+}
+
+.c-button__close--m span:nth-of-type(1)
+{
+    top: -11px;
+
+    transform: translateY(20px) rotate(-45deg);
+}
+
+.c-button__close--m span:nth-of-type(2)
+{
+    top: 9px;
+
+    transform: translateY(0) rotate(45deg);
+}
+
+.c-button__add
+{
+    font-weight: bold;
+
+    position: absolute;
+    top: 50%;
+    right: 10px;
+
+    display: inline-block;
+
+    width: 30px;
+    height: 30px;
+
+    transform: translate(0, -50%);
+
+    color: #999;
+    border-radius: 100%;
+    background: #fff;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .25);
+}
+
+.c-button__add span
+{
+    position: absolute;
+    left: 6px;
+
+    display: inline-block;
+
+    width: 60%;
+    height: 2px;
+
+    background-color: #aaa8a8;
+}
+
+.c-button__add span:nth-of-type(1)
+{
+    top: -6px;
+
+    transform: translateY(20px) rotate(-90deg);
+}
+
+.c-button__add span:nth-of-type(2)
+{
+    top: 14px;
+
+    transform: translateY(0) rotate(0deg);
+}
+
+.c-button__closemini
+{
+    font-weight: bold;
+
+    position: absolute;
+    top: 50%;
+    right: 10px;
+
+    display: inline-block;
+
+    width: 20px;
+    height: 20px;
+
+    transform: translate(0, -50%);
+
+    color: #999;
+    border-radius: 100%;
+    background: #fff;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .25);
+}
+
+.c-button__closemini--black
+{
+    background-color: rgba(0, 0, 0, .5);
+    box-shadow: none;
+}
+
+.c-button__closemini span
+{
+    position: absolute;
+    left: 4px;
+
+    display: inline-block;
+
+    width: 60%;
+    height: 2px;
+
+    background-color: #aaa8a8;
+}
+
+.c-button__closemini span:nth-of-type(1)
+{
+    top: -11px;
+
+    transform: translateY(20px) rotate(-45deg);
+}
+
+.c-button__closemini span:nth-of-type(2)
+{
+    top: 9px;
+
+    transform: translateY(0) rotate(45deg);
+}
+
+.c-button__star
+{
+    font-weight: bold;
+
+    position: absolute;
+    z-index: 50;
+    top: 15px;
+    left: 15px;
+
+    display: inline-block;
+
+    width: 36px;
+    height: 36px;
+
+    color: #fff;
+    border-radius: 100%;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .25);
+}
+
+.c-button__star--on
+{
+    background: #fff url(../image/favorite--on.svg) no-repeat center center;
+    background-size: contain;
+}
+
+.c-button__star--off
+{
+    background: #fff url(../image/favorite--off.svg) no-repeat center center;
+    background-size: contain;
+}
+
+.c-button__star--hidden
+{
+    display: none;
+}
+
+.c-button__regist
+{
+    font-size: 14px;
+
+    display: inline-block;
+
+    width: 100%;
+    padding: 10px 30px;
+
+    text-align: center;
+
+    color: #989898;
+    background-color: #fff;
+    box-shadow: 2px 2px 11px rgba(0, 0, 0, .25);
+}
+
+.c-button__cancel
+{
+    font-size: 14px;
+
+    display: inline-block;
+
+    width: 100%;
+    padding: 10px 30px;
+
+    text-align: center;
+
+    color: #989898;
+    background-color: #fff;
+    box-shadow: 2px 2px 11px rgba(0, 0, 0, .25);
+}
+
+.c-button__plus
+{
+    top: 24px;
+
+    transform: rotate(45deg);
+
+    box-shadow: 1px 1.5px 2px rgba(0, 0, 0, .25);
+}
+
+.c-button__contact
+{
+    font-size: 1.5rem;
+    line-height: 4rem;
+
+    display: block;
+
+    color: #fff;
+    border-radius: 5px;
+    background-color: #cc372d;
+    box-shadow: 2px 2px 0 #aa2d25;
+}
+
+.c-button__form
+{
+    font-size: 1.4rem;
+    line-height: 2.3;
+
+    display: inline-block;
+    float: right;
+
+    margin-bottom: 10px;
+    padding: 0rem 2rem;
+
+    text-align: center;
+
+    box-shadow: none;
+}
+
+.c-button__favorite
+{
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    display: block;
+
+    margin-bottom: .8rem;
+
+    color: #fff;
+    border: 1px solid #cc372d;
+    border-radius: 5px;
+    box-shadow: 2px 2px 0 #aa2d25;
+}
+
+.c-button__favorite:last-child
+{
+    margin-bottom: 0;
+}
+
+.c-button__favorite--on,
+.c-button__favorite--off
+{
+    display: block;
+
+    width: 100%;
+}
+
+.c-button__favorite--on a,
+.c-button__favorite--off a
+{
+    color: #cc372d;
+}
+
+.c-button__favorite--on a ul,
+.c-button__favorite--off a ul
+{
+    display: block;
+
+    width: 100%;
+
+    letter-spacing: -.4em;
+}
+
+.c-button__favorite--on a ul li,
+.c-button__favorite--off a ul li
+{
+    display: inline-block;
+
+    box-sizing: border-box;
+    width: 60%;
+    padding: 1rem .5rem;
+
+    letter-spacing: normal;
+}
+
+.c-button__favorite--on a ul li:first-child,
+.c-button__favorite--off a ul li:first-child
+{
+    width: 40%;
+    padding-left: 2.8rem;
+
+    border-right: 1px solid #cc372d;
+    background: url(../image/favorite--on.svg) no-repeat .5rem center;
+    background-size: 23%;
+}
+
+.c-button__favorite--off a ul li:first-child
+{
+    padding-left: 2.8rem;
+
+    color: #c7c7c7;
+    background: url(../image/favorite--off.svg) no-repeat .5rem center;
+    background-size: 23%;
+}
+
+.c-sidebar
+{
+    position: fixed;
+    z-index: 200;
+    top: 0;
+    right: 0;
+
+    overflow-y: auto;
+
+    width: 38.5rem;
+    height: 100%;
+
+    background-color: #fff;
+}
+
+.c-sidebar__menu
+{
+    position: relative;
+
+    padding: 0 1rem;
+
+    border-top: 1px solid #95989a;
+    border-bottom: 1px solid #95989a;
+
+    -moz-flex-grow: 1;
+    -ms-flex-positive: 1;
+         flex-grow: 1;
+}
+
+.c-sidebar__name
+{
+    word-break: break-all;
+
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+
+.c-sidebar__ph
+{
+    position: relative;
+
+    overflow: hidden;
+
+    width: 24px;
+    height: 24px;
+    margin-right: 1rem;
+
+    border-radius: 0;
+    box-shadow: initial;
+}
+
+.c-sidebar__ph--m
+{
+    width: 40px;
+    height: 40px;
+}
+
+.c-sidebar__ph--catalog
+{
+    background: url(../image/book.svg) no-repeat center center;
+    background-size: contain;
+}
+
+.c-sidebar__ph--item
+{
+    background: url(../image/item.svg) no-repeat center center;
+    background-size: contain;
+}
+
+.c-sidebar__ph--fukidashi
+{
+    background: url(../image/fukidashi.svg) no-repeat center center;
+    background-size: contain;
+}
+
+.c-sidebar__ph--setting
+{
+    background: url(../image/setting.svg) no-repeat center center;
+    background-size: contain;
+}
+
+.c-sidebar__all
+{
+    position: relative;
+
+    padding: 2rem 1rem 1rem;
+
+    -moz-flex-grow: 1;
+    -ms-flex-positive: 1;
+         flex-grow: 1;
+}
+
+.c-sidebar__list
+{
+    position: relative;
+
+    display: block;
+
+    padding: 1.7rem 1rem;
+
+    color: black;
+    border-bottom: 1px solid #95989a;
+
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.c-sidebar__list:last-child
+{
+    border-bottom: none;
+}
+
+.c-sidebar__store
+{
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.c-sidebar__heading
+{
+    font-size: 1.7rem;
+    font-weight: bold;
+
+    padding: 1rem 0 0 0;
+
+    color: #cc372d;
+}
+
+.c-badge
+{
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    display: inline-block;
+
+    min-width: 10px;
+    padding: 4px 7px;
+
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    color: #fff;
+    border-radius: 10px;
+    background-color: #0081b4;
 }
 
 /* Project --------------- */
@@ -4538,7 +5334,7 @@ body > .p-contents
 
 .u-posi__form--a
 {
-    top: 2.4rem;
+    top: 3.4rem;
     left: 1rem;
 }
 
@@ -6233,7 +7029,7 @@ body > .p-contents
 
 .u-posi__form--a
 {
-    top: 2.4rem;
+    top: 3.4rem;
     left: 1rem;
 }
 
@@ -6363,6 +7159,11 @@ body > .p-contents
      -ms-filter: blur(6px);
 }
 
+.u-shadow--none
+{
+    box-shadow: initial;
+}
+
 .u-ellipsis
 {
     overflow: hidden;
@@ -6380,7 +7181,7 @@ body > .p-contents
 
 .u-posi__form--a
 {
-    top: 2.4rem;
+    top: 3.4rem;
     left: 1rem;
 }
 

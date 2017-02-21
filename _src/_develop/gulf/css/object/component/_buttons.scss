@@ -149,9 +149,18 @@
             color: #fff;
             border-radius: 100%;
             box-shadow: 0 2px 2px rgba(0, 0, 0, .25);
-            z-index: 10;
-            background: url(../image/icon--star.png) no-repeat center center;
-            background-size: contain;
+            z-index: 50;
+            &--on {
+                background: #fff url(../image/favorite--on.svg) no-repeat center center;
+                background-size: contain;
+            }
+            &--off {
+                background: #fff url(../image/favorite--off.svg) no-repeat center center;
+                background-size: contain;
+            }
+            &--hidden {
+                display: none;
+            }
         }
         &__regist {
             width: 100%;
@@ -196,6 +205,60 @@
             box-shadow: none;
             line-height: 2.3;
             font-size: 1.4rem;
+        }
+        &__favorite {
+            font-size: 1.2rem;
+            display: block;
+            color: #fff;
+            border-radius: 5px;
+            border: 1px solid #cc372d;
+            box-shadow: 2px 2px 0 #aa2d25;
+            font-weight: bold;
+            margin-bottom: 0.8rem;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            &--on,
+            &--off {
+                display: block;
+                width: 100%;
+                a {
+                    color: #cc372d;
+                    ul {
+                        display: block;
+                        width: 100%;
+                        letter-spacing: -.4em;
+                        li {
+                            display: inline-block;
+                            box-sizing: border-box;
+                            width: 60%;
+                            padding: 1rem 0.5rem;
+                            letter-spacing: normal;
+                            &:first-child {
+                                width: 40%;
+                                border-right: 1px solid #cc372d;
+                                background: url(../image/favorite--on.svg) no-repeat 0.5rem center;
+                                background-size: 23%;
+                                padding-left: 2.8rem;
+                            }
+                        }
+                    }
+                }
+            }
+            &--off {
+                a {
+                    ul {
+                        li {
+                            &:first-child {
+                                background: url(../image/favorite--off.svg) no-repeat 0.5rem center;
+                                background-size: 23%;
+                                padding-left: 2.8rem;
+                                color: #C7C7C7;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

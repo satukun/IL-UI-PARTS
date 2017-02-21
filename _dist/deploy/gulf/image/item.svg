@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-441.24 -383.344 20.221 29.844">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #434343;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        stroke: #fff;
+        stroke-linejoin: round;
+        stroke-miterlimit: 10;
+        stroke-width: 3px;
+      }
+    </style>
+  </defs>
+  <g id="グループ化_1651" data-name="グループ化 1651" transform="translate(-441.24 -383.378)">
+    <path id="パス_1289" data-name="パス 1289" class="cls-1" d="M15.2,3.781c.214-4.83-5.77-5.129-5.941-.085L6.1,6.858H18.2Zm-2.949.3a1.069,1.069,0,0,1,0-2.137,1.033,1.033,0,0,1,1.069,1.069A1.058,1.058,0,0,1,12.255,4.08Z" transform="translate(-3.493 0)"/>
+    <path id="パス_1290" data-name="パス 1290" class="cls-1" d="M2.778,12.556H.769V33.712H16.541V12.556H14.318L13.592,12H17.31V34.268H0V12H3.419Z" transform="translate(0 -6.852)"/>
+    <g id="グループ化_1650" data-name="グループ化 1650" transform="translate(5.668 17.073)">
+      <path id="パス_1291" data-name="パス 1291" class="cls-2" d="M33.753,60.105S29.5,55.443,28.8,54.627l.991-1.224L33.4,56.259s3.963-5.711,8.45-7.459C39.115,51.189,34.161,59,33.753,60.105Z" transform="translate(-28.8 -48.8)"/>
+      <path id="パス_1292" data-name="パス 1292" class="cls-1" d="M33.753,60.105S29.5,55.443,28.8,54.627l.991-1.224L33.4,56.259s3.963-5.711,8.45-7.459C39.115,51.189,34.161,59,33.753,60.105Z" transform="translate(-28.8 -48.8)"/>
+    </g>
+  </g>
+</svg>

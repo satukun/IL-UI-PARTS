@@ -83,5 +83,8 @@
                 -ms-filter: blur(6px);
             }
         }
+        &--none {
+            box-shadow: initial;
+        }
     }
 }

@@ -1,0 +1,84 @@
+.c- {
+    &sidebar {
+        position: fixed;
+        z-index: 200;
+        top: 0;
+        right: 0;
+        overflow-y: auto;
+        width: 38.5rem;
+        height: 100%;
+        background-color: #fff;
+        &__menu {
+            position: relative;
+            padding: 0 1rem;
+            border-top: 1px solid #95989a;
+            border-bottom: 1px solid #95989a;
+            -moz-flex-grow: 1;
+            -ms-flex-positive: 1;
+            flex-grow: 1;
+        }
+        &__name {
+            word-break: break-all;
+            flex-grow: 1;
+        }
+        &__ph {
+            overflow: hidden;
+            position: relative;
+            width: 24px;
+            height: 24px;
+            margin-right: 1rem;
+            border-radius: 0;
+            box-shadow: initial;
+            &--m {
+                width: 40px;
+                height: 40px;
+            }
+            &--catalog {
+                background: url(../image/book.svg) no-repeat center center;
+                background-size: contain;
+            }
+            &--item {
+                background: url(../image/item.svg) no-repeat center center;
+                background-size: contain;
+            }
+            &--fukidashi {
+                background: url(../image/fukidashi.svg) no-repeat center center;
+                background-size: contain;
+            }
+            &--setting {
+                background: url(../image/setting.svg) no-repeat center center;
+                background-size: contain;
+            }
+        }
+        &__all {
+            position: relative;
+            padding: 2rem 1rem 1rem;
+            -moz-flex-grow: 1;
+            -ms-flex-positive: 1;
+            flex-grow: 1;
+        }
+        &__list {
+            position: relative;
+            padding: 1.7rem 1rem;
+            border-bottom: 1px solid #95989a;
+            align-items: center;
+            display: block;
+            color: black;
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+        &__store {
+            -ms-flex-positive: 1;
+            flex-grow: 1;
+            -ms-flex-align: center;
+            align-items: center;
+        }
+        &__heading {
+            font-size: 1.7rem;
+            font-weight: bold;
+            padding: 1rem 0 0 0;
+            color: #cc372d;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+<% if (typeof modifier === undefined) { var modifier = ''; } -%>
+<% if(page.projectName === "gulf"){ -%>
+<% if(modifier === 'nomodal'){
+ modifier = 'c-modal__box--hidden'
+}else{
+ modifier = ''
+} -%>
+<div class="c-modal">
+  <div class="c-modal__box <%= modifier %>">
+    <div class="c-modal__confirm">
+      <div class="c-modal__text">
+        <p>メッセージ削除</p>
+        <span>このメッセージを削除しますか？</span>
+      </div>
+    </div>
+    <ul class="c-modal__choice">
+      <li><a href="#">キャンセル</a></li>
+      <li><a href="#">削除</a></li>
+    </ul>
+  </div>
+</div>
+<% } -%>
