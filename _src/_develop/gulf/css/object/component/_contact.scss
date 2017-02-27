@@ -32,16 +32,18 @@
         }
         &__area {
             position: relative;
-            -webkit-box-flex: 1;
-            -moz-box-flex: 1;
-            -webkit-flex-grow: 1;
+            overflow-y: auto;
             -moz-flex-grow: 1;
             flex-grow: 1;
-            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-content: space-between;
+            align-items: stretch;
             &--inner {
                 padding: 1rem;
-                margin-bottom: 12.8rem;
-                overflow: hidden;
+                overflow-y: auto;
             }
         }
         &__nav {
@@ -64,6 +66,7 @@
                     font-size: 1.4rem;
                     margin-bottom: 10px;
                     font-weight: bold;
+                    color: #95989a;
                 }
                 span {
                     font-size: 1rem;
@@ -395,18 +398,18 @@
             }
         }
         &__form {
-            position: fixed;
-            bottom: 0;
             z-index: 100;
-            width: calc(100% - 270px);
-            overflow: hidden;
-            padding-top: 1rem;
+            bottom: 0;
+            order: 0;
+            flex: 0 1 auto;
+            align-self: stretch;
             &__inner {
                 box-shadow: 0 -4px 6px rgba(0, 0, 0, .25);
             }
             &__shadow {
                 padding: .5rem;
                 background-color: #e3e3e3;
+                position: relative;
             }
             textarea {
                 width: 100%;

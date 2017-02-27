@@ -2211,18 +2211,29 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 {
     position: relative;
 
+    display: -ms-flexbox;
+    display: flex;
     overflow-y: auto;
+        flex-direction: column;
 
     -moz-flex-grow: 1;
     -ms-flex-positive: 1;
          flex-grow: 1;
+    -ms-flex-direction: column;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-line-pack: justify;
+    align-content: space-between;
+    -ms-flex-align: stretch;
+    align-items: stretch;
 }
 
 .c-contact__area--inner
 {
-    overflow: hidden;
+    overflow-y: auto;
 
-    margin-bottom: 12.8rem;
     padding: 1rem;
 }
 
@@ -2261,6 +2272,8 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     font-weight: bold;
 
     margin-bottom: 10px;
+
+    color: #95989a;
 }
 
 .c-contact__link div span
@@ -2782,14 +2795,16 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
 .c-contact__form
 {
-    position: fixed;
     z-index: 100;
     bottom: 0;
 
-    overflow: hidden;
-
-    width: calc(100% - 270px);
-    padding-top: 1rem;
+    -ms-flex-order: 0;
+    order: 0;
+    -ms-flex: 0 1 auto;
+        flex: 0 1 auto;
+    -ms-flex-item-align: stretch;
+    -ms-grid-row-align: stretch;
+    align-self: stretch;
 }
 
 .c-contact__form__inner
@@ -2799,6 +2814,8 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
 .c-contact__form__shadow
 {
+    position: relative;
+
     padding: .5rem;
 
     background-color: #e3e3e3;
@@ -5370,7 +5387,7 @@ body > .p-contents
 
 .u-posi__form--a
 {
-    top: 3.4rem;
+    top: 2.4rem;
     left: 1rem;
 }
 
@@ -7065,7 +7082,7 @@ body > .p-contents
 
 .u-posi__form--a
 {
-    top: 3.4rem;
+    top: 2.4rem;
     left: 1rem;
 }
 
@@ -7217,7 +7234,7 @@ body > .p-contents
 
 .u-posi__form--a
 {
-    top: 3.4rem;
+    top: 2.4rem;
     left: 1rem;
 }
 
