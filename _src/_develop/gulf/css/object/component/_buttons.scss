@@ -231,14 +231,19 @@
                         li {
                             display: inline-block;
                             box-sizing: border-box;
-                            width: 60%;
+                            width: 56%;
                             padding: 1rem 0.5rem;
                             letter-spacing: normal;
                             &:first-child {
-                                width: 40%;
+                                width: 44%;
                                 border-right: 1px solid #cc372d;
                                 background: url(../image/favorite--on.svg) no-repeat 0.5rem center;
                                 background-size: 23%;
+                                padding-left: 2.8rem;
+                            }
+                            &:last-child {
+                                background: url(../image/fukidashi--favorite.svg) no-repeat 1.2rem center;
+                                background-size: 17%;
                                 padding-left: 2.8rem;
                             }
                         }
@@ -254,6 +259,11 @@
                                 background-size: 23%;
                                 padding-left: 2.8rem;
                                 color: #C7C7C7;
+                            }
+                            &:last-child {
+                                background: url(../image/fukidashi--favorite.svg) no-repeat 1.2rem center;
+                                background-size: 17%;
+                                padding-left: 2.8rem;
                             }
                         }
                     }

@@ -63,7 +63,6 @@
             border-bottom: 1px solid #95989a;
             align-items: center;
             display: block;
-            color: black;
             &:last-child {
                 border-bottom: none;
             }
@@ -77,7 +76,7 @@
         &__heading {
             font-size: 1.7rem;
             font-weight: bold;
-            padding: 1rem 0 0 0;
+            padding: 2rem 0 0 0;
             color: #cc372d;
         }
     }

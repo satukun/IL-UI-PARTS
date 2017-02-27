@@ -736,7 +736,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     display: inline-block;
 
     box-sizing: border-box;
-    width: 60%;
+    width: 56%;
     padding: 1rem .5rem;
 
     letter-spacing: normal;
@@ -745,12 +745,21 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 .c-button__favorite--on a ul li:first-child,
 .c-button__favorite--off a ul li:first-child
 {
-    width: 40%;
+    width: 44%;
     padding-left: 2.8rem;
 
     border-right: 1px solid #cc372d;
     background: url(../image/favorite--on.svg) no-repeat .5rem center;
     background-size: 23%;
+}
+
+.c-button__favorite--on a ul li:last-child,
+.c-button__favorite--off a ul li:last-child
+{
+    padding-left: 2.8rem;
+
+    background: url(../image/fukidashi--favorite.svg) no-repeat 1.2rem center;
+    background-size: 17%;
 }
 
 .c-button__favorite--off a ul li:first-child
@@ -760,6 +769,14 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     color: #c7c7c7;
     background: url(../image/favorite--off.svg) no-repeat .5rem center;
     background-size: 23%;
+}
+
+.c-button__favorite--off a ul li:last-child
+{
+    padding-left: 2.8rem;
+
+    background: url(../image/fukidashi--favorite.svg) no-repeat 1.2rem center;
+    background-size: 17%;
 }
 
 .c-article
@@ -3452,7 +3469,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     display: inline-block;
 
     box-sizing: border-box;
-    width: 60%;
+    width: 56%;
     padding: 1rem .5rem;
 
     letter-spacing: normal;
@@ -3461,12 +3478,21 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 .c-button__favorite--on a ul li:first-child,
 .c-button__favorite--off a ul li:first-child
 {
-    width: 40%;
+    width: 44%;
     padding-left: 2.8rem;
 
     border-right: 1px solid #cc372d;
     background: url(../image/favorite--on.svg) no-repeat .5rem center;
     background-size: 23%;
+}
+
+.c-button__favorite--on a ul li:last-child,
+.c-button__favorite--off a ul li:last-child
+{
+    padding-left: 2.8rem;
+
+    background: url(../image/fukidashi--favorite.svg) no-repeat 1.2rem center;
+    background-size: 17%;
 }
 
 .c-button__favorite--off a ul li:first-child
@@ -3476,6 +3502,14 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     color: #c7c7c7;
     background: url(../image/favorite--off.svg) no-repeat .5rem center;
     background-size: 23%;
+}
+
+.c-button__favorite--off a ul li:last-child
+{
+    padding-left: 2.8rem;
+
+    background: url(../image/fukidashi--favorite.svg) no-repeat 1.2rem center;
+    background-size: 17%;
 }
 
 .c-sidebar
@@ -3578,7 +3612,6 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
     padding: 1.7rem 1rem;
 
-    color: black;
     border-bottom: 1px solid #95989a;
 
     -ms-flex-align: center;
@@ -3603,7 +3636,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     font-size: 1.7rem;
     font-weight: bold;
 
-    padding: 1rem 0 0 0;
+    padding: 2rem 0 0 0;
 
     color: #cc372d;
 }
