@@ -94,5 +94,20 @@
                 }
             }
         }
+        &__btn {
+            font-size: 1.3rem;
+            font-weight: 400;
+            display: inline-block;
+            margin-right: .5rem;
+            padding: .8rem;
+            text-align: center;
+            white-space: nowrap;
+            letter-spacing: normal;
+            color: #fff;
+            border-radius: .4rem;
+            &--red {
+                background-color: #c00;
+            }
+        }
     }
 }

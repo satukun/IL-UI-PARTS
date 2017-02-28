@@ -1876,6 +1876,29 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     bottom: 2px;
 }
 
+.c-menu__btn
+{
+    font-size: 1.3rem;
+    font-weight: 400;
+
+    display: inline-block;
+
+    margin-right: .5rem;
+    padding: .8rem;
+
+    text-align: center;
+    white-space: nowrap;
+    letter-spacing: normal;
+
+    color: #fff;
+    border-radius: .4rem;
+}
+
+.c-menu__btn--red
+{
+    background-color: #c00;
+}
+
 .c-arrow
 {
     position: absolute;
@@ -3680,6 +3703,82 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     color: #fff;
     border-radius: 10px;
     background-color: #0081b4;
+}
+
+.c-label
+{
+    font-size: 1rem;
+    font-weight: 400;
+
+    display: inline-block;
+
+    margin-right: .5rem;
+    padding: .2rem .4rem;
+
+    text-align: center;
+    white-space: nowrap;
+    letter-spacing: normal;
+
+    color: #fff;
+    border-radius: .4rem;
+}
+
+.c-label--on
+{
+    background-color: #c00;
+}
+
+.c-label--off
+{
+    background-color: #989898;
+}
+
+.c-manegement__headding
+{
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-weight: bold;
+    line-height: 1.2;
+
+    width: 96%;
+    margin: 0 auto .5rem;
+}
+
+.c-manegement__input
+{
+    font-size: 1rem;
+
+    display: block;
+
+    width: 96%;
+    margin: 0 auto 1rem;
+    padding: 0;
+    padding-bottom: .5rem;
+
+    color: #434343;
+    border: none;
+    border-bottom: 1px solid #95989a;
+    background-color: transparent;
+}
+
+.c-manegement__profile
+{
+    overflow: hidden;
+
+    width: 100px;
+
+    border: 1px solid #95989a;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.c-manegement__change
+{
+    position: relative;
+
+    padding: 1rem;
+
+    text-align: left;
 }
 
 /* Project --------------- */

@@ -1,0 +1,20 @@
+.c- {
+    &label {
+        font-size: 1rem;
+        font-weight: 400;
+        display: inline-block;
+        margin-right: .5rem;
+        padding: .2rem .4rem;
+        text-align: center;
+        white-space: nowrap;
+        letter-spacing: normal;
+        color: #fff;
+        border-radius: .4rem;
+        &--on {
+            background-color: #cc0000;
+        }
+        &--off {
+            background-color: #989898;
+        }
+    }
+}

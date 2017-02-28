@@ -1,0 +1,54 @@
+<%
+var absolutePath = filename.split(site.developDir)[filename.split(site.developDir).length -1].replace('.ejs','.html');
+var relativePath = '../'.repeat([absolutePath.split('/').length -1]);
+var css_js_Path = '../'.repeat([absolutePath.split('/').length -3]);
+var page = {
+  title: site.title.B121 + "｜" + site.name,
+  description: site.description.B121,
+  keywords: site.keywords,
+  projectName: site.name,
+  bodyClass: "c-top",
+  singleCss: ["main.css"],
+  singleJs: [],
+  ogpType: "website",
+  ogpImage: site.ogpImage,
+  absolutePath: absolutePath,
+  relativePath: relativePath,
+  css_js_Path:css_js_Path
+};
+-%>
+
+<%- include(page.relativePath + '_common/ejs/_head', {page: page, modifier: '',}); %>
+<%# include(page.relativePath + '_common/ejs/_menu', {page: page, modifier: 'menuLink',}); %>
+<!-- contents -->
+<article class="l-contents">
+  <div class="p-contents">
+    <div class="c-manegement c-config">
+      <h1 class="c-manegement__headding u-fpd3t">ヘッダ文字btn</h1>
+      <div class="u-fmg15l u-fmg3t u-fmg60b">
+        <span class="c-menu__btn c-menu__btn--red">ヘッダ文字btn</span>
+      </div>
+      <h1 class="c-manegement__headding u-fpd3t">ルーム名 <span class="c-label c-label--on">必須</span><span class="c-label c-label--off">任意</span></h1>
+      <input type="text" class="c-manegement__input u-fmg3t u-fmg60b" value="A店様">
+      <h1 class="c-manegement__headding u-fpd3t">画像</h1>
+      <div class="c-manegement__profile u-fmg30l u-fmg21b u-fmg3t u-fmg60b">
+        <h1 class="c-config__face"></h1>
+        <span class="c-config__change c-manegement__change">変更
+          <a class="c-button__add" href="#">
+            <span></span>
+            <span></span>
+          </a>
+        </span>
+      </div>
+      <h1 class="c-manegement__headding u-fpd3t">ボタン</h1>
+      <div class="u-fmg30l">
+        <ul class="c-product__keyword">
+          <li class="c-product__keywordlist"><a class="c-product__keywordlink" href="#">うどん</a></li>
+        </ul>
+      </div>
+      </div>
+  </div>
+</article>
+<!-- /contents -->
+<%- include(page.relativePath + '_common/ejs/_footer', {page: page, modifier: '',}); %>
+<%- include(page.relativePath + '_common/ejs/_script', {page: page, modifier: '', script: 'two',}); %>

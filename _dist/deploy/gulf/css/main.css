@@ -1876,6 +1876,29 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     bottom: 2px;
 }
 
+.c-menu__btn
+{
+    font-size: 1.3rem;
+    font-weight: 400;
+
+    display: inline-block;
+
+    margin-right: .5rem;
+    padding: .8rem;
+
+    text-align: center;
+    white-space: nowrap;
+    letter-spacing: normal;
+
+    color: #fff;
+    border-radius: .4rem;
+}
+
+.c-menu__btn--red
+{
+    background-color: #c00;
+}
+
 .c-arrow
 {
     position: absolute;
@@ -2211,18 +2234,29 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 {
     position: relative;
 
+    display: -ms-flexbox;
+    display: flex;
     overflow-y: auto;
+        flex-direction: column;
 
     -moz-flex-grow: 1;
     -ms-flex-positive: 1;
          flex-grow: 1;
+    -ms-flex-direction: column;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-line-pack: justify;
+    align-content: space-between;
+    -ms-flex-align: stretch;
+    align-items: stretch;
 }
 
 .c-contact__area--inner
 {
-    overflow: hidden;
+    overflow-y: auto;
 
-    margin-bottom: 12.8rem;
     padding: 1rem;
 }
 
@@ -2261,6 +2295,8 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     font-weight: bold;
 
     margin-bottom: 10px;
+
+    color: #95989a;
 }
 
 .c-contact__link div span
@@ -2782,14 +2818,16 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
 .c-contact__form
 {
-    position: fixed;
     z-index: 100;
     bottom: 0;
 
-    overflow: hidden;
-
-    width: calc(100% - 270px);
-    padding-top: 1rem;
+    -ms-flex-order: 0;
+    order: 0;
+    -ms-flex: 0 1 auto;
+        flex: 0 1 auto;
+    -ms-flex-item-align: stretch;
+    -ms-grid-row-align: stretch;
+    align-self: stretch;
 }
 
 .c-contact__form__inner
@@ -2799,6 +2837,8 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
 .c-contact__form__shadow
 {
+    position: relative;
+
     padding: .5rem;
 
     background-color: #e3e3e3;
@@ -3663,6 +3703,82 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     color: #fff;
     border-radius: 10px;
     background-color: #0081b4;
+}
+
+.c-label
+{
+    font-size: 1rem;
+    font-weight: 400;
+
+    display: inline-block;
+
+    margin-right: .5rem;
+    padding: .2rem .4rem;
+
+    text-align: center;
+    white-space: nowrap;
+    letter-spacing: normal;
+
+    color: #fff;
+    border-radius: .4rem;
+}
+
+.c-label--on
+{
+    background-color: #c00;
+}
+
+.c-label--off
+{
+    background-color: #989898;
+}
+
+.c-manegement__headding
+{
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-weight: bold;
+    line-height: 1.2;
+
+    width: 96%;
+    margin: 0 auto .5rem;
+}
+
+.c-manegement__input
+{
+    font-size: 1rem;
+
+    display: block;
+
+    width: 96%;
+    margin: 0 auto 1rem;
+    padding: 0;
+    padding-bottom: .5rem;
+
+    color: #434343;
+    border: none;
+    border-bottom: 1px solid #95989a;
+    background-color: transparent;
+}
+
+.c-manegement__profile
+{
+    overflow: hidden;
+
+    width: 100px;
+
+    border: 1px solid #95989a;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.c-manegement__change
+{
+    position: relative;
+
+    padding: 1rem;
+
+    text-align: left;
 }
 
 /* Project --------------- */
@@ -5370,7 +5486,7 @@ body > .p-contents
 
 .u-posi__form--a
 {
-    top: 3.4rem;
+    top: 2.4rem;
     left: 1rem;
 }
 
@@ -7065,7 +7181,7 @@ body > .p-contents
 
 .u-posi__form--a
 {
-    top: 3.4rem;
+    top: 2.4rem;
     left: 1rem;
 }
 
@@ -7217,7 +7333,7 @@ body > .p-contents
 
 .u-posi__form--a
 {
-    top: 3.4rem;
+    top: 2.4rem;
     left: 1rem;
 }
 
