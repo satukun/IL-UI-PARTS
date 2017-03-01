@@ -10,6 +10,16 @@
             padding: 0.2rem 0;
             text-align: center;
         }
+        &__timeline {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            width: 77%;
+            flex-flow: column nowrap;
+            &--name {
+                padding: 1rem 1.4rem;
+            }
+        }
         &__textarea {
             padding: 1rem 1rem 1.5rem;
             font-size: 1.2rem;
@@ -118,6 +128,9 @@
             padding: 0 5px 5px;
             &--left {
                 flex-direction: row;
+                .c-contact__timeline--name {
+                    text-align: left;
+                }
                 .c-contact__fukidashi {
                     &::before {
                         position: absolute;
@@ -161,6 +174,9 @@
             }
             &--right {
                 flex-direction: row-reverse;
+                .c-contact__timeline--name {
+                    text-align: right;
+                }
                 .c-contact__fukidashi {
                     flex-direction: row-reverse;
                     &::before {
@@ -224,9 +240,9 @@
         &__fukidashi {
             align-items: flex-end;
             display: flex;
-            width: 77%;
             position: relative;
             z-index: 10;
+            overflow: hidden;
             &--text {
                 font-size: 1.2rem;
                 line-height: 1.5;
@@ -243,7 +259,6 @@
             &__ph {
                 align-items: flex-end;
                 display: flex;
-                width: 72%;
                 position: relative;
                 z-index: 10;
                 &--text {

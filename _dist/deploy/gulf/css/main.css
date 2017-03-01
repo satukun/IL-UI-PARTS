@@ -2199,6 +2199,25 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     text-align: center;
 }
 
+.c-contact__timeline
+{
+    position: relative;
+    z-index: 10;
+
+    display: -ms-flexbox;
+    display: flex;
+
+    width: 77%;
+
+    -ms-flex-flow: column nowrap;
+        flex-flow: column nowrap;
+}
+
+.c-contact__timeline--name
+{
+    padding: 1rem 1.4rem;
+}
+
 .c-contact__textarea
 {
     font-size: 1.2rem;
@@ -2377,6 +2396,11 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
     -ms-flex-direction: row;
 }
 
+.c-contact__contact--left .c-contact__timeline--name
+{
+    text-align: left;
+}
+
 .c-contact__contact--left .c-contact__fukidashi::before
 {
     position: absolute;
@@ -2437,6 +2461,11 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
         flex-direction: row-reverse;
 
     -ms-flex-direction: row-reverse;
+}
+
+.c-contact__contact--right .c-contact__timeline--name
+{
+    text-align: right;
 }
 
 .c-contact__contact--right .c-contact__fukidashi
@@ -2534,8 +2563,7 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
     display: -ms-flexbox;
     display: flex;
-
-    width: 77%;
+    overflow: hidden;
 
     -ms-flex-align: end;
     align-items: flex-end;
@@ -2567,8 +2595,6 @@ FLOCSSでのObjectは、さらに次の3つのレイヤーに分けられます�
 
     display: -ms-flexbox;
     display: flex;
-
-    width: 72%;
 
     -ms-flex-align: end;
     align-items: flex-end;
